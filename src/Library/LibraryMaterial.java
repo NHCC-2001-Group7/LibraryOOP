@@ -10,6 +10,6 @@ package Library;
  *
  * @author Sved
  */
-public class LibraryMaterial {
+public abstract class LibraryMaterial {
     
 }

@@ -10,6 +10,6 @@ package Library;
  *
  * @author Sved
  */
-public class AudioVisualMaterial {
+public class AudioVisualMaterial extends LibraryMaterial {
     
 }

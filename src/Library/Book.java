@@ -10,6 +10,6 @@ package Library;
  *
  * @author Sved
  */
-public class Book {
+public class Book extends LibraryMaterial {
     
 }
