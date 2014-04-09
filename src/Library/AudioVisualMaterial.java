@@ -7,9 +7,17 @@
 package Library;
 
 /**
- *
- * @author Sved
+ * 
+ * 
+ * @author 
+ * Class: CSCI 2001-51
+ * Due Date: 04/30/14
+ * 
+ * Version: 1.00
+ * 
  */
+
+
 public class AudioVisualMaterial extends LibraryMaterial {
     
 }

@@ -7,9 +7,17 @@
 package Library;
 
 /**
- *
- * @author Sved
+ * This class generates the main GUI for the program.
+ * 
+ * @author Mike Plucker, Billy Lam, Xavier Porter
+ * Class: CSCI 2001-51
+ * Due Date: 04/30/14
+ * 
+ * Version: 1.00
+ * 
  */
+
+
 public class Librarian extends javax.swing.JFrame {
 
     /**
