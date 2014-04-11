@@ -7,7 +7,7 @@
 package Library;
 
 /**
- * This class is a sub-class of LibraryMaterial. It develops a book's characteristics.
+ * This class is a sub-class of LibraryMaterial. It develops a book's attributes.
  * 
  * @author Mike Plucker
  * Class: CSCI 2001-51
