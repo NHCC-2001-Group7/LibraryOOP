@@ -30,7 +30,7 @@ public abstract class LibraryMaterial {
     /** Concept #2 Default constructor */
     //no argument constructor (default)
     public LibraryMaterial(){
-        this(null,null,0,0); //initialize each instance variable to their default value (either null or zero).
+        this(null,null,0.0,0); //initialize each instance variable to their default value (either null or zero).
     }
     
     //constructor to initialize author, title, price and published year
