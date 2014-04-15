@@ -6,6 +6,11 @@
 
 package Library;
 
+
+//import classes
+//import java.math.BigDecimal;
+
+
 /**
  * This class is the Super class of the project.
  * 
@@ -20,51 +25,53 @@ package Library;
 
 public abstract class LibraryMaterial {
     
-    /** Concept #1 Encapsulation/Data hiding */
-    //declare field variables as private
-    private String author, title;
-    private double price;
-    private int pubYear;
+    /** Concept #4 protected visibility modifier */
+    //declare field variables as protected
+    protected String author, title;
+    protected double price;
+    protected int pubYear;
     
     
     /** Concept #2 Default constructor */
+    /** Concept #7 Method overloading */
     //no argument constructor (default)
     public LibraryMaterial(){
-        this(null,null,0.0,0); //initialize each instance variable to their default value (either null or zero).
+        this(null,null,0,0); //initialize each instance variable to their default value (either null or zero).
     }
     
+    /** Concept #7 Method overloading */
     //constructor to initialize author, title, price and published year
-    public LibraryMaterial(String a, String t, double p, int y){
+    public LibraryMaterial(String author, String title, double price, int pubYear){
         
         //initialize variables
-        author = a;
-        title = t;
-        setPrice(p); //validate and store price
-        pubYear = y;
+        this.author = author;
+        this.title = title;
+        setPrice(price); //validate and store price
+        this.pubYear = pubYear;
     }
     
     //set author
-    public void setAuthor(String a){
-        author = a;
+    public void setAuthor(String author){
+        this.author = author;
     }
     
     //set title
-    public void setTitle(String t){
-        title = t;
+    public void setTitle(String title){
+        this.title = title;
     }
     
     //validate and set price
-    public void setPrice(double p){
-        if(p >= 0.0){ //validate if price is positive
-            price = p;
+    public void setPrice(double price){
+        if(price >= 0){ //validate if price is positive
+            this.price = price;
         }
         else
             throw new IllegalArgumentException("Price must be >= 0.0"); //throws exception if price is negative
     }
     
     //set published year
-    public void setPubYear(int y){
-        pubYear = y;
+    public void setPubYear(int pubYear){
+        this.pubYear = pubYear;
     }
     
     //get author
@@ -87,10 +94,13 @@ public abstract class LibraryMaterial {
         return pubYear;
     }
     
+    //abstract method overrided by concrete subclasses
+    public abstract String displayInfo(); //no implementation here
+    
     /** Concept #6 Method Overriding */
     //convert LibraryMaterial to String format
     @Override //this method overrides a superclass method (Object method toString)
     public String toString(){
-        return String.format("Author: %s\nTitle: %s\nPrice: $%.2f\nPublication Year: %d\n", getAuthor(), getTitle(), getPrice(), getPubYear());
+        return String.format("Author: %s\nTitle: %s\nPrice: $%.2f\nPublication Year: %d", getAuthor(), getTitle(), getPrice(), getPubYear());
     }
 }

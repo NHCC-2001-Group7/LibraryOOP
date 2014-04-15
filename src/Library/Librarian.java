@@ -6,8 +6,12 @@
 
 package Library;
 
+
+//import classes
+
+
 /**
- * This class generates the main GUI for the program.
+ * This class generates the main GUI for the program as well as runs the program.
  * 
  * @author Mike Plucker, Billy Lam, Xavier Porter
  * Class: CSCI 2001-51
@@ -19,12 +23,28 @@ package Library;
 
 
 public class Librarian extends javax.swing.JFrame {
-
+    
+    //create subclass objects
+    //create book objects
+    Book TexasHomeownersAssociationLaw = new Book("Gregory S. Cagle", "Texas Homeowners Association Law", 37.74, 2013, "Paperback", "2nd", 822);
+    Book MotivationalInterviewing = new Book("William R. Miller and Stephen Rollnick", "Motivational Interviewing", 51.00, 2012, "Hardcover", "3rd", 482);
+    Book PsionicPower = new Book("Mike Mearls", "Psionic Power", 20.79, 2010, "Hardcover", "4th", 160);
+    
+    //create LibraryMaterial array
+    LibraryMaterial[] materials = {TexasHomeownersAssociationLaw, MotivationalInterviewing, PsionicPower};
+    
+    
     /**
      * Creates new form Librarian
      */
     public Librarian() {
         initComponents();
+        
+        //testing with println command
+        //enhanced for loop goes through the books and prints their information
+        for(LibraryMaterial currentMaterial : materials){
+            System.out.println(currentMaterial.displayInfo()); //displays info for each book
+        }
     }
 
     /**

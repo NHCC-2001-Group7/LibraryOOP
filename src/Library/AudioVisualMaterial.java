@@ -6,8 +6,12 @@
 
 package Library;
 
+
+//import classes
+
+
 /**
- * 
+ * This class is a sub-class of LibraryMaterial.
  * 
  * @author 
  * Class: CSCI 2001-51
@@ -18,6 +22,16 @@ package Library;
  */
 
 
+/** Concept #3 Inheritance */
+//AudioVisualMaterial class extends LibraryMaterial
 public class AudioVisualMaterial extends LibraryMaterial {
+    
+    /** Concept #5 super reference */
+    /** Concept #6 Method Overriding */
+    //overrides abstract method displayInfo in LibraryMaterial
+    @Override
+    public String displayInfo(){
+        return String.format("%s\n", super.toString());
+    }
     
 }
