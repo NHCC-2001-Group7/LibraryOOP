@@ -48,7 +48,7 @@ public class Book extends LibraryMaterial {
         //initialize variables
         super(author, title, price, pubYear); //pass to LibraryMaterial constructor
         this.bookType = bookType;
-        this.printEdition = printEdition;
+        this.printEdition = printEdition.toLowerCase();
         setPageNumber(pageNumber); //validate and store pageNumber
     }
     
@@ -60,13 +60,13 @@ public class Book extends LibraryMaterial {
         //initialize variables
         super(author, title, price, pubYear); //pass to LibraryMaterial constructor
         
-//        //if book is a first edition
-//        if(printEdition == 1){
-//            this.printEdition = printEdition; //initialize printEdition
-//        }
-//        else{
-//            this.printEdition = 0; //otherwise printEdition is set to default (zero)
-//        }
+        //if book is a first edition
+        if(printEdition.equalsIgnoreCase("1rst")){
+            this.printEdition = printEdition.toLowerCase(); //initialize printEdition to first edition
+        }
+        else{
+            this.printEdition = null; //otherwise printEdition is set to default (zero)
+        }
     }
     
     //set bookType

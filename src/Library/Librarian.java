@@ -26,12 +26,14 @@ public class Librarian extends javax.swing.JFrame {
     
     //create subclass objects
     //create book objects
-    Book TexasHomeownersAssociationLaw = new Book("Gregory S. Cagle", "Texas Homeowners Association Law", 37.74, 2013, "Paperback", "2nd", 822);
+    Book TexasHomeownersAssociationLaw = new Book("Gregory S. Cagle", "Texas Homeowners Association Law", 37.74, 2013, "Paperback", "2ND", 822);
     Book MotivationalInterviewing = new Book("William R. Miller and Stephen Rollnick", "Motivational Interviewing", 51.00, 2012, "Hardcover", "3rd", 482);
     Book PsionicPower = new Book("Mike Mearls", "Psionic Power", 20.79, 2010, "Hardcover", "4th", 160);
     
+    Book Test = new Book("MeMEME", "A test of a book", 10.99, 2014, "1RST");
+    
     //create LibraryMaterial array
-    LibraryMaterial[] materials = {TexasHomeownersAssociationLaw, MotivationalInterviewing, PsionicPower};
+    LibraryMaterial[] materials = {TexasHomeownersAssociationLaw, MotivationalInterviewing, PsionicPower, Test};
     
     
     /**
