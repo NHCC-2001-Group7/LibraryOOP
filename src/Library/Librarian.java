@@ -126,12 +126,12 @@ public class Librarian extends javax.swing.JFrame {
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/Images/PlayButton.jpg"))); // NOI18N
         getContentPane().add(jButton1);
-        jButton1.setBounds(654, 6, 180, 45);
+        jButton1.setBounds(658, 8, 180, 45);
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/Images/StopButton.jpg"))); // NOI18N
         jButton2.setPreferredSize(new java.awt.Dimension(180, 45));
         getContentPane().add(jButton2);
-        jButton2.setBounds(858, 6, 180, 45);
+        jButton2.setBounds(858, 8, 180, 45);
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/Images/PileOfBooks2.jpg"))); // NOI18N
         getContentPane().add(jLabel5);
