@@ -6,6 +6,8 @@
 
 package Library;
 
+import java.io.File;
+
 
 //import classes
 
@@ -34,10 +36,28 @@ public class Librarian extends javax.swing.JFrame {
     Book Test2 = new Book();
     
     //create audioVisual objects
+    private final File monstClip = new File("sound/Monster.wav");
+    private final File beatClip = new File("sound/Beatles.wav");
+    private final File frzClip = new File("frozen.wav");
+    private final File toyClip = new File("sound/toystory.wav");
+    private final File bobClip = new File("sound/Bob.wav");
+    private final File charClip = new File("sound/charlie.wav");
+    private final File earthClip = new File("sound/earthwind.wav");
+    private final File sadeClip = new File("sound/SadeClip.wav");
+    private final File rickClip = new File("sound/rickAstley.wav");
     
-        //place audioVisual objects here.
+    AudioVisualMaterial Frozen = new AudioVisualMaterial("Walt Disney Studios Home Entertainment", "Frozen", 26.96, 2013, "Untitled", "Untitled", "DVD", null, frzClip);
+    AudioVisualMaterial MonstersUniversity = new AudioVisualMaterial("Walt Disney Studios Home Entertainment","Monsters University", 15.96, 2013,"Untitled", "Untitled", "DVD", null , monstClip);
+    AudioVisualMaterial ToyStory = new AudioVisualMaterial("Disney Pixar", "Toy Story 3", 18.27, 2010, "Untitled", "Untitled", "DVD", null, toyClip); 
+    AudioVisualMaterial TheBeatles = new AudioVisualMaterial("The Beatles", "On Air - Live At The BBC Volume 2 ", 15.07, 2013, "Untitled" , "CD", "Untitled", null, beatClip);
+    AudioVisualMaterial Marley = new AudioVisualMaterial("Bob Marley", "Legend: The Best Of Bob Marley And The Wailers", 11.45, 2002, "Untitled", "CD", "Untitled", null, bobClip );
+    AudioVisualMaterial charlieBrown = new AudioVisualMaterial("Fantasy", "Charlie Brown Christmas", 5.99, 2000, "Audio Cassette" , "Untitled", "Untitled", null, charClip);
+    AudioVisualMaterial EarthWindFire = new AudioVisualMaterial("Earth Wind and Fire", "Earth Wind and Fire: Greatest Hits", 10.00, 1998, "Audio Cassette", "Untitled", "Untitled", null, earthClip);
+    AudioVisualMaterial Sade = new AudioVisualMaterial("Sade", "The Best of Sade", 9.99, 2001, "Untitled", "CD", "Untitled", null, sadeClip);
+    AudioVisualMaterial Rick = new AudioVisualMaterial("Rick Astley", "Whenever You Need Somebody", 7.95, 1990, "Audio Cassette", "Untitled", "Untitled", null, rickClip );
     
-    //create arrays
+//create arrays
+    AudioVisualMaterial[] audio = {Frozen,MonstersUniversity, ToyStory, TheBeatles, Marley, charlieBrown,EarthWindFire, Sade, Rick};
     LibraryMaterial[] materials = {TexasHomeownersAssociationLaw, MotivationalInterviewing, PsionicPower, Test, Test2}; //array of all library materials(add audiovisual objects once coded)
     LibraryMaterial[] books = {TexasHomeownersAssociationLaw, MotivationalInterviewing, PsionicPower}; //array of library books
     
@@ -52,6 +72,10 @@ public class Librarian extends javax.swing.JFrame {
         //enhanced for loop goes through the books and prints their information
         for(LibraryMaterial currentMaterial : materials){
             System.out.println(currentMaterial.displayInfo()); //displays info for each book
+        }
+        
+       for(AudioVisualMaterial currentAudio : audio){
+            System.out.println(currentAudio.displayInfo()); //displays info for each book
         }
     }
 
