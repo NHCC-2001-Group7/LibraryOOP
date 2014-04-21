@@ -88,17 +88,41 @@ public class Librarian extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(1080, 720));
+        setPreferredSize(new java.awt.Dimension(1080, 720));
+
+        jTabbedPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jTabbedPane1.setFocusable(false);
+        jTabbedPane1.setFont(new java.awt.Font("Serif", 1, 24)); // NOI18N
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/Images/BookshelfHome.jpg"))); // NOI18N
+        jTabbedPane1.addTab("   Home   ", jLabel1);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/Images/Bookshelf1.jpg"))); // NOI18N
+        jTabbedPane1.addTab("   Books   ", jLabel2);
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/Images/Bookshelf5.jpg"))); // NOI18N
+        jTabbedPane1.addTab("    Audio    ", jLabel3);
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/Images/Bookshelf3.jpg"))); // NOI18N
+        jTabbedPane1.addTab("   Video   ", jLabel4);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1)
         );
 
         pack();
@@ -140,5 +164,10 @@ public class Librarian extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JTabbedPane jTabbedPane1;
     // End of variables declaration//GEN-END:variables
 }
