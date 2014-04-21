@@ -31,9 +31,12 @@ public class Librarian extends javax.swing.JFrame {
     Book TexasHomeownersAssociationLaw = new Book("Gregory S. Cagle", "Texas Homeowners Association Law", 37.74, 2013, "Paperback", 2, 822);
     Book MotivationalInterviewing = new Book("William R. Miller and Stephen Rollnick", "Motivational Interviewing", 51.00, 2012, "Hardcover", 3, 482);
     Book PsionicPower = new Book("Mike Mearls", "Psionic Power", 20.79, 2010, "Hardcover", 4, 160);
+    Book GameOfThrones = new Book("George R.R. Martin", "A Game of Thrones", 19.77, 1996, "Hardcover", 1, 704);
+    Book Divergent = new Book("Veronica Roth", "Divergent", 10.18, 2011, "Hardcover", 1, 496);
+    Book FaultInOurStars = new Book("John Green", "The Fault in our Stars", 10.00, 2012, "Hardcover", 1, 318);
     
-    Book Test = new Book("MeMEME", "A test of a book", 10.99, 2014, 1); //for testing 3rd constructor in book class
-    Book Test2 = new Book();
+    //Book Test = new Book("MeMEME", "A test of a book", 10.99, 2014, 1); //for testing 3rd constructor in book class
+    //Book Test2 = new Book();
     
     //create audioVisual objects
     private final File monstClip = new File("sound/Monster.wav");
@@ -58,8 +61,8 @@ public class Librarian extends javax.swing.JFrame {
     
 //create arrays
     AudioVisualMaterial[] audio = {Frozen,MonstersUniversity, ToyStory, TheBeatles, Marley, charlieBrown,EarthWindFire, Sade, Rick};
-    LibraryMaterial[] materials = {TexasHomeownersAssociationLaw, MotivationalInterviewing, PsionicPower, Test, Test2}; //array of all library materials(add audiovisual objects once coded)
-    LibraryMaterial[] books = {TexasHomeownersAssociationLaw, MotivationalInterviewing, PsionicPower}; //array of library books
+    LibraryMaterial[] materials = {TexasHomeownersAssociationLaw, MotivationalInterviewing, PsionicPower, GameOfThrones, Divergent, FaultInOurStars}; //array of all library materials(add audiovisual objects once coded)
+    LibraryMaterial[] books = {TexasHomeownersAssociationLaw, MotivationalInterviewing, PsionicPower, GameOfThrones, Divergent, FaultInOurStars}; //array of library books
     
     
     /**
