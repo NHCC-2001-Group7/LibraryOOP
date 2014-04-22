@@ -92,13 +92,13 @@ public class Librarian extends javax.swing.JFrame {
     private void initComponents() {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
+        homeTab = new javax.swing.JLabel();
+        bookTab = new javax.swing.JLabel();
+        audioTab = new javax.swing.JLabel();
+        videoTab = new javax.swing.JLabel();
+        playButton = new javax.swing.JButton();
+        stopButton = new javax.swing.JButton();
+        bookBackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1080, 730));
@@ -109,33 +109,33 @@ public class Librarian extends javax.swing.JFrame {
         jTabbedPane1.setFocusable(false);
         jTabbedPane1.setFont(new java.awt.Font("Serif", 1, 24)); // NOI18N
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/Images/BookshelfHome.jpg"))); // NOI18N
-        jTabbedPane1.addTab("   Home   ", jLabel1);
+        homeTab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/Images/BookshelfHome.jpg"))); // NOI18N
+        jTabbedPane1.addTab("   Home   ", homeTab);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/Images/Bookshelf1.jpg"))); // NOI18N
-        jTabbedPane1.addTab("   Books   ", jLabel2);
+        bookTab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/Images/Bookshelf1.jpg"))); // NOI18N
+        jTabbedPane1.addTab("   Books   ", bookTab);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/Images/Bookshelf5.jpg"))); // NOI18N
-        jTabbedPane1.addTab("    Audio    ", jLabel3);
+        audioTab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/Images/Bookshelf5.jpg"))); // NOI18N
+        jTabbedPane1.addTab("    Audio    ", audioTab);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/Images/Bookshelf3.jpg"))); // NOI18N
-        jTabbedPane1.addTab("   Video   ", jLabel4);
+        videoTab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/Images/Bookshelf3.jpg"))); // NOI18N
+        jTabbedPane1.addTab("   Video   ", videoTab);
 
         getContentPane().add(jTabbedPane1);
         jTabbedPane1.setBounds(-4, 22, 1354, 692);
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/Images/PlayButton.jpg"))); // NOI18N
-        getContentPane().add(jButton1);
-        jButton1.setBounds(658, 8, 180, 45);
+        playButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/Images/PlayButton.jpg"))); // NOI18N
+        getContentPane().add(playButton);
+        playButton.setBounds(658, 8, 180, 45);
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/Images/StopButton.jpg"))); // NOI18N
-        jButton2.setPreferredSize(new java.awt.Dimension(180, 45));
-        getContentPane().add(jButton2);
-        jButton2.setBounds(858, 8, 180, 45);
+        stopButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/Images/StopButton.jpg"))); // NOI18N
+        stopButton.setPreferredSize(new java.awt.Dimension(180, 45));
+        getContentPane().add(stopButton);
+        stopButton.setBounds(858, 8, 180, 45);
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/Images/PileOfBooks2.jpg"))); // NOI18N
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(-2, -120, 1080, 200);
+        bookBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/Images/PileOfBooks2.jpg"))); // NOI18N
+        getContentPane().add(bookBackground);
+        bookBackground.setBounds(-2, -120, 1080, 200);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -176,13 +176,13 @@ public class Librarian extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel audioTab;
+    private javax.swing.JLabel bookBackground;
+    private javax.swing.JLabel bookTab;
+    private javax.swing.JLabel homeTab;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JButton playButton;
+    private javax.swing.JButton stopButton;
+    private javax.swing.JLabel videoTab;
     // End of variables declaration//GEN-END:variables
 }
