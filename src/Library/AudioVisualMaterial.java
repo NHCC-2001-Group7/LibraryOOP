@@ -58,38 +58,38 @@ public class AudioVisualMaterial extends LibraryMaterial {
     //create soundClip array
     final URL[] SOUND = {FROZENCLIP, MONSTERClIP, TOYCLIP, BEATLESCLIP, BOBCLIP, SADECLIP, CHARLIECLIP, EARTHCLIP, RICKCLIP};
     
-//    //create book image files
-//    private final ImageIcon TEXASIMG = new ImageIcon(getClass().getResource("images/TexasHomeownersAssociationLaw.jpg"));
-//    private final ImageIcon MOTIVATIONIMG = new ImageIcon(getClass().getResource("images/MotivationalInterviweing.jpg"));
-//    private final ImageIcon PSIONICIMG = new ImageIcon(getClass().getResource("images/PsionicPower.jpg"));
-//    private final ImageIcon GAMEIMG = new ImageIcon(getClass().getResource("images/AGameOfThrones.jpg"));
-//    private final ImageIcon DIVERGENTIMG = new ImageIcon(getClass().getResource("images/Divergent.jpg"));
-//    private final ImageIcon FAULTIMG = new ImageIcon(getClass().getResource("images/TheFaultInOurStars.jpg"));
-//    
-//    //create audio image files
-//    private final ImageIcon BEATLESIMG = new ImageIcon(getClass().getResource("images/beatlesImg.jpg"));
-//    private final ImageIcon BOBIMG = new ImageIcon(getClass().getResource("images/marleyImg.jpg"));
-//    private final ImageIcon SADEIMG = new ImageIcon(getClass().getResource("images/sadeImg.jpg"));
-//    private final ImageIcon CHARLIEIMG = new ImageIcon(getClass().getResource("images/charlieImg.jpg"));
-//    private final ImageIcon EARTHIMG = new ImageIcon(getClass().getResource("images/earthImg.jpg"));
-//    private final ImageIcon RICKIMG = new ImageIcon(getClass().getResource("images/rickAstleyImg.jpg"));
-//    
-//    //create video image files
-//    private final ImageIcon FROZENIMG = new ImageIcon(getClass().getResource("images/frozen.jpg"));
-//    private final ImageIcon MONSTERIMG = new ImageIcon(getClass().getResource("images/monsterImg.jpg"));
-//    private final ImageIcon TOYIMG = new ImageIcon(getClass().getResource("images/toyStoryImg.jpg"));
-//    
-//    //create images array
-//    final ImageIcon[] IMAGES = {TEXASIMG, MOTIVATIONIMG, PSIONICIMG, GAMEIMG, DIVERGENTIMG, FAULTIMG, BEATLESIMG, BOBIMG, SADEIMG, CHARLIEIMG, 
-//        EARTHIMG, RICKIMG, FROZENIMG, MONSTERIMG, TOYIMG};
+    //create book image files
+    private final ImageIcon TEXASIMG = new ImageIcon(getClass().getResource("images/TexasHomeownersAssociationLaw.jpg"));
+    private final ImageIcon MOTIVATIONIMG = new ImageIcon(getClass().getResource("images/MotivationalInterviewing.jpg"));
+    private final ImageIcon PSIONICIMG = new ImageIcon(getClass().getResource("images/PsionicPower.jpg"));
+    private final ImageIcon GAMEIMG = new ImageIcon(getClass().getResource("images/AGameOfThrones.jpg"));
+    private final ImageIcon DIVERGENTIMG = new ImageIcon(getClass().getResource("images/Divergent.jpg"));
+    private final ImageIcon FAULTIMG = new ImageIcon(getClass().getResource("images/TheFaultInOurStars.jpg"));
     
+    //create audio image files
+    private final ImageIcon BEATLESIMG = new ImageIcon(getClass().getResource("images/beatlesImg.jpg"));
+    private final ImageIcon BOBIMG = new ImageIcon(getClass().getResource("images/marleyImg.jpg"));
+    private final ImageIcon SADEIMG = new ImageIcon(getClass().getResource("images/sadeImg.jpg"));
+    private final ImageIcon CHARLIEIMG = new ImageIcon(getClass().getResource("images/charlieImg.jpg"));
+    private final ImageIcon EARTHIMG = new ImageIcon(getClass().getResource("images/earthImg.jpg"));
+    private final ImageIcon RICKIMG = new ImageIcon(getClass().getResource("images/rickAstleyImg.jpg"));
     
+    //create video image files
+    private final ImageIcon FROZENIMG = new ImageIcon(getClass().getResource("images/frozenImg.jpg"));
+    private final ImageIcon MONSTERIMG = new ImageIcon(getClass().getResource("images/monsterImg.jpg"));
+    private final ImageIcon TOYIMG = new ImageIcon(getClass().getResource("images/toyStoryImg.jpg"));
+    
+    private final ImageIcon WELCOME = new ImageIcon(getClass().getResource("images/welcomeLibrary.jpg"));
+    
+    //create images array
+    final ImageIcon[] IMAGES = {TEXASIMG, MOTIVATIONIMG, PSIONICIMG, GAMEIMG, DIVERGENTIMG, FAULTIMG, BEATLESIMG, BOBIMG, SADEIMG, CHARLIEIMG, 
+        EARTHIMG, RICKIMG, FROZENIMG, MONSTERIMG, TOYIMG, WELCOME};
     
     
     /** Concept #2 Default Constructor */
     // no arg constructor acts as a default
     public AudioVisualMaterial(){
-        this("Unknown", "Untitled",0,0, "Untitled", null, null); 
+        this("Unknown", "Untitled",0,0, "Unknown", null, null); 
     }
            
         
@@ -102,7 +102,7 @@ public class AudioVisualMaterial extends LibraryMaterial {
      //Initialize variables
      this.audioType = audioType;
      this.soundClip = soundClip;
-     //this.coverImage = coverImage;
+     this.coverImage = coverImage;
     }
 
     
@@ -116,13 +116,13 @@ public class AudioVisualMaterial extends LibraryMaterial {
         this.audioType = audioType;
     }
       
-//     public BufferedImage[] getCoverImage() {
-//        return coverImage;
-//    }
-//
-//    public void setCoverImage(BufferedImage[] coverImage) {
-//        this.coverImage = coverImage;
-//    }
+     public ImageIcon getCoverImage() {
+        return coverImage;
+    }
+
+    public void setCoverImage(ImageIcon coverImage) {
+        this.coverImage = coverImage;
+    }
 
     public URL getSoundClip() {
         return soundClip;
@@ -133,18 +133,24 @@ public class AudioVisualMaterial extends LibraryMaterial {
     }
  
   
-    //validate and set display cover
-    public void displayCover(BufferedImage[] coverImage){
-
-        try {
-            coverImage[0] = ImageIO.read(new File("image/monster.jpg"));
-            coverImage[1] = ImageIO.read(new File("image/beatles.jpg"));
-            coverImage[2] = ImageIO.read(new File("image/beatles.jpg"));
-        } catch (IOException ex) {
-            Logger.getLogger(AudioVisualMaterial.class.getName()).log(Level.SEVERE, null, ex);
-        }
- 
-    }
+//    //validate and set display cover
+//    public void displayCover(BufferedImage[] coverImage){
+//
+//        try {
+//            coverImage[0] = ImageIO.read(new File("image/monster.jpg"));
+//            coverImage[1] = ImageIO.read(new File("image/beatles.jpg"));
+//            coverImage[2] = ImageIO.read(new File("image/beatles.jpg"));
+//        } catch (IOException ex) {
+//            Logger.getLogger(AudioVisualMaterial.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+// 
+//    }
+    
+//    public void displayCover(){
+//        
+//        librarian.audioImage.setIcon();
+//        
+//    }
     
     public void playSoundClip(){
     try{

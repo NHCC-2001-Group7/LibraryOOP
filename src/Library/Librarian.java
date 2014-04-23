@@ -36,17 +36,17 @@ public class Librarian extends javax.swing.JFrame {
     Book FaultInOurStars = new Book("John Green", "The Fault in our Stars", 10.00, 2012, "Hardcover", 1, 318);
     
     //create audio objects
-    AudioVisualMaterial TheBeatles = new AudioVisualMaterial("The Beatles", "On Air - Live At The BBC Volume 2 ", 15.07, 2013, "CD", null, AV.SOUND[0]);
-    AudioVisualMaterial Marley = new AudioVisualMaterial("Bob Marley", "Legend: The Best Of Bob Marley And The Wailers", 11.45, 2002, "CD", null, AV.SOUND[0]);
-    AudioVisualMaterial Sade = new AudioVisualMaterial("Sade", "The Best of Sade", 9.99, 2001, "CD", null, AV.SOUND[0]);
-    AudioVisualMaterial CharlieBrown = new AudioVisualMaterial("Fantasy", "Charlie Brown Christmas", 5.99, 2000, "Audio Cassette", null, AV.SOUND[0]);
-    AudioVisualMaterial EarthWindFire = new AudioVisualMaterial("Earth Wind and Fire", "Earth Wind and Fire: Greatest Hits", 10.00, 1998, "Audio Cassette", null, AV.SOUND[0]);
-    AudioVisualMaterial Rick = new AudioVisualMaterial("Rick Astley", "Whenever You Need Somebody", 7.95, 1990, "Audio Cassette", null, AV.SOUND[0]);
+    AudioVisualMaterial TheBeatles = new AudioVisualMaterial("The Beatles", "On Air - Live At The BBC Volume 2 ", 15.07, 2013, "CD", AV.IMAGES[6], AV.SOUND[0]);
+    AudioVisualMaterial Marley = new AudioVisualMaterial("Bob Marley", "Legend: The Best Of Bob Marley And The Wailers", 11.45, 2002, "CD", AV.IMAGES[7], AV.SOUND[0]);
+    AudioVisualMaterial Sade = new AudioVisualMaterial("Sade", "The Best of Sade", 9.99, 2001, "CD", AV.IMAGES[8], AV.SOUND[0]);
+    AudioVisualMaterial CharlieBrown = new AudioVisualMaterial("Fantasy", "Charlie Brown Christmas", 5.99, 2000, "Audio Cassette", AV.IMAGES[9], AV.SOUND[0]);
+    AudioVisualMaterial EarthWindFire = new AudioVisualMaterial("Earth Wind and Fire", "Earth Wind and Fire: Greatest Hits", 10.00, 1998, "Audio Cassette", AV.IMAGES[10], AV.SOUND[0]);
+    AudioVisualMaterial Rick = new AudioVisualMaterial("Rick Astley", "Whenever You Need Somebody", 7.95, 1990, "Audio Cassette", AV.IMAGES[11], AV.SOUND[0]);
     
     //create video objects
-    AudioVisualMaterial Frozen = new AudioVisualMaterial("Walt Disney Studios Home Entertainment", "Frozen", 26.96, 2013, "DVD", null, AV.SOUND[0]);
-    AudioVisualMaterial MonstersUniversity = new AudioVisualMaterial("Walt Disney Studios Home Entertainment","Monster's University", 15.96, 2013, "DVD", null , AV.SOUND[0]);
-    AudioVisualMaterial ToyStory = new AudioVisualMaterial("Disney Pixar", "Toy Story 3", 18.27, 2010, "DVD", null, AV.SOUND[0]); 
+    AudioVisualMaterial Frozen = new AudioVisualMaterial("Walt Disney Studios Home Entertainment", "Frozen", 26.96, 2013, "DVD", AV.IMAGES[12], AV.SOUND[0]);
+    AudioVisualMaterial MonstersUniversity = new AudioVisualMaterial("Walt Disney Studios Home Entertainment","Monster's University", 15.96, 2013, "DVD", AV.IMAGES[13], AV.SOUND[0]);
+    AudioVisualMaterial ToyStory = new AudioVisualMaterial("Disney Pixar", "Toy Story 3", 18.27, 2010, "DVD", AV.IMAGES[14], AV.SOUND[0]); 
     
     
     //create object arrays
@@ -169,7 +169,7 @@ public class Librarian extends javax.swing.JFrame {
         bookPanel.add(bookCB);
         bookCB.setBounds(30, 260, 260, 40);
 
-        bookImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/images/Divergent.jpg"))); // NOI18N
+        bookImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/images/welcomeLibrary.jpg"))); // NOI18N
         bookPanel.add(bookImage);
         bookImage.setBounds(350, 30, 330, 490);
 
@@ -205,7 +205,7 @@ public class Librarian extends javax.swing.JFrame {
         audioPanel.add(audioCB);
         audioCB.setBounds(40, 260, 190, 40);
 
-        audioImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/images/sadeImg.jpg"))); // NOI18N
+        audioImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/images/welcomeLibrary.jpg"))); // NOI18N
         audioPanel.add(audioImage);
         audioImage.setBounds(260, 50, 420, 490);
 
@@ -240,7 +240,7 @@ public class Librarian extends javax.swing.JFrame {
         videoPanel.add(videoCB);
         videoCB.setBounds(70, 270, 170, 30);
 
-        videoImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/images/toyStoryImg.jpg"))); // NOI18N
+        videoImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/images/welcomeLibrary.jpg"))); // NOI18N
         videoPanel.add(videoImage);
         videoImage.setBounds(320, 40, 360, 500);
 
@@ -301,7 +301,7 @@ public class Librarian extends javax.swing.JFrame {
             }
             else if(bookTitle == "Please Select a Book"){ //if no book is selected
                 bookText.setText(""); //clear TextArea
-                //bookImage.setIcon(); //set to default image
+                bookImage.setIcon(AV.IMAGES[15]); //set to default image
             }
         }
     }//GEN-LAST:event_bookCBItemStateChanged
@@ -313,12 +313,12 @@ public class Librarian extends javax.swing.JFrame {
         for(AudioVisualMaterial currentAudio : audio){
             if(currentAudio.getAuthor() == audioArtist){ //if comboBox selection matches audio's artist
                 audioText.setText(currentAudio.displayInfo()); //display audio's info in TextArea
-                //audioImage.setIcon(setDisplayCover()); //display audio's image
+                audioImage.setIcon(currentAudio.getCoverImage()); //display audio's image
                 currentAudio.playSoundClip(); //play audio's soundClip
             }
             else if(audioArtist == "Please Select an Artist"){ //if no audio is selected
                 audioText.setText(""); //clear TextArea
-                //audioImage.setIcon(); //set to default image
+                audioImage.setIcon(AV.IMAGES[15]); //set to default image
                 //stop soundClip; //stop soundClip
             }
         }
@@ -333,12 +333,12 @@ public class Librarian extends javax.swing.JFrame {
             if(currentVideo.getTitle() == movieName){ //if comboBox selection matches video's title
                 //currentVideo.stopSoundClip();
                 videoText.setText(currentVideo.displayInfo()); //display video's info in TextArea
-                //videoImage.setIcon(setDisplayCover()); //display video's image
+                videoImage.setIcon(currentVideo.getCoverImage()); //display video's image
                 currentVideo.playSoundClip(); //play video's soundClip
             }
             else if(movieName == "Please Select a Movie"){ //if no video is selected
                 videoText.setText(""); //clear TextArea
-                //videoImage.setIcon(); //set to default image
+                videoImage.setIcon(AV.IMAGES[15]); //set to default image
                 //AV.stopSoundClip(); //stop soundClip
             }
         }
@@ -346,6 +346,7 @@ public class Librarian extends javax.swing.JFrame {
 
     private void stopButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stopButtonActionPerformed
         
+        //AV.stopSoundClip(); //stop soundClip
         
         
     }//GEN-LAST:event_stopButtonActionPerformed

@@ -176,7 +176,7 @@
                 <Component class="javax.swing.JLabel" name="bookImage">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/Library/images/Divergent.jpg"/>
+                      <Image iconType="3" name="/Library/images/welcomeLibrary.jpg"/>
                     </Property>
                   </Properties>
                   <Constraints>
@@ -278,7 +278,7 @@
                 <Component class="javax.swing.JLabel" name="audioImage">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/Library/images/sadeImg.jpg"/>
+                      <Image iconType="3" name="/Library/images/welcomeLibrary.jpg"/>
                     </Property>
                   </Properties>
                   <Constraints>
@@ -376,7 +376,7 @@
                 <Component class="javax.swing.JLabel" name="videoImage">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/Library/images/toyStoryImg.jpg"/>
+                      <Image iconType="3" name="/Library/images/welcomeLibrary.jpg"/>
                     </Property>
                   </Properties>
                   <Constraints>
