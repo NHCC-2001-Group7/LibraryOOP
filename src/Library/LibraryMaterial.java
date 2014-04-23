@@ -14,7 +14,7 @@ package Library;
 /**
  * This class is the Super class of the project.
  * 
- * @author
+ * @author Billy Lam
  * Class: CSCI 2001-51
  * Due Date: 04/30/14
  * 

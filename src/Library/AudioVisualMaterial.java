@@ -25,7 +25,7 @@ import javax.swing.*;
 /**
  * This class is a sub-class of LibraryMaterial.
  * 
- * @author 
+ * @author Xavier Porter
  * Class: CSCI 2001-51
  * Due Date: 04/30/14
  * 
