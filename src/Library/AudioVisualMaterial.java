@@ -19,6 +19,7 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 //import javax.swing.*;
 
+
 /**
  * This class is a sub-class of LibraryMaterial.
  * 
@@ -157,23 +158,52 @@ public class AudioVisualMaterial extends LibraryMaterial {
 //        
 //    }
     
-    public void playSoundClip(){
-    try{
-        AudioInputStream audio = AudioSystem.getAudioInputStream(soundClip); //open an audio input stream
-        clip = AudioSystem.getClip(); //get a sound clip resource
-        clip.open(audio); //open audio clip and load samples from the audio input stream
-        clip.start(); //plays sound clip
-    }catch(  UnsupportedAudioFileException | IOException | LineUnavailableException uae){
+    public void setupSoundClip(){
+        if(clip != null && clip.isRunning()){
+//            BooleanControl muteControl = (BooleanControl) clip.getControl(BooleanControl.Type.MUTE);
+//            if(muteControl != null){
+//                muteControl.setValue(true);
+//            }
+            System.out.println("Stopping audio");
+            clip.stop();
+        }
+        try{
+            AudioInputStream audio = AudioSystem.getAudioInputStream(soundClip); //open an audio input stream
+            clip = AudioSystem.getClip(); //get a sound clip resource
+            clip.open(audio); //open audio clip and load samples from the audio input stream
+//        if(clip.isRunning()){
+//            clip.stop(); //stop the player if it is still running
+//        }
+        //clip.setFramePosition(0); //rewind clip to the beginning
+        //clip.start(); //plays sound clip
+//        if(clip != null && clip.isRunning()){
+//            clip.stop();
+//        }
+        }catch(  UnsupportedAudioFileException | IOException | LineUnavailableException uae){
             System.out.println(uae);
-    }          
+        }          
     }
         
+    public void playSoundClip(){
+        if(clip != null && clip.isRunning()){
+            System.out.println("Stopping audio");
+            clip.stop();
+        }
+        clip.setFramePosition(0);
+        clip.start();
+    }
+    
     //stop soundClip
     public void stopSoundClip(){
 //        if(clip != null){ //checks if sound is still playing, if it is...
 //            clip.stop(); //stop sound
 //        }
-        clip.stop();
+        if(clip.isRunning()){
+            System.out.println("Stopping audio");
+            clip.stop();
+        }
+        
+        //clip.stop();
     }
     
     /** Concept #5 super reference */

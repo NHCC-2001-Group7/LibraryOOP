@@ -28,12 +28,12 @@ public class Librarian extends javax.swing.JFrame {
     
     //create subclass objects
     //create book objects
-    Book TexasHomeownersAssociationLaw = new Book("Gregory S. Cagle", "Texas Homeowners Association Law", 37.74, 2013, "Paperback", 2, 822);
-    Book MotivationalInterviewing = new Book("William R. Miller and Stephen Rollnick", "Motivational Interviewing", 51.00, 2012, "Hardcover", 3, 482);
-    Book PsionicPower = new Book("Mike Mearls", "Psionic Power", 20.79, 2010, "Hardcover", 4, 160);
-    Book GameOfThrones = new Book("George R.R. Martin", "A Game of Thrones", 19.77, 1996, "Hardcover", 1, 704);
-    Book Divergent = new Book("Veronica Roth", "Divergent", 10.18, 2011, "Hardcover", 1, 496);
-    Book FaultInOurStars = new Book("John Green", "The Fault in our Stars", 10.00, 2012, "Hardcover", 1, 318);
+    Book TexasHomeownersAssociationLaw = new Book("Gregory S. Cagle", "Texas Homeowners Association Law", 37.74, 2013, "Paperback", 2, 822, AV.IMAGES[0]);
+    Book MotivationalInterviewing = new Book("William R. Miller and Stephen Rollnick", "Motivational Interviewing", 51.00, 2012, "Hardcover", 3, 482, AV.IMAGES[1]);
+    Book PsionicPower = new Book("Mike Mearls", "Psionic Power", 20.79, 2010, "Hardcover", 4, 160, AV.IMAGES[2]);
+    Book GameOfThrones = new Book("George R.R. Martin", "A Game of Thrones", 19.77, 1996, "Hardcover", 1, 704, AV.IMAGES[3]);
+    Book Divergent = new Book("Veronica Roth", "Divergent", 10.18, 2011, "Hardcover", 1, 496, AV.IMAGES[4]);
+    Book FaultInOurStars = new Book("John Green", "The Fault in our Stars", 10.00, 2012, "Hardcover", 1, 318, AV.IMAGES[5]);
     
     //create audio objects
     AudioVisualMaterial TheBeatles = new AudioVisualMaterial("The Beatles", "On Air - Live At The BBC Volume 2 ", 15.07, 2013, "CD", AV.IMAGES[6], AV.SOUND[0]);
@@ -297,7 +297,7 @@ public class Librarian extends javax.swing.JFrame {
         for(Book currentBook : books){
             if(currentBook.getTitle() == bookTitle){ //if comboBox selection matches book's title
                 bookText.setText(currentBook.displayInfo()); //display book's info in TextArea
-                //bookImage.setIcon(setDisplayCover()); //display book's image
+                bookImage.setIcon(currentBook.getCoverImage()); //display book's image
             }
             else if(bookTitle == "Please Select a Book"){ //if no book is selected
                 bookText.setText(""); //clear TextArea
@@ -314,11 +314,13 @@ public class Librarian extends javax.swing.JFrame {
             if(currentAudio.getAuthor() == audioArtist){ //if comboBox selection matches audio's artist
                 audioText.setText(currentAudio.displayInfo()); //display audio's info in TextArea
                 audioImage.setIcon(currentAudio.getCoverImage()); //display audio's image
+                currentAudio.setupSoundClip();
                 currentAudio.playSoundClip(); //play audio's soundClip
             }
             else if(audioArtist == "Please Select an Artist"){ //if no audio is selected
                 audioText.setText(""); //clear TextArea
                 audioImage.setIcon(AV.IMAGES[15]); //set to default image
+                currentAudio.stopSoundClip();
                 //stop soundClip; //stop soundClip
             }
         }
@@ -334,11 +336,13 @@ public class Librarian extends javax.swing.JFrame {
                 //currentVideo.stopSoundClip();
                 videoText.setText(currentVideo.displayInfo()); //display video's info in TextArea
                 videoImage.setIcon(currentVideo.getCoverImage()); //display video's image
+                currentVideo.setupSoundClip();
                 currentVideo.playSoundClip(); //play video's soundClip
             }
             else if(movieName == "Please Select a Movie"){ //if no video is selected
                 videoText.setText(""); //clear TextArea
                 videoImage.setIcon(AV.IMAGES[15]); //set to default image
+                currentVideo.stopSoundClip();
                 //AV.stopSoundClip(); //stop soundClip
             }
         }

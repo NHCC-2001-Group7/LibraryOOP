@@ -8,6 +8,7 @@ package Library;
 
 
 //import classes
+import javax.swing.ImageIcon;
 
 
 /**
@@ -31,18 +32,19 @@ public class Book extends LibraryMaterial {
     private String bookType; //(hardcover/paperback/large)
     private int printEdition; //(1rst/2nd/3rd/4th...)
     private int pageNumber;
+    private ImageIcon coverImage;
     
     
     /** Concept #2 Default constructor */
     /** Concept #7 Method overloading */
     //no argument constructor (acts as default constructor)
     public Book(){
-        this("Unknown","Untitled",0,0,"Unknown",0,0); //initialize all field variables to their default value (either null or zero).
+        this("Unknown", "Untitled", 0, 0, "Unknown", 0, 0, null); //initialize all field variables to their default value (either null or zero).
     }
     
     /** Concept #7 Method overloading */
     //constructor to initialize all field variables (including super class's field variables)
-    public Book(String author, String title, double price, int pubYear, String bookType, int printEdition, int pageNumber){
+    public Book(String author, String title, double price, int pubYear, String bookType, int printEdition, int pageNumber, ImageIcon coverImage){
         
         /** Concept #5 super reference */
         //initialize variables
@@ -50,6 +52,7 @@ public class Book extends LibraryMaterial {
         this.bookType = bookType;
         setPrintEdition(printEdition); //validate and store printEdition
         setPageNumber(pageNumber); //validate and store pageNumber
+        this.coverImage = coverImage;
     }
     
     /** Concept #7 Method overloading */
@@ -88,6 +91,11 @@ public class Book extends LibraryMaterial {
             throw new IllegalArgumentException("Page Number must be > 0"); //throws exception if pageNumber is negative
     }
     
+    //set coverImage
+    public void setCoverImage(ImageIcon coverImage) {
+        this.coverImage = coverImage;
+    }
+    
     //get bookType
      public String getBookType(){
         return bookType;
@@ -101,6 +109,11 @@ public class Book extends LibraryMaterial {
     //get pageNumber
     public int getPageNumber(){
         return pageNumber;
+    }
+    
+    //get coverImage
+    public ImageIcon getCoverImage() {
+        return coverImage;
     }
     
     //method to find appropriate ordinal suffix and include it at the end of the printEdition number
