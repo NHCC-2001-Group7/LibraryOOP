@@ -38,7 +38,7 @@ public class AudioVisualMaterial extends LibraryMaterial {
     /** Concept #1 Encapsulation/Data Hiding*/
     //Declare field variables as private
     private String audioType;
-    private final int x = 14;
+    //private final int x = 14;
     //private BufferedImage[] coverImage = new BufferedImage[x]; 
     private ImageIcon coverImage;
     private URL soundClip;
@@ -79,6 +79,7 @@ public class AudioVisualMaterial extends LibraryMaterial {
     private final ImageIcon MONSTERIMG = new ImageIcon(getClass().getResource("images/monsterImg.jpg"));
     private final ImageIcon TOYIMG = new ImageIcon(getClass().getResource("images/toyStoryImg.jpg"));
     
+    //create default image file
     private final ImageIcon WELCOME = new ImageIcon(getClass().getResource("images/welcomeLibrary.jpg"));
     
     //create images array
@@ -101,8 +102,8 @@ public class AudioVisualMaterial extends LibraryMaterial {
      super(author, title, price, pubYear); //pass to LibraryMaterial constructor
      //Initialize variables
      this.audioType = audioType;
-     this.soundClip = soundClip;
      this.coverImage = coverImage;
+     this.soundClip = soundClip;
     }
 
     
@@ -115,19 +116,23 @@ public class AudioVisualMaterial extends LibraryMaterial {
     public void setAudioType(String audioType) {
         this.audioType = audioType;
     }
-      
+    
+    //get coverImage
      public ImageIcon getCoverImage() {
         return coverImage;
     }
-
+    
+    //set coverImage
     public void setCoverImage(ImageIcon coverImage) {
         this.coverImage = coverImage;
     }
-
+    
+    //get soundClip
     public URL getSoundClip() {
         return soundClip;
     }
-
+    
+    //set soundClip
     public void setSoundClip(URL soundClip) {
         this.soundClip = soundClip;
     }
