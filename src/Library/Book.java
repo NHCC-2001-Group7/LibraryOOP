@@ -37,7 +37,7 @@ public class Book extends LibraryMaterial {
     /** Concept #7 Method overloading */
     //no argument constructor (acts as default constructor)
     public Book(){
-        this("Unknown","Untitled",0,0,"Unknown",0,0); //initialize all field variables to their default value (either null or zero).
+        //this("Unknown","Untitled",0,0,"Unknown",0,0); //initialize all field variables to their default value (either null or zero).
     }
     
     /** Concept #7 Method overloading */

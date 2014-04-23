@@ -6,8 +6,6 @@
 
 package Library;
 
-import java.io.File;
-
 
 //import classes
 
@@ -26,6 +24,8 @@ import java.io.File;
 
 public class Librarian extends javax.swing.JFrame {
     
+    private AudioVisualMaterial AV = new AudioVisualMaterial();
+    
     //create subclass objects
     //create book objects
     Book TexasHomeownersAssociationLaw = new Book("Gregory S. Cagle", "Texas Homeowners Association Law", 37.74, 2013, "Paperback", 2, 822);
@@ -35,32 +35,32 @@ public class Librarian extends javax.swing.JFrame {
     Book Divergent = new Book("Veronica Roth", "Divergent", 10.18, 2011, "Hardcover", 1, 496);
     Book FaultInOurStars = new Book("John Green", "The Fault in our Stars", 10.00, 2012, "Hardcover", 1, 318);
     
-    //create sound files
-    private final File frzClip = new File("frozen.wav");
-    private final File monstClip = new File("sound/Monster.wav");
-    private final File toyClip = new File("sound/toystory.wav");
-    private final File beatClip = new File("sound/Beatles.wav");
-    private final File bobClip = new File("sound/Bob.wav");
-    private final File sadeClip = new File("sound/SadeClip.wav");
-    private final File charClip = new File("sound/charlie.wav");
-    private final File earthClip = new File("sound/earthwind.wav");
-    private final File rickClip = new File("sound/rickAstley.wav");
+//    //create sound files
+//    private final File frzClip = new File("frozen.wav");
+//    private final File monstClip = new File("sound/Monster.wav");
+//    private final File toyClip = new File("sound/toystory.wav");
+//    private final File beatClip = new File("sound/Beatles.wav");
+//    private final File bobClip = new File("sound/Bob.wav");
+//    private final File sadeClip = new File("sound/SadeClip.wav");
+//    private final File charClip = new File("sound/charlie.wav");
+//    private final File earthClip = new File("sound/earthwind.wav");
+//    private final File rickClip = new File("sound/rickAstley.wav");
     
     //create audio objects
-    AudioVisualMaterial TheBeatles = new AudioVisualMaterial("The Beatles", "On Air - Live At The BBC Volume 2 ", 15.07, 2013, "CD", null, beatClip);
-    AudioVisualMaterial Marley = new AudioVisualMaterial("Bob Marley", "Legend: The Best Of Bob Marley And The Wailers", 11.45, 2002, "CD", null, bobClip );
-    AudioVisualMaterial Sade = new AudioVisualMaterial("Sade", "The Best of Sade", 9.99, 2001, "CD", null, sadeClip);
-    AudioVisualMaterial CharlieBrown = new AudioVisualMaterial("Fantasy", "Charlie Brown Christmas", 5.99, 2000, "Audio Cassette", null, charClip);
-    AudioVisualMaterial EarthWindFire = new AudioVisualMaterial("Earth Wind and Fire", "Earth Wind and Fire: Greatest Hits", 10.00, 1998, "Audio Cassette", null, earthClip);
-    AudioVisualMaterial Rick = new AudioVisualMaterial("Rick Astley", "Whenever You Need Somebody", 7.95, 1990, "Audio Cassette", null, rickClip );
+    AudioVisualMaterial TheBeatles = new AudioVisualMaterial("The Beatles", "On Air - Live At The BBC Volume 2 ", 15.07, 2013, "CD", null, AV.SOUND[0]);
+    AudioVisualMaterial Marley = new AudioVisualMaterial("Bob Marley", "Legend: The Best Of Bob Marley And The Wailers", 11.45, 2002, "CD", null, AV.SOUND[0]);
+    AudioVisualMaterial Sade = new AudioVisualMaterial("Sade", "The Best of Sade", 9.99, 2001, "CD", null, AV.SOUND[0]);
+    AudioVisualMaterial CharlieBrown = new AudioVisualMaterial("Fantasy", "Charlie Brown Christmas", 5.99, 2000, "Audio Cassette", null, AV.SOUND[0]);
+    AudioVisualMaterial EarthWindFire = new AudioVisualMaterial("Earth Wind and Fire", "Earth Wind and Fire: Greatest Hits", 10.00, 1998, "Audio Cassette", null, AV.SOUND[0]);
+    AudioVisualMaterial Rick = new AudioVisualMaterial("Rick Astley", "Whenever You Need Somebody", 7.95, 1990, "Audio Cassette", null, AV.SOUND[0]);
     
     //create video objects
-    AudioVisualMaterial Frozen = new AudioVisualMaterial("Walt Disney Studios Home Entertainment", "Frozen", 26.96, 2013, "DVD", null, frzClip);
-    AudioVisualMaterial MonstersUniversity = new AudioVisualMaterial("Walt Disney Studios Home Entertainment","Monster's University", 15.96, 2013, "DVD", null , monstClip);
-    AudioVisualMaterial ToyStory = new AudioVisualMaterial("Disney Pixar", "Toy Story 3", 18.27, 2010, "DVD", null, toyClip); 
+    AudioVisualMaterial Frozen = new AudioVisualMaterial("Walt Disney Studios Home Entertainment", "Frozen", 26.96, 2013, "DVD", null, AV.SOUND[0]);
+    AudioVisualMaterial MonstersUniversity = new AudioVisualMaterial("Walt Disney Studios Home Entertainment","Monster's University", 15.96, 2013, "DVD", null , AV.SOUND[0]);
+    AudioVisualMaterial ToyStory = new AudioVisualMaterial("Disney Pixar", "Toy Story 3", 18.27, 2010, "DVD", null, AV.SOUND[0]); 
     
     
-    //create arrays
+    //create object arrays
     LibraryMaterial[] materials = {TexasHomeownersAssociationLaw, MotivationalInterviewing, PsionicPower, GameOfThrones, Divergent, FaultInOurStars, 
         Frozen, MonstersUniversity, ToyStory, TheBeatles, Marley, Sade, CharlieBrown, EarthWindFire, Rick}; //array of all library materials
     Book[] books = {TexasHomeownersAssociationLaw, MotivationalInterviewing, PsionicPower, GameOfThrones, Divergent, FaultInOurStars}; //array of books
@@ -325,7 +325,7 @@ public class Librarian extends javax.swing.JFrame {
             if(currentAudio.getAuthor() == audioArtist){ //if comboBox selection matches audio's artist
                 audioText.setText(currentAudio.displayInfo()); //display audio's info in TextArea
                 //audioImage.setIcon(setDisplayCover()); //display audio's image
-                //play soundClip; //play audio's soundClip
+                currentAudio.playSoundClip(); //play audio's soundClip
             }
             else if(audioArtist == "Please Select an Artist"){ //if no audio is selected
                 audioText.setText(""); //clear TextArea
@@ -336,19 +336,21 @@ public class Librarian extends javax.swing.JFrame {
     }//GEN-LAST:event_audioCBItemStateChanged
 
     private void videoCBItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_videoCBItemStateChanged
+        //AV.stopSoundClip();
         String movieName = (String)videoCB.getSelectedItem(); //get user's selection and assign to variable
         
         //enhanced for loop scans through video array
         for(AudioVisualMaterial currentVideo : video){
             if(currentVideo.getTitle() == movieName){ //if comboBox selection matches video's title
+                currentVideo.stopSoundClip();
                 videoText.setText(currentVideo.displayInfo()); //display video's info in TextArea
                 //videoImage.setIcon(setDisplayCover()); //display video's image
-                //play soundClip; //play video's soundClip
+                currentVideo.playSoundClip(); //play video's soundClip
             }
             else if(movieName == "Please Select a Movie"){ //if no video is selected
                 videoText.setText(""); //clear TextArea
                 //videoImage.setIcon(); //set to default image
-                //stop soundClip; //stop soundClip
+                //AV.stopSoundClip(); //stop soundClip
             }
         }
     }//GEN-LAST:event_videoCBItemStateChanged
