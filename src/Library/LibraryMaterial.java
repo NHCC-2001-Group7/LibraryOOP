@@ -101,6 +101,6 @@ public abstract class LibraryMaterial {
     //convert LibraryMaterial to String format
     @Override //this method overrides a superclass method (Object method toString)
     public String toString(){
-        return String.format("Author: %s\nTitle: %s\nPrice: $%.2f\nPublication Year: %d", getAuthor(), getTitle(), getPrice(), getPubYear());
+        return String.format("Title: %s\nAuthor: %s\nPrice: $%.2f\nPublication Year: %d", getTitle(), getAuthor(), getPrice(), getPubYear());
     }
 }

@@ -40,9 +40,7 @@ public class AudioVisualMaterial extends LibraryMaterial {
 
     /** Concept #1 Encapsulation/Data Hiding*/
     //Declare field variables as private
-    private String audioTape;
-    private String CD;
-    private String DVD;
+    private String audioType;
     private final int x = 2;
     private BufferedImage[] coverImage = new BufferedImage[x]; 
     private File soundClip;
@@ -52,54 +50,30 @@ public class AudioVisualMaterial extends LibraryMaterial {
     /** Concept #2 Default Constructor */
     // no arg constructor acts as a default
     public AudioVisualMaterial(){
-        this("Unknown", "Untitled",0,0, "Untitled", "Untitled", "Untitled", null, null); 
+        this("Unknown", "Untitled",0,0, "Untitled", null, null); 
     }
            
         
      /** Concept #7 Method overloading */
      //constructor to initialize all field variables (including super class's field variables)
-     public AudioVisualMaterial(String author, String title, double price, int pubYear, String audioTape, String CD, String DVD, BufferedImage[] coverImage, File soundClip) {
+     public AudioVisualMaterial(String author, String title, double price, int pubYear, String audioType, BufferedImage[] coverImage, File soundClip) {
      
      /** Concept #5 super reference */
      super(author, title, price, pubYear); //pass to LibraryMaterial constructor
      //Initialize variables
-     this.audioTape = audioTape;
-     this.CD = CD;
-     this.DVD = DVD; 
+     this.audioType = audioType;
     }
 
- 
     
-     //get AudioTape
-    public String getAudioTape() {
-        return audioTape;
+     //get AudioType
+    public String getAudioType() {
+        return audioType;
     }
 
-    //set AudioTape
-    public void setAudioTape(String audioTape) {
-        this.audioTape = audioTape;
+    //set AudioType
+    public void setAudioType(String audioType) {
+        this.audioType = audioType;
     }
-
-    //get CD
-    public String getCD() {
-        return CD;
-    }
-
-    //set CD
-    public void setCD(String CD) {
-        this.CD = CD;
-    }
-
-    //get DVD
-    public String getDVD() {
-        return DVD;
-    }
-
-    //set DVD
-    public void setDVD(String DVD) {
-        this.DVD = DVD;
-    }
-
       
      public BufferedImage[] getCoverImage() {
         return coverImage;
@@ -143,15 +117,18 @@ public class AudioVisualMaterial extends LibraryMaterial {
           }       
        
         }
+        
+//        //stop music when applet closes
+//	public void stopMusic(){
+//		if(oops != null) //checks if sound is still playing, if it is...
+//			oops.stop(); //stop sound
+//	}
     
     /** Concept #5 super reference */
     /** Concept #6 Method Overriding */
     //overrides abstract method displayInfo in LibraryMaterial
     @Override
     public String displayInfo(){
-        return String.format("%s\nAudioTape: %s\nCD: %s\nDVD: %s\n", super.toString(), getAudioTape(), getCD(), getDVD());
+        return String.format("%s\nAudioType: %s\n", super.toString(), getAudioType());
     }
-
-  
-    
 }

@@ -35,34 +35,37 @@ public class Librarian extends javax.swing.JFrame {
     Book Divergent = new Book("Veronica Roth", "Divergent", 10.18, 2011, "Hardcover", 1, 496);
     Book FaultInOurStars = new Book("John Green", "The Fault in our Stars", 10.00, 2012, "Hardcover", 1, 318);
     
-    //Book Test = new Book("MeMEME", "A test of a book", 10.99, 2014, 1); //for testing 3rd constructor in book class
-    //Book Test2 = new Book();
-    
-    //create audioVisual objects
-    private final File monstClip = new File("sound/Monster.wav");
-    private final File beatClip = new File("sound/Beatles.wav");
+    //create sound files
     private final File frzClip = new File("frozen.wav");
+    private final File monstClip = new File("sound/Monster.wav");
     private final File toyClip = new File("sound/toystory.wav");
+    private final File beatClip = new File("sound/Beatles.wav");
     private final File bobClip = new File("sound/Bob.wav");
+    private final File sadeClip = new File("sound/SadeClip.wav");
     private final File charClip = new File("sound/charlie.wav");
     private final File earthClip = new File("sound/earthwind.wav");
-    private final File sadeClip = new File("sound/SadeClip.wav");
     private final File rickClip = new File("sound/rickAstley.wav");
     
-    AudioVisualMaterial Frozen = new AudioVisualMaterial("Walt Disney Studios Home Entertainment", "Frozen", 26.96, 2013, "Untitled", "Untitled", "DVD", null, frzClip);
-    AudioVisualMaterial MonstersUniversity = new AudioVisualMaterial("Walt Disney Studios Home Entertainment","Monsters University", 15.96, 2013,"Untitled", "Untitled", "DVD", null , monstClip);
-    AudioVisualMaterial ToyStory = new AudioVisualMaterial("Disney Pixar", "Toy Story 3", 18.27, 2010, "Untitled", "Untitled", "DVD", null, toyClip); 
-    AudioVisualMaterial TheBeatles = new AudioVisualMaterial("The Beatles", "On Air - Live At The BBC Volume 2 ", 15.07, 2013, "Untitled" , "CD", "Untitled", null, beatClip);
-    AudioVisualMaterial Marley = new AudioVisualMaterial("Bob Marley", "Legend: The Best Of Bob Marley And The Wailers", 11.45, 2002, "Untitled", "CD", "Untitled", null, bobClip );
-    AudioVisualMaterial charlieBrown = new AudioVisualMaterial("Fantasy", "Charlie Brown Christmas", 5.99, 2000, "Audio Cassette" , "Untitled", "Untitled", null, charClip);
-    AudioVisualMaterial EarthWindFire = new AudioVisualMaterial("Earth Wind and Fire", "Earth Wind and Fire: Greatest Hits", 10.00, 1998, "Audio Cassette", "Untitled", "Untitled", null, earthClip);
-    AudioVisualMaterial Sade = new AudioVisualMaterial("Sade", "The Best of Sade", 9.99, 2001, "Untitled", "CD", "Untitled", null, sadeClip);
-    AudioVisualMaterial Rick = new AudioVisualMaterial("Rick Astley", "Whenever You Need Somebody", 7.95, 1990, "Audio Cassette", "Untitled", "Untitled", null, rickClip );
+    //create audio objects
+    AudioVisualMaterial TheBeatles = new AudioVisualMaterial("The Beatles", "On Air - Live At The BBC Volume 2 ", 15.07, 2013, "CD", null, beatClip);
+    AudioVisualMaterial Marley = new AudioVisualMaterial("Bob Marley", "Legend: The Best Of Bob Marley And The Wailers", 11.45, 2002, "CD", null, bobClip );
+    AudioVisualMaterial Sade = new AudioVisualMaterial("Sade", "The Best of Sade", 9.99, 2001, "CD", null, sadeClip);
+    AudioVisualMaterial CharlieBrown = new AudioVisualMaterial("Fantasy", "Charlie Brown Christmas", 5.99, 2000, "Audio Cassette", null, charClip);
+    AudioVisualMaterial EarthWindFire = new AudioVisualMaterial("Earth Wind and Fire", "Earth Wind and Fire: Greatest Hits", 10.00, 1998, "Audio Cassette", null, earthClip);
+    AudioVisualMaterial Rick = new AudioVisualMaterial("Rick Astley", "Whenever You Need Somebody", 7.95, 1990, "Audio Cassette", null, rickClip );
     
-//create arrays
-    AudioVisualMaterial[] audio = {Frozen,MonstersUniversity, ToyStory, TheBeatles, Marley, charlieBrown,EarthWindFire, Sade, Rick};
-    LibraryMaterial[] materials = {TexasHomeownersAssociationLaw, MotivationalInterviewing, PsionicPower, GameOfThrones, Divergent, FaultInOurStars}; //array of all library materials(add audiovisual objects once coded)
-    LibraryMaterial[] books = {TexasHomeownersAssociationLaw, MotivationalInterviewing, PsionicPower, GameOfThrones, Divergent, FaultInOurStars}; //array of library books
+    //create video objects
+    AudioVisualMaterial Frozen = new AudioVisualMaterial("Walt Disney Studios Home Entertainment", "Frozen", 26.96, 2013, "DVD", null, frzClip);
+    AudioVisualMaterial MonstersUniversity = new AudioVisualMaterial("Walt Disney Studios Home Entertainment","Monster's University", 15.96, 2013, "DVD", null , monstClip);
+    AudioVisualMaterial ToyStory = new AudioVisualMaterial("Disney Pixar", "Toy Story 3", 18.27, 2010, "DVD", null, toyClip); 
+    
+    
+    //create arrays
+    LibraryMaterial[] materials = {TexasHomeownersAssociationLaw, MotivationalInterviewing, PsionicPower, GameOfThrones, Divergent, FaultInOurStars, 
+        Frozen, MonstersUniversity, ToyStory, TheBeatles, Marley, Sade, CharlieBrown, EarthWindFire, Rick}; //array of all library materials
+    Book[] books = {TexasHomeownersAssociationLaw, MotivationalInterviewing, PsionicPower, GameOfThrones, Divergent, FaultInOurStars}; //array of books
+    AudioVisualMaterial[] audio = {TheBeatles, Marley, Sade, CharlieBrown, EarthWindFire, Rick}; //array of audio materials
+    AudioVisualMaterial[] video = {Frozen, MonstersUniversity, ToyStory}; //array of video materials
     
     
     /**
@@ -71,15 +74,18 @@ public class Librarian extends javax.swing.JFrame {
     public Librarian() {
         initComponents();
         
-        //testing with println command
-        //enhanced for loop goes through the books and prints their information
-        for(LibraryMaterial currentMaterial : materials){
-            System.out.println(currentMaterial.displayInfo()); //displays info for each book
-        }
-        
-       for(AudioVisualMaterial currentAudio : audio){
-            System.out.println(currentAudio.displayInfo()); //displays info for each book
-        }
+//        //testing with println command
+//        for(LibraryMaterial currentMaterial : materials){
+//            System.out.println(currentMaterial.displayInfo()); //displays info for each library material
+//        }
+//        
+//        for(Book currentBook : books){
+//            System.out.println(currentBook.displayInfo()); //displays info for each book
+//        }
+//        
+//       for(AudioVisualMaterial currentAudio : audio){
+//            System.out.println(currentAudio.displayInfo()); //displays info for each audiovisual material
+//        }
     }
 
     /**
@@ -92,23 +98,38 @@ public class Librarian extends javax.swing.JFrame {
     private void initComponents() {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel1 = new javax.swing.JPanel();
-        jPanel5 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jPanel6 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jPanel7 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        jPanel8 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
+        homeTab = new javax.swing.JPanel();
+        homePanel = new javax.swing.JPanel();
+        libraryName = new javax.swing.JLabel();
+        libraryInfo = new javax.swing.JLabel();
+        homeBackground = new javax.swing.JLabel();
+        bookTab = new javax.swing.JPanel();
+        bookPanel = new javax.swing.JPanel();
+        bookCB = new javax.swing.JComboBox();
+        bookImage = new javax.swing.JLabel();
+        bookInfo = new javax.swing.JScrollPane();
+        bookText = new javax.swing.JTextArea();
+        bookBackgound = new javax.swing.JLabel();
+        audioTab = new javax.swing.JPanel();
+        audioPanel = new javax.swing.JPanel();
+        audioCB = new javax.swing.JComboBox();
+        audioImage = new javax.swing.JLabel();
+        audioInfo = new javax.swing.JScrollPane();
+        audioText = new javax.swing.JTextArea();
+        audioBackground = new javax.swing.JLabel();
+        videoTab = new javax.swing.JPanel();
+        videoPanel = new javax.swing.JPanel();
+        videoCB = new javax.swing.JComboBox();
+        videoImage = new javax.swing.JLabel();
+        videoInfo = new javax.swing.JScrollPane();
+        videoText = new javax.swing.JTextArea();
+        videoBackground = new javax.swing.JLabel();
         playButton = new javax.swing.JButton();
         stopButton = new javax.swing.JButton();
-        bookBackground = new javax.swing.JLabel();
+        topBookBackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Library OOM");
         setMinimumSize(new java.awt.Dimension(1080, 730));
         getContentPane().setLayout(null);
 
@@ -116,77 +137,233 @@ public class Librarian extends javax.swing.JFrame {
         jTabbedPane1.setFocusable(false);
         jTabbedPane1.setFont(new java.awt.Font("Serif", 1, 24)); // NOI18N
 
-        jPanel1.setLayout(null);
+        homeTab.setLayout(null);
 
-        jPanel5.setLayout(null);
+        homePanel.setLayout(null);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/Images/BookshelfHome.jpg"))); // NOI18N
-        jLabel1.setText("jLabel1");
-        jPanel5.add(jLabel1);
-        jLabel1.setBounds(-4, 2, 1094, 666);
+        libraryName.setFont(new java.awt.Font("Serif", 1, 56)); // NOI18N
+        libraryName.setForeground(new java.awt.Color(102, 255, 102));
+        libraryName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        libraryName.setText("Library");
+        homePanel.add(libraryName);
+        libraryName.setBounds(350, 40, 310, 70);
 
-        jPanel1.add(jPanel5);
-        jPanel5.setBounds(2, -2, 1084, 644);
+        libraryInfo.setFont(new java.awt.Font("Serif", 1, 48)); // NOI18N
+        libraryInfo.setForeground(new java.awt.Color(255, 255, 153));
+        libraryInfo.setText("Information About Library");
+        homePanel.add(libraryInfo);
+        libraryInfo.setBounds(240, 150, 630, 320);
 
-        jTabbedPane1.addTab("   Home   ", jPanel1);
+        homeBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/Images/BookshelfHome.jpg"))); // NOI18N
+        homeBackground.setText("jLabel1");
+        homePanel.add(homeBackground);
+        homeBackground.setBounds(-4, 2, 1094, 666);
 
-        jPanel2.setLayout(null);
+        homeTab.add(homePanel);
+        homePanel.setBounds(2, -2, 1084, 644);
 
-        jPanel6.setLayout(null);
+        jTabbedPane1.addTab("   Home   ", homeTab);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/Images/Bookshelf1.jpg"))); // NOI18N
-        jPanel6.add(jLabel2);
-        jLabel2.setBounds(0, -2, 1092, 688);
+        bookTab.setLayout(null);
 
-        jPanel2.add(jPanel6);
-        jPanel6.setBounds(2, 2, 1088, 678);
+        bookPanel.setLayout(null);
 
-        jTabbedPane1.addTab("   Books   ", jPanel2);
+        bookCB.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
+        bookCB.setMaximumRowCount(7);
+        bookCB.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Please Select a Book", "Texas Homeowners Association Law", "Motivational Interviewing", "Psionic Power", "A Game of Thrones", "Divergent", "The Fault in our Stars" }));
+        bookCB.setToolTipText("");
+        bookCB.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                bookCBItemStateChanged(evt);
+            }
+        });
+        bookPanel.add(bookCB);
+        bookCB.setBounds(30, 260, 260, 40);
 
-        jPanel3.setLayout(null);
+        bookImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/images/Divergent.jpg"))); // NOI18N
+        bookPanel.add(bookImage);
+        bookImage.setBounds(350, 30, 330, 490);
 
-        jPanel7.setLayout(null);
+        bookText.setColumns(20);
+        bookText.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
+        bookText.setRows(5);
+        bookInfo.setViewportView(bookText);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/Images/Bookshelf2.jpg"))); // NOI18N
-        jPanel7.add(jLabel3);
-        jLabel3.setBounds(2, 0, 1092, 668);
+        bookPanel.add(bookInfo);
+        bookInfo.setBounds(720, 200, 320, 170);
 
-        jPanel3.add(jPanel7);
-        jPanel7.setBounds(0, 0, 1094, 658);
+        bookBackgound.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/Images/Bookshelf1.jpg"))); // NOI18N
+        bookPanel.add(bookBackgound);
+        bookBackgound.setBounds(0, -2, 1092, 688);
 
-        jTabbedPane1.addTab("    Audio    ", jPanel3);
+        bookTab.add(bookPanel);
+        bookPanel.setBounds(2, 2, 1088, 678);
 
-        jPanel4.setLayout(null);
+        jTabbedPane1.addTab("   Books   ", bookTab);
 
-        jPanel8.setLayout(null);
+        audioTab.setLayout(null);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/Images/Bookshelf3.jpg"))); // NOI18N
-        jPanel8.add(jLabel4);
-        jLabel4.setBounds(0, 0, 1088, 666);
+        audioPanel.setLayout(null);
 
-        jPanel4.add(jPanel8);
-        jPanel8.setBounds(0, -2, 1092, 664);
+        audioCB.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
+        audioCB.setMaximumRowCount(7);
+        audioCB.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Please Select an Artist", "The Beatles", "Bob Marley", "Sade", "Fantasy", "Earth Wind and Fire", "Rick Astley" }));
+        audioCB.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                audioCBItemStateChanged(evt);
+            }
+        });
+        audioPanel.add(audioCB);
+        audioCB.setBounds(40, 260, 190, 40);
 
-        jTabbedPane1.addTab("   Video   ", jPanel4);
+        audioImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/images/sadeImg.jpg"))); // NOI18N
+        audioPanel.add(audioImage);
+        audioImage.setBounds(260, 50, 420, 490);
+
+        audioText.setColumns(20);
+        audioText.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
+        audioText.setRows(5);
+        audioInfo.setViewportView(audioText);
+
+        audioPanel.add(audioInfo);
+        audioInfo.setBounds(690, 220, 380, 140);
+
+        audioBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/Images/Bookshelf2.jpg"))); // NOI18N
+        audioPanel.add(audioBackground);
+        audioBackground.setBounds(2, 0, 1092, 668);
+
+        audioTab.add(audioPanel);
+        audioPanel.setBounds(0, 0, 1094, 658);
+
+        jTabbedPane1.addTab("    Audio    ", audioTab);
+
+        videoTab.setLayout(null);
+
+        videoPanel.setLayout(null);
+
+        videoCB.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
+        videoCB.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Please Select a Movie", "Frozen", "Monster's University", "Toy Story 3" }));
+        videoCB.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                videoCBItemStateChanged(evt);
+            }
+        });
+        videoPanel.add(videoCB);
+        videoCB.setBounds(70, 270, 170, 30);
+
+        videoImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/images/toyStoryImg.jpg"))); // NOI18N
+        videoPanel.add(videoImage);
+        videoImage.setBounds(320, 40, 360, 500);
+
+        videoText.setColumns(20);
+        videoText.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
+        videoText.setRows(5);
+        videoInfo.setViewportView(videoText);
+
+        videoPanel.add(videoInfo);
+        videoInfo.setBounds(700, 210, 350, 140);
+
+        videoBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/Images/Bookshelf3.jpg"))); // NOI18N
+        videoPanel.add(videoBackground);
+        videoBackground.setBounds(0, 0, 1088, 666);
+
+        videoTab.add(videoPanel);
+        videoPanel.setBounds(0, -2, 1092, 664);
+
+        jTabbedPane1.addTab("   Video   ", videoTab);
 
         getContentPane().add(jTabbedPane1);
         jTabbedPane1.setBounds(-4, 22, 1354, 692);
 
         playButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/Images/PlayButton.jpg"))); // NOI18N
+        playButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                playButtonActionPerformed(evt);
+            }
+        });
         getContentPane().add(playButton);
         playButton.setBounds(658, 8, 180, 45);
 
         stopButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/Images/StopButton.jpg"))); // NOI18N
         stopButton.setPreferredSize(new java.awt.Dimension(180, 45));
+        stopButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                stopButtonActionPerformed(evt);
+            }
+        });
         getContentPane().add(stopButton);
         stopButton.setBounds(858, 8, 180, 45);
 
-        bookBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/Images/PileOfBooks2.jpg"))); // NOI18N
-        getContentPane().add(bookBackground);
-        bookBackground.setBounds(-2, -120, 1080, 200);
+        topBookBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/Images/PileOfBooks2.jpg"))); // NOI18N
+        getContentPane().add(topBookBackground);
+        topBookBackground.setBounds(-2, -120, 1080, 200);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void bookCBItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_bookCBItemStateChanged
+        String bookTitle = (String)bookCB.getSelectedItem(); //get user's selection and assign to variable
+        
+        //enhanced for loop scans through book array
+        for(Book currentBook : books){
+            if(currentBook.getTitle() == bookTitle){ //if comboBox selection matches book's title
+                bookText.setText(currentBook.displayInfo()); //display book's info in TextArea
+                //bookImage.setIcon(setDisplayCover()); //display book's image
+            }
+            else if(bookTitle == "Please Select a Book"){ //if no book is selected
+                bookText.setText(""); //clear TextArea
+                //bookImage.setIcon(); //set to default image
+            }
+        }
+    }//GEN-LAST:event_bookCBItemStateChanged
+
+    private void audioCBItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_audioCBItemStateChanged
+        String audioArtist = (String)audioCB.getSelectedItem(); //get user's selection and assign to variable
+        
+        //enhanced for loop scans through audio array
+        for(AudioVisualMaterial currentAudio : audio){
+            if(currentAudio.getAuthor() == audioArtist){ //if comboBox selection matches audio's artist
+                audioText.setText(currentAudio.displayInfo()); //display audio's info in TextArea
+                //audioImage.setIcon(setDisplayCover()); //display audio's image
+                //play soundClip; //play audio's soundClip
+            }
+            else if(audioArtist == "Please Select an Artist"){ //if no audio is selected
+                audioText.setText(""); //clear TextArea
+                //audioImage.setIcon(); //set to default image
+                //stop soundClip; //stop soundClip
+            }
+        }
+    }//GEN-LAST:event_audioCBItemStateChanged
+
+    private void videoCBItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_videoCBItemStateChanged
+        String movieName = (String)videoCB.getSelectedItem(); //get user's selection and assign to variable
+        
+        //enhanced for loop scans through video array
+        for(AudioVisualMaterial currentVideo : video){
+            if(currentVideo.getTitle() == movieName){ //if comboBox selection matches video's title
+                videoText.setText(currentVideo.displayInfo()); //display video's info in TextArea
+                //videoImage.setIcon(setDisplayCover()); //display video's image
+                //play soundClip; //play video's soundClip
+            }
+            else if(movieName == "Please Select a Movie"){ //if no video is selected
+                videoText.setText(""); //clear TextArea
+                //videoImage.setIcon(); //set to default image
+                //stop soundClip; //stop soundClip
+            }
+        }
+    }//GEN-LAST:event_videoCBItemStateChanged
+
+    private void stopButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stopButtonActionPerformed
+        
+        
+        
+    }//GEN-LAST:event_stopButtonActionPerformed
+
+    private void playButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playButtonActionPerformed
+        
+        
+        
+    }//GEN-LAST:event_playButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -224,21 +401,35 @@ public class Librarian extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel bookBackground;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
+    private javax.swing.JLabel audioBackground;
+    private javax.swing.JComboBox audioCB;
+    private javax.swing.JLabel audioImage;
+    private javax.swing.JScrollPane audioInfo;
+    private javax.swing.JPanel audioPanel;
+    private javax.swing.JPanel audioTab;
+    private javax.swing.JTextArea audioText;
+    private javax.swing.JLabel bookBackgound;
+    private javax.swing.JComboBox bookCB;
+    private javax.swing.JLabel bookImage;
+    private javax.swing.JScrollPane bookInfo;
+    private javax.swing.JPanel bookPanel;
+    private javax.swing.JPanel bookTab;
+    private javax.swing.JTextArea bookText;
+    private javax.swing.JLabel homeBackground;
+    private javax.swing.JPanel homePanel;
+    private javax.swing.JPanel homeTab;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JLabel libraryInfo;
+    private javax.swing.JLabel libraryName;
     private javax.swing.JButton playButton;
     private javax.swing.JButton stopButton;
+    private javax.swing.JLabel topBookBackground;
+    private javax.swing.JLabel videoBackground;
+    private javax.swing.JComboBox videoCB;
+    private javax.swing.JLabel videoImage;
+    private javax.swing.JScrollPane videoInfo;
+    private javax.swing.JPanel videoPanel;
+    private javax.swing.JPanel videoTab;
+    private javax.swing.JTextArea videoText;
     // End of variables declaration//GEN-END:variables
 }
