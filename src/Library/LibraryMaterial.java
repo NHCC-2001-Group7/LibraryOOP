@@ -36,7 +36,7 @@ public abstract class LibraryMaterial {
     /** Concept #7 Method overloading */
     //no argument constructor (default)
     public LibraryMaterial(){
-        //this(null,null,0,0); //initialize each instance variable to their default value (either null or zero).
+        this(null,null,0,0); //initialize each instance variable to their default value (either null or zero).
     }
     
     /** Concept #7 Method overloading */

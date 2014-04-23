@@ -35,17 +35,6 @@ public class Librarian extends javax.swing.JFrame {
     Book Divergent = new Book("Veronica Roth", "Divergent", 10.18, 2011, "Hardcover", 1, 496);
     Book FaultInOurStars = new Book("John Green", "The Fault in our Stars", 10.00, 2012, "Hardcover", 1, 318);
     
-//    //create sound files
-//    private final File frzClip = new File("frozen.wav");
-//    private final File monstClip = new File("sound/Monster.wav");
-//    private final File toyClip = new File("sound/toystory.wav");
-//    private final File beatClip = new File("sound/Beatles.wav");
-//    private final File bobClip = new File("sound/Bob.wav");
-//    private final File sadeClip = new File("sound/SadeClip.wav");
-//    private final File charClip = new File("sound/charlie.wav");
-//    private final File earthClip = new File("sound/earthwind.wav");
-//    private final File rickClip = new File("sound/rickAstley.wav");
-    
     //create audio objects
     AudioVisualMaterial TheBeatles = new AudioVisualMaterial("The Beatles", "On Air - Live At The BBC Volume 2 ", 15.07, 2013, "CD", null, AV.SOUND[0]);
     AudioVisualMaterial Marley = new AudioVisualMaterial("Bob Marley", "Legend: The Best Of Bob Marley And The Wailers", 11.45, 2002, "CD", null, AV.SOUND[0]);
@@ -342,7 +331,7 @@ public class Librarian extends javax.swing.JFrame {
         //enhanced for loop scans through video array
         for(AudioVisualMaterial currentVideo : video){
             if(currentVideo.getTitle() == movieName){ //if comboBox selection matches video's title
-                currentVideo.stopSoundClip();
+                //currentVideo.stopSoundClip();
                 videoText.setText(currentVideo.displayInfo()); //display video's info in TextArea
                 //videoImage.setIcon(setDisplayCover()); //display video's image
                 currentVideo.playSoundClip(); //play video's soundClip

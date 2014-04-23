@@ -16,6 +16,7 @@ import java.net.URL;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 //import javax.swing.*;
 
 /**
@@ -37,8 +38,9 @@ public class AudioVisualMaterial extends LibraryMaterial {
     /** Concept #1 Encapsulation/Data Hiding*/
     //Declare field variables as private
     private String audioType;
-    private final int x = 2;
-    private BufferedImage[] coverImage = new BufferedImage[x]; 
+    private final int x = 14;
+    //private BufferedImage[] coverImage = new BufferedImage[x]; 
+    private ImageIcon coverImage;
     private URL soundClip;
     private Clip clip;
     
@@ -53,26 +55,54 @@ public class AudioVisualMaterial extends LibraryMaterial {
     private final URL EARTHCLIP = this.getClass().getResource("Sound/earthwind.wav");
     private final URL RICKCLIP = this.getClass().getResource("Sound/rickAstley.wav");
     
-   //create soundClip array
+    //create soundClip array
     final URL[] SOUND = {FROZENCLIP, MONSTERClIP, TOYCLIP, BEATLESCLIP, BOBCLIP, SADECLIP, CHARLIECLIP, EARTHCLIP, RICKCLIP};
+    
+//    //create book image files
+//    private final ImageIcon TEXASIMG = new ImageIcon(getClass().getResource("images/TexasHomeownersAssociationLaw.jpg"));
+//    private final ImageIcon MOTIVATIONIMG = new ImageIcon(getClass().getResource("images/MotivationalInterviweing.jpg"));
+//    private final ImageIcon PSIONICIMG = new ImageIcon(getClass().getResource("images/PsionicPower.jpg"));
+//    private final ImageIcon GAMEIMG = new ImageIcon(getClass().getResource("images/AGameOfThrones.jpg"));
+//    private final ImageIcon DIVERGENTIMG = new ImageIcon(getClass().getResource("images/Divergent.jpg"));
+//    private final ImageIcon FAULTIMG = new ImageIcon(getClass().getResource("images/TheFaultInOurStars.jpg"));
+//    
+//    //create audio image files
+//    private final ImageIcon BEATLESIMG = new ImageIcon(getClass().getResource("images/beatlesImg.jpg"));
+//    private final ImageIcon BOBIMG = new ImageIcon(getClass().getResource("images/marleyImg.jpg"));
+//    private final ImageIcon SADEIMG = new ImageIcon(getClass().getResource("images/sadeImg.jpg"));
+//    private final ImageIcon CHARLIEIMG = new ImageIcon(getClass().getResource("images/charlieImg.jpg"));
+//    private final ImageIcon EARTHIMG = new ImageIcon(getClass().getResource("images/earthImg.jpg"));
+//    private final ImageIcon RICKIMG = new ImageIcon(getClass().getResource("images/rickAstleyImg.jpg"));
+//    
+//    //create video image files
+//    private final ImageIcon FROZENIMG = new ImageIcon(getClass().getResource("images/frozen.jpg"));
+//    private final ImageIcon MONSTERIMG = new ImageIcon(getClass().getResource("images/monsterImg.jpg"));
+//    private final ImageIcon TOYIMG = new ImageIcon(getClass().getResource("images/toyStoryImg.jpg"));
+//    
+//    //create images array
+//    final ImageIcon[] IMAGES = {TEXASIMG, MOTIVATIONIMG, PSIONICIMG, GAMEIMG, DIVERGENTIMG, FAULTIMG, BEATLESIMG, BOBIMG, SADEIMG, CHARLIEIMG, 
+//        EARTHIMG, RICKIMG, FROZENIMG, MONSTERIMG, TOYIMG};
+    
+    
     
     
     /** Concept #2 Default Constructor */
     // no arg constructor acts as a default
     public AudioVisualMaterial(){
-        //this("Unknown", "Untitled",0,0, "Untitled", null, null); 
+        this("Unknown", "Untitled",0,0, "Untitled", null, null); 
     }
            
         
      /** Concept #7 Method overloading */
      //constructor to initialize all field variables (including super class's field variables)
-     public AudioVisualMaterial(String author, String title, double price, int pubYear, String audioType, BufferedImage[] coverImage, URL soundClip) {
+     public AudioVisualMaterial(String author, String title, double price, int pubYear, String audioType, ImageIcon coverImage, URL soundClip) {
      
      /** Concept #5 super reference */
      super(author, title, price, pubYear); //pass to LibraryMaterial constructor
      //Initialize variables
      this.audioType = audioType;
      this.soundClip = soundClip;
+     //this.coverImage = coverImage;
     }
 
     
@@ -86,13 +116,13 @@ public class AudioVisualMaterial extends LibraryMaterial {
         this.audioType = audioType;
     }
       
-     public BufferedImage[] getCoverImage() {
-        return coverImage;
-    }
-
-    public void setCoverImage(BufferedImage[] coverImage) {
-        this.coverImage = coverImage;
-    }
+//     public BufferedImage[] getCoverImage() {
+//        return coverImage;
+//    }
+//
+//    public void setCoverImage(BufferedImage[] coverImage) {
+//        this.coverImage = coverImage;
+//    }
 
     public URL getSoundClip() {
         return soundClip;
