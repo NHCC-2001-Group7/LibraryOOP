@@ -60,12 +60,12 @@ public class AudioVisualMaterial extends LibraryMaterial {
     final URL[] SOUND = {FROZENCLIP, MONSTERClIP, TOYCLIP, BEATLESCLIP, BOBCLIP, SADECLIP, CHARLIECLIP, EARTHCLIP, RICKCLIP};
     
     //create book image files
-    private final ImageIcon TEXASIMG = new ImageIcon(getClass().getResource("images/TexasHomeownersAssociationLaw.jpg"));
-    private final ImageIcon MOTIVATIONIMG = new ImageIcon(getClass().getResource("images/MotivationalInterviewing.jpg"));
-    private final ImageIcon PSIONICIMG = new ImageIcon(getClass().getResource("images/PsionicPower.jpg"));
-    private final ImageIcon GAMEIMG = new ImageIcon(getClass().getResource("images/AGameOfThrones.jpg"));
-    private final ImageIcon DIVERGENTIMG = new ImageIcon(getClass().getResource("images/Divergent.jpg"));
-    private final ImageIcon FAULTIMG = new ImageIcon(getClass().getResource("images/TheFaultInOurStars.jpg"));
+    private final ImageIcon TEXASIMG = new ImageIcon(getClass().getResource("images/TexasHomeownersAssociationLaw2.jpg"));
+    private final ImageIcon MOTIVATIONIMG = new ImageIcon(getClass().getResource("images/MotivationalInterviewing2.jpg"));
+    private final ImageIcon PSIONICIMG = new ImageIcon(getClass().getResource("images/PsionicPower2.jpg"));
+    private final ImageIcon GAMEIMG = new ImageIcon(getClass().getResource("images/AGameOfThrones2.jpg"));
+    private final ImageIcon DIVERGENTIMG = new ImageIcon(getClass().getResource("images/Divergent2.jpg"));
+    private final ImageIcon FAULTIMG = new ImageIcon(getClass().getResource("images/TheFaultInOurStars2.jpg"));
     
     //create audio image files
     private final ImageIcon BEATLESIMG = new ImageIcon(getClass().getResource("images/beatlesImg2.jpg"));
