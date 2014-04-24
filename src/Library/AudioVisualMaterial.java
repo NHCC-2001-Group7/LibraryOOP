@@ -47,8 +47,8 @@ public class AudioVisualMaterial extends LibraryMaterial {
     
     //create sound files
     private final URL FROZENCLIP = this.getClass().getResource("Sound/Let it Go - Frozen.wav");
-    private final URL MONSTERClIP = this.getClass().getResource("Sound/Monster.wav");
-    private final URL TOYCLIP = this.getClass().getResource("Sound/toystory.wav");
+    private final URL MONSTERClIP = this.getClass().getResource("Sound/MonstersUniversity.wav");
+    private final URL TOYCLIP = this.getClass().getResource("Sound/Friend in Me.wav");
     private final URL BEATLESCLIP = this.getClass().getResource("Sound/Beatles.wav");
     private final URL BOBCLIP = this.getClass().getResource("Sound/Bob.wav");
     private final URL SADECLIP = this.getClass().getResource("Sound/SadeClip.wav");
