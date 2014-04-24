@@ -172,11 +172,11 @@ public class Librarian extends javax.swing.JFrame {
             }
         });
         bookPanel.add(bookCB);
-        bookCB.setBounds(30, 260, 260, 40);
+        bookCB.setBounds(36, 42, 260, 40);
 
-        bookImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/images/welcomeLibrary.jpg"))); // NOI18N
+        bookImage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         bookPanel.add(bookImage);
-        bookImage.setBounds(350, 30, 330, 490);
+        bookImage.setBounds(344, 34, 330, 490);
 
         bookText.setColumns(20);
         bookText.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
@@ -184,7 +184,7 @@ public class Librarian extends javax.swing.JFrame {
         bookInfo.setViewportView(bookText);
 
         bookPanel.add(bookInfo);
-        bookInfo.setBounds(720, 200, 320, 170);
+        bookInfo.setBounds(726, 190, 320, 170);
 
         bookBackgound.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/Images/Bookshelf1.jpg"))); // NOI18N
         bookPanel.add(bookBackgound);
@@ -208,11 +208,11 @@ public class Librarian extends javax.swing.JFrame {
             }
         });
         audioPanel.add(audioCB);
-        audioCB.setBounds(40, 260, 190, 40);
+        audioCB.setBounds(48, 54, 190, 40);
 
-        audioImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/images/welcomeLibrary.jpg"))); // NOI18N
+        audioImage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         audioPanel.add(audioImage);
-        audioImage.setBounds(260, 50, 420, 490);
+        audioImage.setBounds(244, 52, 420, 490);
 
         audioText.setColumns(20);
         audioText.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
@@ -220,7 +220,7 @@ public class Librarian extends javax.swing.JFrame {
         audioInfo.setViewportView(audioText);
 
         audioPanel.add(audioInfo);
-        audioInfo.setBounds(686, 220, 368, 140);
+        audioInfo.setBounds(674, 228, 368, 134);
 
         audioBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/Images/Bookshelf4.jpg"))); // NOI18N
         audioPanel.add(audioBackground);
@@ -243,11 +243,11 @@ public class Librarian extends javax.swing.JFrame {
             }
         });
         videoPanel.add(videoCB);
-        videoCB.setBounds(70, 270, 170, 30);
+        videoCB.setBounds(66, 62, 170, 30);
 
-        videoImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/images/welcomeLibrary.jpg"))); // NOI18N
+        videoImage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         videoPanel.add(videoImage);
-        videoImage.setBounds(320, 40, 360, 500);
+        videoImage.setBounds(300, 68, 360, 500);
 
         videoText.setColumns(20);
         videoText.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
@@ -255,7 +255,7 @@ public class Librarian extends javax.swing.JFrame {
         videoInfo.setViewportView(videoText);
 
         videoPanel.add(videoInfo);
-        videoInfo.setBounds(700, 210, 350, 140);
+        videoInfo.setBounds(698, 252, 350, 132);
 
         videoBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/Images/Bookshelf3.jpg"))); // NOI18N
         videoPanel.add(videoBackground);
