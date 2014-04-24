@@ -6,6 +6,8 @@
 
 package Library;
 
+import java.io.File;
+
 
 //import classes
 
@@ -24,7 +26,8 @@ package Library;
 
 public class Librarian extends javax.swing.JFrame {
     
-    private AudioVisualMaterial AV = new AudioVisualMaterial();
+    private AudioVisualMaterial AV = new AudioVisualMaterial();  
+    
     
     //create subclass objects
     //create book objects
@@ -217,7 +220,7 @@ public class Librarian extends javax.swing.JFrame {
         audioPanel.add(audioInfo);
         audioInfo.setBounds(690, 220, 380, 140);
 
-        audioBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/Images/Bookshelf2.jpg"))); // NOI18N
+        audioBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/Images/Bookshelf4.jpg"))); // NOI18N
         audioPanel.add(audioBackground);
         audioBackground.setBounds(2, 0, 1092, 668);
 
