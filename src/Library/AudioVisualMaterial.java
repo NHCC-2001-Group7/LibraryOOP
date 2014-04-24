@@ -76,7 +76,7 @@ public class AudioVisualMaterial extends LibraryMaterial {
     private final ImageIcon RICKIMG = new ImageIcon(getClass().getResource("images/rickAstleyImg2.jpg"));
     
     //create video image files
-    private final ImageIcon FROZENIMG = new ImageIcon(getClass().getResource("images/frozenImg.jpg"));
+    private final ImageIcon FROZENIMG = new ImageIcon(getClass().getResource("images/frozenImg2.jpg"));
     private final ImageIcon MONSTERIMG = new ImageIcon(getClass().getResource("images/monsterImg.jpg"));
     private final ImageIcon TOYIMG = new ImageIcon(getClass().getResource("images/toyStoryImg.jpg"));
     

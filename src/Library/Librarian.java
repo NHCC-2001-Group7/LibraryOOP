@@ -91,6 +91,8 @@ public class Librarian extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        playButton = new javax.swing.JButton();
+        stopButton = new javax.swing.JButton();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         homeTab = new javax.swing.JPanel();
         homePanel = new javax.swing.JPanel();
@@ -118,14 +120,31 @@ public class Librarian extends javax.swing.JFrame {
         videoInfo = new javax.swing.JScrollPane();
         videoText = new javax.swing.JTextArea();
         videoBackground = new javax.swing.JLabel();
-        playButton = new javax.swing.JButton();
-        stopButton = new javax.swing.JButton();
         topBookBackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Library OOM");
         setMinimumSize(new java.awt.Dimension(1080, 730));
         getContentPane().setLayout(null);
+
+        playButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/Images/PlayButton.jpg"))); // NOI18N
+        playButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                playButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(playButton);
+        playButton.setBounds(658, 8, 180, 45);
+
+        stopButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/Images/StopButton.jpg"))); // NOI18N
+        stopButton.setPreferredSize(new java.awt.Dimension(180, 45));
+        stopButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                stopButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(stopButton);
+        stopButton.setBounds(858, 8, 180, 45);
 
         jTabbedPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jTabbedPane1.setFocusable(false);
@@ -209,8 +228,6 @@ public class Librarian extends javax.swing.JFrame {
         });
         audioPanel.add(audioCB);
         audioCB.setBounds(48, 54, 190, 40);
-
-        audioImage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         audioPanel.add(audioImage);
         audioImage.setBounds(244, 52, 420, 490);
 
@@ -244,8 +261,6 @@ public class Librarian extends javax.swing.JFrame {
         });
         videoPanel.add(videoCB);
         videoCB.setBounds(66, 62, 170, 30);
-
-        videoImage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         videoPanel.add(videoImage);
         videoImage.setBounds(300, 68, 360, 500);
 
@@ -269,25 +284,6 @@ public class Librarian extends javax.swing.JFrame {
         getContentPane().add(jTabbedPane1);
         jTabbedPane1.setBounds(-4, 22, 1354, 692);
 
-        playButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/Images/PlayButton.jpg"))); // NOI18N
-        playButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                playButtonActionPerformed(evt);
-            }
-        });
-        getContentPane().add(playButton);
-        playButton.setBounds(658, 8, 180, 45);
-
-        stopButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/Images/StopButton.jpg"))); // NOI18N
-        stopButton.setPreferredSize(new java.awt.Dimension(180, 45));
-        stopButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                stopButtonActionPerformed(evt);
-            }
-        });
-        getContentPane().add(stopButton);
-        stopButton.setBounds(858, 8, 180, 45);
-
         topBookBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/Images/PileOfBooks2.jpg"))); // NOI18N
         getContentPane().add(topBookBackground);
         topBookBackground.setBounds(-2, -120, 1080, 200);
@@ -303,10 +299,6 @@ public class Librarian extends javax.swing.JFrame {
             if(currentBook.getTitle() == bookTitle){ //if comboBox selection matches book's title
                 bookText.setText(currentBook.displayInfo()); //display book's info in TextArea
                 bookImage.setIcon(currentBook.getCoverImage()); //display book's image
-            }
-            else if(bookTitle == "Please Select a Book"){ //if no book is selected
-                bookText.setText(""); //clear TextArea
-                bookImage.setIcon(AV.IMAGES[15]); //set to default image
             }
         }
     }//GEN-LAST:event_bookCBItemStateChanged
@@ -368,8 +360,26 @@ public class Librarian extends javax.swing.JFrame {
     private void stopButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stopButtonActionPerformed
         
         //AV.stopSoundClip(); //stop soundClip
+        String movieName = (String)videoCB.getSelectedItem(); //get user's selection and assign to variable
+        String audioArtist = (String)audioCB.getSelectedItem(); //get user's selection and assign to variable
         
-        
+        for(AudioVisualMaterial currentVideo : video){
+            
+            if(currentVideo.getTitle() != movieName){
+                currentVideo.setupSoundClip();
+                currentVideo.stopSoundClip();
+                videoImage.setIcon(AV.IMAGES[15]); //set to default image
+                //AV.stopSoundClip(); //stop soundClip
+            }
+        }
+            for(AudioVisualMaterial currentAudio : audio){
+            
+            if(currentAudio.getAuthor() != audioArtist){
+                currentAudio.setupSoundClip();
+                currentAudio.stopSoundClip();
+                //stop soundClip; //stop soundClip
+            }
+            }
     }//GEN-LAST:event_stopButtonActionPerformed
 
     private void playButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playButtonActionPerformed
