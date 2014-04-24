@@ -65,7 +65,9 @@ public class Librarian extends javax.swing.JFrame {
      */
     public Librarian() {
         initComponents();
-        
+        bookText.setEditable(false); 
+        audioText.setEditable(false);
+        videoText.setEditable(false);
 //        //testing with println command
 //        for(LibraryMaterial currentMaterial : materials){
 //            System.out.println(currentMaterial.displayInfo()); //displays info for each library material
@@ -218,7 +220,7 @@ public class Librarian extends javax.swing.JFrame {
         audioInfo.setViewportView(audioText);
 
         audioPanel.add(audioInfo);
-        audioInfo.setBounds(690, 220, 380, 140);
+        audioInfo.setBounds(686, 220, 368, 140);
 
         audioBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/Images/Bookshelf4.jpg"))); // NOI18N
         audioPanel.add(audioBackground);
