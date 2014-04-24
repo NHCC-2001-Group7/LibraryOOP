@@ -166,6 +166,7 @@ public class AudioVisualMaterial extends LibraryMaterial {
 //            }
             System.out.println("Stopping audio");
             clip.stop();
+            clip.close();
         }
         try{
             AudioInputStream audio = AudioSystem.getAudioInputStream(soundClip); //open an audio input stream
@@ -188,6 +189,7 @@ public class AudioVisualMaterial extends LibraryMaterial {
         if(clip != null && clip.isRunning()){
             System.out.println("Stopping audio");
             clip.stop();
+            clip.close();
         }
         clip.setFramePosition(0);
         clip.start();
@@ -201,6 +203,7 @@ public class AudioVisualMaterial extends LibraryMaterial {
         if(clip.isRunning()){
             System.out.println("Stopping audio");
             clip.stop();
+            clip.close();
         }
         
         //clip.stop();
