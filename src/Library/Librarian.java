@@ -39,17 +39,17 @@ public class Librarian extends javax.swing.JFrame {
     Book FaultInOurStars = new Book("John Green", "The Fault in our Stars", 10.00, 2012, "Hardcover", 1, 318, AV.IMAGES[5]);
     
     //create audio objects
-    AudioVisualMaterial TheBeatles = new AudioVisualMaterial("The Beatles", "On Air - Live At The BBC Volume 2 ", 15.07, 2013, "CD", AV.IMAGES[6], AV.SOUND[0]);
-    AudioVisualMaterial Marley = new AudioVisualMaterial("Bob Marley", "Legend: The Best Of Bob Marley And The Wailers", 11.45, 2002, "CD", AV.IMAGES[7], AV.SOUND[0]);
-    AudioVisualMaterial Sade = new AudioVisualMaterial("Sade", "The Best of Sade", 9.99, 2001, "CD", AV.IMAGES[8], AV.SOUND[0]);
-    AudioVisualMaterial CharlieBrown = new AudioVisualMaterial("Fantasy", "Charlie Brown Christmas", 5.99, 2000, "Audio Cassette", AV.IMAGES[9], AV.SOUND[0]);
-    AudioVisualMaterial EarthWindFire = new AudioVisualMaterial("Earth Wind and Fire", "Earth Wind and Fire: Greatest Hits", 10.00, 1998, "Audio Cassette", AV.IMAGES[10], AV.SOUND[0]);
-    AudioVisualMaterial Rick = new AudioVisualMaterial("Rick Astley", "Whenever You Need Somebody", 7.95, 1990, "Audio Cassette", AV.IMAGES[11], AV.SOUND[0]);
+    AudioVisualMaterial TheBeatles = new AudioVisualMaterial("The Beatles", "On Air - Live At The BBC Volume 2 ", 15.07, 2013, "CD", AV.IMAGES[6], AV.SOUND[3]);
+    AudioVisualMaterial Marley = new AudioVisualMaterial("Bob Marley", "Legend: The Best Of Bob Marley And The Wailers", 11.45, 2002, "CD", AV.IMAGES[7], AV.SOUND[4]);
+    AudioVisualMaterial Sade = new AudioVisualMaterial("Sade", "The Best of Sade", 9.99, 2001, "CD", AV.IMAGES[8], AV.SOUND[5]);
+    AudioVisualMaterial CharlieBrown = new AudioVisualMaterial("Fantasy", "Charlie Brown Christmas", 5.99, 2000, "Audio Cassette", AV.IMAGES[9], AV.SOUND[6]);
+    AudioVisualMaterial EarthWindFire = new AudioVisualMaterial("Earth Wind and Fire", "Earth Wind and Fire: Greatest Hits", 10.00, 1998, "Audio Cassette", AV.IMAGES[10], AV.SOUND[7]);
+    AudioVisualMaterial Rick = new AudioVisualMaterial("Rick Astley", "Whenever You Need Somebody", 7.95, 1990, "Audio Cassette", AV.IMAGES[11], AV.SOUND[8]);
     
     //create video objects
     AudioVisualMaterial Frozen = new AudioVisualMaterial("Walt Disney Studios Home Entertainment", "Frozen", 26.96, 2013, "DVD", AV.IMAGES[12], AV.SOUND[0]);
-    AudioVisualMaterial MonstersUniversity = new AudioVisualMaterial("Walt Disney Studios Home Entertainment","Monster's University", 15.96, 2013, "DVD", AV.IMAGES[13], AV.SOUND[0]);
-    AudioVisualMaterial ToyStory = new AudioVisualMaterial("Disney Pixar", "Toy Story 3", 18.27, 2010, "DVD", AV.IMAGES[14], AV.SOUND[0]); 
+    AudioVisualMaterial MonstersUniversity = new AudioVisualMaterial("Walt Disney Studios Home Entertainment","Monster's University", 15.96, 2013, "DVD", AV.IMAGES[13], AV.SOUND[1]);
+    AudioVisualMaterial ToyStory = new AudioVisualMaterial("Disney Pixar", "Toy Story 3", 18.27, 2010, "DVD", AV.IMAGES[14], AV.SOUND[2]); 
     
     
     //create object arrays
@@ -322,6 +322,12 @@ public class Librarian extends javax.swing.JFrame {
                 currentAudio.setupSoundClip();
                 currentAudio.playSoundClip(); //play audio's soundClip
             }
+            
+            if(currentAudio.getAuthor() != audioArtist){
+                currentAudio.setupSoundClip();
+                currentAudio.stopSoundClip();
+            }
+            
             else if(audioArtist == "Please Select an Artist"){ //if no audio is selected
                 audioText.setText(""); //clear TextArea
                 audioImage.setIcon(AV.IMAGES[15]); //set to default image
@@ -344,6 +350,12 @@ public class Librarian extends javax.swing.JFrame {
                 currentVideo.setupSoundClip();
                 currentVideo.playSoundClip(); //play video's soundClip
             }
+            
+            if(currentVideo.getAuthor() != movieName){
+                currentVideo.setupSoundClip();
+                currentVideo.stopSoundClip();
+            }
+            
             else if(movieName == "Please Select a Movie"){ //if no video is selected
                 videoText.setText(""); //clear TextArea
                 videoImage.setIcon(AV.IMAGES[15]); //set to default image
