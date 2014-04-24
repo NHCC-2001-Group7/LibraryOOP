@@ -351,7 +351,7 @@ public class Librarian extends javax.swing.JFrame {
                 currentVideo.playSoundClip(); //play video's soundClip
             }
             
-            if(currentVideo.getAuthor() != movieName){
+            if(currentVideo.getTitle() != movieName){
                 currentVideo.setupSoundClip();
                 currentVideo.stopSoundClip();
             }

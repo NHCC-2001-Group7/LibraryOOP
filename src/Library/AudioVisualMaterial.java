@@ -68,12 +68,12 @@ public class AudioVisualMaterial extends LibraryMaterial {
     private final ImageIcon FAULTIMG = new ImageIcon(getClass().getResource("images/TheFaultInOurStars.jpg"));
     
     //create audio image files
-    private final ImageIcon BEATLESIMG = new ImageIcon(getClass().getResource("images/beatlesImg.jpg"));
-    private final ImageIcon BOBIMG = new ImageIcon(getClass().getResource("images/marleyImg.jpg"));
-    private final ImageIcon SADEIMG = new ImageIcon(getClass().getResource("images/sadeImg.jpg"));
-    private final ImageIcon CHARLIEIMG = new ImageIcon(getClass().getResource("images/charlieImg.jpg"));
-    private final ImageIcon EARTHIMG = new ImageIcon(getClass().getResource("images/earthImg.jpg"));
-    private final ImageIcon RICKIMG = new ImageIcon(getClass().getResource("images/rickAstleyImg.jpg"));
+    private final ImageIcon BEATLESIMG = new ImageIcon(getClass().getResource("images/beatlesImg2.jpg"));
+    private final ImageIcon BOBIMG = new ImageIcon(getClass().getResource("images/marleyImg2.jpg"));
+    private final ImageIcon SADEIMG = new ImageIcon(getClass().getResource("images/sadeImg2.jpg"));
+    private final ImageIcon CHARLIEIMG = new ImageIcon(getClass().getResource("images/charlieImg2.jpg"));
+    private final ImageIcon EARTHIMG = new ImageIcon(getClass().getResource("images/earthImg2.jpg"));
+    private final ImageIcon RICKIMG = new ImageIcon(getClass().getResource("images/rickAstleyImg2.jpg"));
     
     //create video image files
     private final ImageIcon FROZENIMG = new ImageIcon(getClass().getResource("images/frozenImg.jpg"));
