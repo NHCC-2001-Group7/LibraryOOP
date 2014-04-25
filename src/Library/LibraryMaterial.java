@@ -7,10 +7,6 @@
 package Library;
 
 
-//import classes
-//import java.math.BigDecimal;
-
-
 /**
  * This class is the Super class of the project.
  * 
