@@ -27,7 +27,7 @@ import javax.swing.ImageIcon;
 
 
 /** Concept #3 Inheritance */
-//AudioVisualMaterial class extends LibraryMaterial
+/**AudioVisualMaterial class extends LibraryMaterial */
 public class AudioVisualMaterial extends LibraryMaterial {
 
     /** Concept #1 Encapsulation/Data Hiding*/
@@ -118,7 +118,7 @@ public class AudioVisualMaterial extends LibraryMaterial {
 
     /**
      * get AudioType
-     * @return
+     * @return audioType
      */
         public String getAudioType() {
         return audioType;
@@ -138,7 +138,7 @@ public class AudioVisualMaterial extends LibraryMaterial {
 
     /**
      * get coverImage
-     * @return
+     * @return coverImage
      */
          public ImageIcon getCoverImage() {
         return coverImage;
@@ -158,7 +158,7 @@ public class AudioVisualMaterial extends LibraryMaterial {
 
     /**
      * get soundClip
-     * @return
+     * @return soundClip
      */
         public URL getSoundClip() {
         return soundClip;

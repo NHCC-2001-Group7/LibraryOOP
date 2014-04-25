@@ -22,9 +22,8 @@ import javax.swing.ImageIcon;
  * 
  */
 
-
-/** Concept #3 Inheritance */
 //Book class extends LibraryMaterial
+/** Concept #3 Inheritance */
 public class Book extends LibraryMaterial {
     
     /** Concept #1 Encapsulation/Data hiding */
@@ -138,7 +137,7 @@ public class Book extends LibraryMaterial {
   
     /**
      * get bookType
-     * @return
+     * @return bookType
      */
          public String getBookType(){
         return bookType;
@@ -148,7 +147,7 @@ public class Book extends LibraryMaterial {
 
     /**
      * get printEdition
-     * @return
+     * @return printEdition
      */
         public int getPrintEdition(){
         return printEdition;
@@ -158,7 +157,7 @@ public class Book extends LibraryMaterial {
 
     /**
      * get pageNumber
-     * @return
+     * @return pageNumber
      */
         public int getPageNumber(){
         return pageNumber;
@@ -168,7 +167,7 @@ public class Book extends LibraryMaterial {
 
     /**
      * get coverImage
-     * @return
+     * @return coverImage
      */
         public ImageIcon getCoverImage() {
         return coverImage;
@@ -179,7 +178,7 @@ public class Book extends LibraryMaterial {
     /**
      * method to find appropriate ordinal suffix and include it at the end of the printEdition number
      * @param suffix
-     * @return
+     * 
      */
         public String getOrdinalSuffix(int suffix){
         if(suffix == 0){

@@ -62,7 +62,7 @@ public abstract class LibraryMaterial {
     
  
     /**
-     *     //set author
+     *  set author
      * @param author
      */
         public void setAuthor(String author){
@@ -107,7 +107,7 @@ public abstract class LibraryMaterial {
 
     /**
      * get author
-     * @return
+     * @return  author
      */
         public String getAuthor(){
         return author;
@@ -117,7 +117,7 @@ public abstract class LibraryMaterial {
         
     /**
      * get title
-     * @return
+     * @return title
      */
         public String getTitle(){
         return title;
@@ -126,8 +126,8 @@ public abstract class LibraryMaterial {
 
 
     /**
-     * get price
-     * @return
+     * get price 
+     * @return price
      */
         public double getPrice(){
         return price;
@@ -137,7 +137,7 @@ public abstract class LibraryMaterial {
 
     /**
      * get published year
-     * @return
+     * @return pubYear
      */
         public int getPubYear(){
         return pubYear;
@@ -147,14 +147,17 @@ public abstract class LibraryMaterial {
 
     /**
      * abstract method overrided by concrete subclasses
-     * @return
+     * 
+     * @return displayInfo
      */
         public abstract String displayInfo(); //no implementation here
     
     /** Concept #6 Method Overriding
      * this method overrides a superclass method (Object method toString)
      * convert LibraryMaterial to String format
-     * @return  */
+     * 
+     * @return toString
+     */
     @Override 
     public String toString(){
         return String.format("Title: %s\nAuthor: %s\nPrice: $%.2f\nPublication Year: %d", getTitle(), getAuthor(), getPrice(), getPubYear());
