@@ -147,13 +147,4 @@ public class Book extends LibraryMaterial {
         return String.format("%s\nBook Type: %s\nEdition: %d%s\nNumber of Pages: %d\n", super.toString(), getBookType(), getPrintEdition(), 
                 getOrdinalSuffix(getPrintEdition()), getPageNumber());
     }
-    
-//    /** Concept #5 super reference */
-//    /** Concept #6 Method Overriding */
-//    //convert Book to String format
-//    @Override //this method overrides a superclass method (LibraryMaterial method toString)
-//    public String toString(){
-//        return String.format("%s\nBook Type: %s\nEdition: %d%s\nNumber of Pages: %d\n", super.toString(), getBookType(), getPrintEdition(), 
-//              getOrdinalSuffix(getPrintEdition()), getPageNumber());
-//    }
 }

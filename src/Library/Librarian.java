@@ -6,8 +6,6 @@
 
 package Library;
 
-import java.io.File;
-
 
 //import classes
 import javax.swing.*;
@@ -30,8 +28,6 @@ import javax.swing.event.ChangeEvent;
 public class Librarian extends javax.swing.JFrame {
     
     private AudioVisualMaterial AV = new AudioVisualMaterial();  
-    
-    //private AudioVisualMaterial currentSound = SelectAudio;
     
     
     //create subclass objects
@@ -321,42 +317,19 @@ public class Librarian extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bookCBItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_bookCBItemStateChanged
-        //String bookTitle = (String)bookCB.getSelectedItem(); //get user's selection and assign to variable
         
         for(Book currentBook : books){
             if(bookCB.getSelectedItem() == currentBook.getTitle()){
-                if(bookCB.getSelectedItem() == SelectBook.getTitle()){
-                    bookText.setText("");
-                }
                 bookText.setText(currentBook.displayInfo()); //display book's info in TextArea
                 bookImage.setIcon(currentBook.getCoverImage()); //display book's image
-            }  
+            }
+            if(bookCB.getSelectedItem() == SelectBook.getTitle()){
+                    bookText.setText("");
+            } 
         }
-        
-//        for(int i=0; i < books.length; i++){
-//            if(bookCB.getSelectedItem() == currentBook.getTitle()){
-//                if(bookCB.getSelectedItem() == SelectBook.getTitle()){
-//                    bookText.setText("");
-//                }
-//                bookText.setText(currentBook.displayInfo()); //display book's info in TextArea
-//                bookImage.setIcon(currentBook.getCoverImage()); //display book's image
-//            }  
-//        }
-        
-//        //enhanced for loop scans through book array
-//        for(Book currentBook : books){
-//            if(currentBook.getTitle() == bookTitle){ //if comboBox selection matches book's title
-//                bookText.setText(currentBook.displayInfo()); //display book's info in TextArea
-//                bookImage.setIcon(currentBook.getCoverImage()); //display book's image
-//            }
-//        }
     }//GEN-LAST:event_bookCBItemStateChanged
 
     private void audioCBItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_audioCBItemStateChanged
-        //String audioArtist = (String)audioCB.getSelectedItem(); //get user's selection and assign to variable
-        
-        //currentSound.setupSoundClip();
-        //currentSound.stopSoundClip();
         
         for(AudioVisualMaterial currentAudio : audio){
             currentSound = currentAudio;
@@ -366,41 +339,18 @@ public class Librarian extends javax.swing.JFrame {
                 currentSound.setupSoundClip();
                 currentSound.playSoundClip(); //play audio's soundClip
             }
-            
             if(audioCB.getSelectedItem() != currentSound.getAuthor()){
                 currentSound.setupSoundClip();
                 currentSound.stopSoundClip();
             }
+            if(audioCB.getSelectedItem() == SelectAudio.getAuthor()){
+                audioText.setText("");
+            }
         }
-        
-//        //enhanced for loop scans through audio array
-//        for(AudioVisualMaterial currentAudio : audio){
-//            if(currentAudio.getAuthor() == audioArtist){ //if comboBox selection matches audio's artist
-//                audioText.setText(currentAudio.displayInfo()); //display audio's info in TextArea
-//                audioImage.setIcon(currentAudio.getCoverImage()); //display audio's image
-//                currentAudio.setupSoundClip();
-//                currentAudio.playSoundClip(); //play audio's soundClip
-//            }
-//            
-//            if(currentAudio.getAuthor() != audioArtist){
-//                currentAudio.setupSoundClip();
-//                currentAudio.stopSoundClip();
-//            }
-//            
-//            else if(audioArtist == "Please Select an Artist"){ //if no audio is selected
-//                audioText.setText(""); //clear TextArea
-//                audioImage.setIcon(AV.IMAGES[15]); //set to default image
-//                currentAudio.stopSoundClip();
-//                //stop soundClip; //stop soundClip
-//            }
-//        }
     }//GEN-LAST:event_audioCBItemStateChanged
 
     private void videoCBItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_videoCBItemStateChanged
-        //AV.stopSoundClip();
-        //String movieName = (String)videoCB.getSelectedItem(); //get user's selection and assign to variable
-        currentSound.stopSoundClip();
-        
+  
         for(AudioVisualMaterial currentVideo : video){
             currentSound = currentVideo;
             if(videoCB.getSelectedItem() == currentSound.getTitle()){
@@ -409,69 +359,44 @@ public class Librarian extends javax.swing.JFrame {
                 currentSound.setupSoundClip();
                 currentSound.playSoundClip(); //play audio's soundClip
             }
-            
             if(videoCB.getSelectedItem() != currentSound.getTitle()){
                 currentSound.setupSoundClip();
                 currentSound.stopSoundClip();
             }
+            if(videoCB.getSelectedItem() == SelectVideo.getTitle()){
+                videoText.setText("");
+            }
         }
-        
-//        //enhanced for loop scans through video array
-//        for(AudioVisualMaterial currentVideo : video){
-//            if(currentVideo.getTitle() == movieName){ //if comboBox selection matches video's title
-//                //currentVideo.stopSoundClip();
-//                videoText.setText(currentVideo.displayInfo()); //display video's info in TextArea
-//                videoImage.setIcon(currentVideo.getCoverImage()); //display video's image
-//                currentVideo.setupSoundClip();
-//                currentVideo.playSoundClip(); //play video's soundClip
-//            }
-//            
-//            if(currentVideo.getTitle() != movieName){
-//                currentVideo.setupSoundClip();
-//                currentVideo.stopSoundClip();
-//            }
-//            
-//            else if(movieName == "Please Select a Movie"){ //if no video is selected
-//                videoText.setText(""); //clear TextArea
-//                videoImage.setIcon(AV.IMAGES[15]); //set to default image
-//                currentVideo.stopSoundClip();
-//                //AV.stopSoundClip(); //stop soundClip
-//            }
-//        }
     }//GEN-LAST:event_videoCBItemStateChanged
 
     private void stopButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stopButtonActionPerformed
         
-
-        //AV.stopSoundClip(); //stop soundClip
-        String movieName = (String)videoCB.getSelectedItem(); //get user's selection and assign to variable
-        String audioArtist = (String)audioCB.getSelectedItem(); //get user's selection and assign to variable
-        
         for(AudioVisualMaterial currentVideo : video){
-            
-            if(currentVideo.getTitle() != movieName){
                 currentVideo.setupSoundClip();
-                currentVideo.stopSoundClip();
-                videoImage.setIcon(AV.IMAGES[15]); //set to default image
-                //AV.stopSoundClip(); //stop soundClip
-            }
+                currentVideo.stopSoundClip();   
         }
-            for(AudioVisualMaterial currentAudio : audio){
-            
-            if(currentAudio.getAuthor() != audioArtist){
-                currentAudio.setupSoundClip();
-                currentAudio.stopSoundClip();
-                //stop soundClip; //stop soundClip
-            }
-            }
-        
-        
+        for(AudioVisualMaterial currentAudio : audio){   
+            currentAudio.setupSoundClip();
+            currentAudio.stopSoundClip();
+        }
     }//GEN-LAST:event_stopButtonActionPerformed
 
     private void playButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playButtonActionPerformed
         
-        
-        
+//        for(AudioVisualMaterial currentVideo : video){
+//            currentSound = currentVideo;
+//            if(videoCB.getSelectedItem() == currentSound.getTitle()){
+//                currentSound.setupSoundClip();
+//                currentSound.playSoundClip();
+//            }
+//        }
+//        for(AudioVisualMaterial currentAudio : audio){
+//            currentSound = currentAudio;
+//            if(audioCB.getSelectedItem() == currentSound.getAuthor()){
+//                currentSound.setupSoundClip();
+//                currentSound.playSoundClip();
+//            }
+//        }
     }//GEN-LAST:event_playButtonActionPerformed
 
     /**

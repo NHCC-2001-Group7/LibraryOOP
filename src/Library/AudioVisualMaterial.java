@@ -8,16 +8,10 @@ package Library;
 
 
 //import classes
-//import java.awt.*;
 import java.io.*;
 import javax.sound.sampled.*;
-import java.awt.image.BufferedImage;
 import java.net.URL;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
-//import javax.swing.*;
 
 
 /**
@@ -141,32 +135,9 @@ public class AudioVisualMaterial extends LibraryMaterial {
         this.soundClip = soundClip;
     }
  
-  
-//    //validate and set display cover
-//    public void displayCover(BufferedImage[] coverImage){
-//
-//        try {
-//            coverImage[0] = ImageIO.read(new File("image/monster.jpg"));
-//            coverImage[1] = ImageIO.read(new File("image/beatles.jpg"));
-//            coverImage[2] = ImageIO.read(new File("image/beatles.jpg"));
-//        } catch (IOException ex) {
-//            Logger.getLogger(AudioVisualMaterial.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-// 
-//    }
-    
-//    public void displayCover(){
-//        
-//        librarian.audioImage.setIcon();
-//        
-//    }
     
     public void setupSoundClip(){
         if(clip != null && clip.isRunning()){
-//            BooleanControl muteControl = (BooleanControl) clip.getControl(BooleanControl.Type.MUTE);
-//            if(muteControl != null){
-//                muteControl.setValue(true);
-//            }
             System.out.println("Stopping audio");
             clip.stop();
             clip.close();
@@ -175,14 +146,6 @@ public class AudioVisualMaterial extends LibraryMaterial {
             AudioInputStream audio = AudioSystem.getAudioInputStream(soundClip); //open an audio input stream
             clip = AudioSystem.getClip(); //get a sound clip resource
             clip.open(audio); //open audio clip and load samples from the audio input stream
-//        if(clip.isRunning()){
-//            clip.stop(); //stop the player if it is still running
-//        }
-        //clip.setFramePosition(0); //rewind clip to the beginning
-        //clip.start(); //plays sound clip
-//        if(clip != null && clip.isRunning()){
-//            clip.stop();
-//        }
         }catch(  UnsupportedAudioFileException | IOException | LineUnavailableException uae){
             System.out.println(uae);
         }          
@@ -198,18 +161,12 @@ public class AudioVisualMaterial extends LibraryMaterial {
         clip.start();
     }
     
-    //stop soundClip
     public void stopSoundClip(){
-//        if(clip != null){ //checks if sound is still playing, if it is...
-//            clip.stop(); //stop sound
-//        }
         if(clip != null && clip.isRunning()){
             System.out.println("Stopping audio");
             clip.stop();
             clip.close();
         }
-        
-        //clip.stop();
     }
     
     /** Concept #5 super reference */
