@@ -191,7 +191,7 @@ public class Book extends LibraryMaterial {
         int tenRemainder = suffix % 10; //declare local variable...find 1 digit remainder
         switch(tenRemainder){
             case 1:
-                return "rst"; //for all non teen numbers ending in 1...1rst, 21rst, 151rst...etc.
+                return "st"; //for all non teen numbers ending in 1...1st, 21st, 151st...etc.
             case 2:
                 return "nd"; //for all non teen numbers ending in 2...2nd, 22nd, 152nd...etc.
             case 3:

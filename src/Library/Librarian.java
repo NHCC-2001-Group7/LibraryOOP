@@ -297,7 +297,7 @@ public class Librarian extends javax.swing.JFrame {
             }
         });
         videoPanel.add(videoCB);
-        videoCB.setBounds(34, 62, 234, 30);
+        videoCB.setBounds(34, 56, 234, 40);
         videoPanel.add(videoImage);
         videoImage.setBounds(300, 68, 360, 500);
 
