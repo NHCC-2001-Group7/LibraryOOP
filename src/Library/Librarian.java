@@ -10,6 +10,9 @@ import java.io.File;
 
 
 //import classes
+import javax.swing.*;
+import javax.swing.event.ChangeListener;
+import javax.swing.event.ChangeEvent;
 
 
 /**
@@ -87,18 +90,28 @@ public class Librarian extends javax.swing.JFrame {
             videoCB.addItem(currentVideo.getTitle());
         }
         
-//        //testing with println command
-//        for(LibraryMaterial currentMaterial : materials){
-//            System.out.println(currentMaterial.displayInfo()); //displays info for each library material
-//        }
-//        
-//        for(Book currentBook : books){
-//            System.out.println(currentBook.displayInfo()); //displays info for each book
-//        }
-//        
-//       for(AudioVisualMaterial currentAudio : audio){
-//            System.out.println(currentAudio.displayInfo()); //displays info for each audiovisual material
-//        }
+        jTabbedPane1.addChangeListener(new ChangeListener(){ //create a change listener
+        
+        @Override
+        public void stateChanged(ChangeEvent e){ //create a method StateChanged
+            JTabbedPane jTabbedPane1 = (JTabbedPane)e.getSource(); //Add change Listener to JTabbed Pane
+            
+            int tab = jTabbedPane1.getSelectedIndex(); //gets current selected tab and stores into tab
+            
+            for(AudioVisualMaterial currentAudio : audio){ //enhanced for loop that iterates through array
+                if(tab != 2){ //if tab is changed, stop music
+                    currentAudio.setupSoundClip();
+                    currentAudio.stopSoundClip();
+                }
+            }
+            for(AudioVisualMaterial currentVideo : video){ //enhanced for loop that iterates through array
+                if(tab != 3){ //if tab is changed, stop music
+                    currentVideo.setupSoundClip();
+                    currentVideo.stopSoundClip();
+                }
+            }
+        }
+    });   
     }
 
     /**
