@@ -39,7 +39,7 @@ public class Book extends LibraryMaterial {
     /** Concept #7 Method overloading */
     //no argument constructor (acts as default constructor)
     public Book(){
-        this("Unknown", "Untitled", 0, 0, "Unknown", 0, 0, null); //initialize all field variables to their default value (either null or zero).
+        this("Unknown", "Select a Book", 0, 0, "Unknown", 0, 0, null); //initialize all field variables to their default value (either null or zero).
     }
     
     /** Concept #7 Method overloading */
@@ -57,7 +57,7 @@ public class Book extends LibraryMaterial {
     
     /** Concept #7 Method overloading */
     //constructor to initialize firstEdition only (including super class's field variables)
-    public Book(String author, String title, double price, int pubYear, int printEdition){
+    public Book(String author, String title, double price, int pubYear, int printEdition, ImageIcon coverImage){
         
         /** Concept #5 super reference */
         //initialize variables
@@ -65,6 +65,7 @@ public class Book extends LibraryMaterial {
         
         if(printEdition == 1){ //only initialize if book is a first edition
             this.printEdition = printEdition;
+            this.coverImage = coverImage;
         }
     }
     

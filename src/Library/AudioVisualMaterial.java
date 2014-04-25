@@ -46,6 +46,7 @@ public class AudioVisualMaterial extends LibraryMaterial {
     private Clip clip;
     
     //create sound files
+    
     private final URL FROZENCLIP = this.getClass().getResource("Sound/Let it Go - Frozen.wav");
     private final URL MONSTERClIP = this.getClass().getResource("Sound/MonstersUniversity.wav");
     private final URL TOYCLIP = this.getClass().getResource("Sound/Friend in Me.wav");
@@ -55,9 +56,10 @@ public class AudioVisualMaterial extends LibraryMaterial {
     private final URL CHARLIECLIP = this.getClass().getResource("Sound/charlie.wav");
     private final URL EARTHCLIP = this.getClass().getResource("Sound/earthwind.wav");
     private final URL RICKCLIP = this.getClass().getResource("Sound/rickAstley.wav");
+    private final URL BLANK = this.getClass().getResource("Sound/Blank.wav");
     
     //create soundClip array
-    final URL[] SOUND = {FROZENCLIP, MONSTERClIP, TOYCLIP, BEATLESCLIP, BOBCLIP, SADECLIP, CHARLIECLIP, EARTHCLIP, RICKCLIP};
+    final URL[] SOUND = {FROZENCLIP, MONSTERClIP, TOYCLIP, BEATLESCLIP, BOBCLIP, SADECLIP, CHARLIECLIP, EARTHCLIP, RICKCLIP, BLANK};
     
     //create book image files
     private final ImageIcon TEXASIMG = new ImageIcon(getClass().getResource("images/TexasHomeownersAssociationLaw2.jpg"));
@@ -91,7 +93,8 @@ public class AudioVisualMaterial extends LibraryMaterial {
     /** Concept #2 Default Constructor */
     // no arg constructor acts as a default
     public AudioVisualMaterial(){
-        this("Unknown", "Untitled",0,0, "Unknown", null, null); 
+        this("Select an Artist", "Select a Movie",0,0, "Unknown", null, null); 
+        soundClip = SOUND[9];
     }
            
         
@@ -200,7 +203,7 @@ public class AudioVisualMaterial extends LibraryMaterial {
 //        if(clip != null){ //checks if sound is still playing, if it is...
 //            clip.stop(); //stop sound
 //        }
-        if(clip.isRunning()){
+        if(clip != null && clip.isRunning()){
             System.out.println("Stopping audio");
             clip.stop();
             clip.close();

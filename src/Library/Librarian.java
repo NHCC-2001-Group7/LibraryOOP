@@ -28,17 +28,22 @@ public class Librarian extends javax.swing.JFrame {
     
     private AudioVisualMaterial AV = new AudioVisualMaterial();  
     
+    //private AudioVisualMaterial currentSound = SelectAudio;
+    
     
     //create subclass objects
     //create book objects
+    Book SelectBook = new Book(); //uses default constructor
     Book TexasHomeownersAssociationLaw = new Book("Gregory S. Cagle", "Texas Homeowners Association Law", 37.74, 2013, "Paperback", 2, 822, AV.IMAGES[0]);
     Book MotivationalInterviewing = new Book("William R. Miller and Stephen Rollnick", "Motivational Interviewing", 51.00, 2012, "Hardcover", 3, 482, AV.IMAGES[1]);
     Book PsionicPower = new Book("Mike Mearls", "Psionic Power", 20.79, 2010, "Hardcover", 4, 160, AV.IMAGES[2]);
     Book GameOfThrones = new Book("George R.R. Martin", "A Game of Thrones", 19.77, 1996, "Hardcover", 1, 704, AV.IMAGES[3]);
     Book Divergent = new Book("Veronica Roth", "Divergent", 10.18, 2011, "Hardcover", 1, 496, AV.IMAGES[4]);
-    Book FaultInOurStars = new Book("John Green", "The Fault in our Stars", 10.00, 2012, "Hardcover", 1, 318, AV.IMAGES[5]);
+    //Book FaultInOurStars = new Book("John Green", "The Fault in our Stars", 10.00, 2012, "Hardcover", 1, 318, AV.IMAGES[5]);
+    Book FaultInOurStars = new Book("John Green", "The Fault in our Stars", 10.00, 2012, 1, AV.IMAGES[5]); //uses 1rst Edition constructor
     
     //create audio objects
+    AudioVisualMaterial SelectAudio = new AudioVisualMaterial(); //uses default constructor
     AudioVisualMaterial TheBeatles = new AudioVisualMaterial("The Beatles", "On Air - Live At The BBC Volume 2 ", 15.07, 2013, "CD", AV.IMAGES[6], AV.SOUND[3]);
     AudioVisualMaterial Marley = new AudioVisualMaterial("Bob Marley", "Legend: The Best Of Bob Marley And The Wailers", 11.45, 2002, "CD", AV.IMAGES[7], AV.SOUND[4]);
     AudioVisualMaterial Sade = new AudioVisualMaterial("Sade", "The Best of Sade", 9.99, 2001, "CD", AV.IMAGES[8], AV.SOUND[5]);
@@ -47,19 +52,20 @@ public class Librarian extends javax.swing.JFrame {
     AudioVisualMaterial Rick = new AudioVisualMaterial("Rick Astley", "Whenever You Need Somebody", 7.95, 1990, "Audio Cassette", AV.IMAGES[11], AV.SOUND[8]);
     
     //create video objects
+    AudioVisualMaterial SelectVideo = new AudioVisualMaterial(); //uses defualt constructor
     AudioVisualMaterial Frozen = new AudioVisualMaterial("Walt Disney Studios Home Entertainment", "Frozen", 26.96, 2013, "DVD", AV.IMAGES[12], AV.SOUND[0]);
     AudioVisualMaterial MonstersUniversity = new AudioVisualMaterial("Walt Disney Studios Home Entertainment","Monster's University", 15.96, 2013, "DVD", AV.IMAGES[13], AV.SOUND[1]);
     AudioVisualMaterial ToyStory = new AudioVisualMaterial("Disney Pixar", "Toy Story 3", 18.27, 2010, "DVD", AV.IMAGES[14], AV.SOUND[2]); 
     
     
     //create object arrays
-    LibraryMaterial[] materials = {TexasHomeownersAssociationLaw, MotivationalInterviewing, PsionicPower, GameOfThrones, Divergent, FaultInOurStars, 
-        Frozen, MonstersUniversity, ToyStory, TheBeatles, Marley, Sade, CharlieBrown, EarthWindFire, Rick}; //array of all library materials
-    Book[] books = {TexasHomeownersAssociationLaw, MotivationalInterviewing, PsionicPower, GameOfThrones, Divergent, FaultInOurStars}; //array of books
-    AudioVisualMaterial[] audio = {TheBeatles, Marley, Sade, CharlieBrown, EarthWindFire, Rick}; //array of audio materials
-    AudioVisualMaterial[] video = {Frozen, MonstersUniversity, ToyStory}; //array of video materials
+    LibraryMaterial[] materials = {SelectBook, TexasHomeownersAssociationLaw, MotivationalInterviewing, PsionicPower, GameOfThrones, Divergent, FaultInOurStars, 
+        SelectVideo, Frozen, MonstersUniversity, ToyStory, SelectAudio, TheBeatles, Marley, Sade, CharlieBrown, EarthWindFire, Rick}; //array of all library materials
+    Book[] books = {SelectBook, TexasHomeownersAssociationLaw, MotivationalInterviewing, PsionicPower, GameOfThrones, Divergent, FaultInOurStars}; //array of books
+    AudioVisualMaterial[] audio = {SelectAudio, TheBeatles, Marley, Sade, CharlieBrown, EarthWindFire, Rick}; //array of audio materials
+    AudioVisualMaterial[] video = {SelectVideo, Frozen, MonstersUniversity, ToyStory}; //array of video materials
     
-    
+    private AudioVisualMaterial currentSound = SelectAudio;
     /**
      * Creates new form Librarian
      */
@@ -68,6 +74,19 @@ public class Librarian extends javax.swing.JFrame {
         bookText.setEditable(false); 
         audioText.setEditable(false);
         videoText.setEditable(false);
+        
+        for(Book currentBook : books){
+            bookCB.addItem(currentBook.getTitle());
+        }
+        
+        for(AudioVisualMaterial currentAudio : audio){
+            audioCB.addItem(currentAudio.getAuthor());
+        }
+        
+        for(AudioVisualMaterial currentVideo : video){
+            videoCB.addItem(currentVideo.getTitle());
+        }
+        
 //        //testing with println command
 //        for(LibraryMaterial currentMaterial : materials){
 //            System.out.println(currentMaterial.displayInfo()); //displays info for each library material
@@ -183,7 +202,6 @@ public class Librarian extends javax.swing.JFrame {
 
         bookCB.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         bookCB.setMaximumRowCount(7);
-        bookCB.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Please Select a Book", "Texas Homeowners Association Law", "Motivational Interviewing", "Psionic Power", "A Game of Thrones", "Divergent", "The Fault in our Stars" }));
         bookCB.setToolTipText("");
         bookCB.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -220,7 +238,6 @@ public class Librarian extends javax.swing.JFrame {
 
         audioCB.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         audioCB.setMaximumRowCount(7);
-        audioCB.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Please Select an Artist", "The Beatles", "Bob Marley", "Sade", "Fantasy", "Earth Wind and Fire", "Rick Astley" }));
         audioCB.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 audioCBItemStateChanged(evt);
@@ -253,7 +270,6 @@ public class Librarian extends javax.swing.JFrame {
         videoPanel.setLayout(null);
 
         videoCB.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
-        videoCB.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Please Select a Movie", "Frozen", "Monster's University", "Toy Story 3" }));
         videoCB.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 videoCBItemStateChanged(evt);
@@ -292,73 +308,128 @@ public class Librarian extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bookCBItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_bookCBItemStateChanged
-        String bookTitle = (String)bookCB.getSelectedItem(); //get user's selection and assign to variable
+        //String bookTitle = (String)bookCB.getSelectedItem(); //get user's selection and assign to variable
         
-        //enhanced for loop scans through book array
         for(Book currentBook : books){
-            if(currentBook.getTitle() == bookTitle){ //if comboBox selection matches book's title
+            if(bookCB.getSelectedItem() == currentBook.getTitle()){
+                if(bookCB.getSelectedItem() == SelectBook.getTitle()){
+                    bookText.setText("");
+                }
                 bookText.setText(currentBook.displayInfo()); //display book's info in TextArea
                 bookImage.setIcon(currentBook.getCoverImage()); //display book's image
-            }
+            }  
         }
+        
+//        for(int i=0; i < books.length; i++){
+//            if(bookCB.getSelectedItem() == currentBook.getTitle()){
+//                if(bookCB.getSelectedItem() == SelectBook.getTitle()){
+//                    bookText.setText("");
+//                }
+//                bookText.setText(currentBook.displayInfo()); //display book's info in TextArea
+//                bookImage.setIcon(currentBook.getCoverImage()); //display book's image
+//            }  
+//        }
+        
+//        //enhanced for loop scans through book array
+//        for(Book currentBook : books){
+//            if(currentBook.getTitle() == bookTitle){ //if comboBox selection matches book's title
+//                bookText.setText(currentBook.displayInfo()); //display book's info in TextArea
+//                bookImage.setIcon(currentBook.getCoverImage()); //display book's image
+//            }
+//        }
     }//GEN-LAST:event_bookCBItemStateChanged
 
     private void audioCBItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_audioCBItemStateChanged
-        String audioArtist = (String)audioCB.getSelectedItem(); //get user's selection and assign to variable
+        //String audioArtist = (String)audioCB.getSelectedItem(); //get user's selection and assign to variable
         
-        //enhanced for loop scans through audio array
+        //currentSound.setupSoundClip();
+        //currentSound.stopSoundClip();
+        
         for(AudioVisualMaterial currentAudio : audio){
-            if(currentAudio.getAuthor() == audioArtist){ //if comboBox selection matches audio's artist
-                audioText.setText(currentAudio.displayInfo()); //display audio's info in TextArea
-                audioImage.setIcon(currentAudio.getCoverImage()); //display audio's image
-                currentAudio.setupSoundClip();
-                currentAudio.playSoundClip(); //play audio's soundClip
+            currentSound = currentAudio;
+            if(audioCB.getSelectedItem() == currentSound.getAuthor()){
+                audioText.setText(currentSound.displayInfo()); //display audio's info in TextArea
+                audioImage.setIcon(currentSound.getCoverImage()); //display audio's image
+                currentSound.setupSoundClip();
+                currentSound.playSoundClip(); //play audio's soundClip
             }
             
-            if(currentAudio.getAuthor() != audioArtist){
-                currentAudio.setupSoundClip();
-                currentAudio.stopSoundClip();
-            }
-            
-            else if(audioArtist == "Please Select an Artist"){ //if no audio is selected
-                audioText.setText(""); //clear TextArea
-                audioImage.setIcon(AV.IMAGES[15]); //set to default image
-                currentAudio.stopSoundClip();
-                //stop soundClip; //stop soundClip
+            if(audioCB.getSelectedItem() != currentSound.getAuthor()){
+                currentSound.setupSoundClip();
+                currentSound.stopSoundClip();
             }
         }
+        
+//        //enhanced for loop scans through audio array
+//        for(AudioVisualMaterial currentAudio : audio){
+//            if(currentAudio.getAuthor() == audioArtist){ //if comboBox selection matches audio's artist
+//                audioText.setText(currentAudio.displayInfo()); //display audio's info in TextArea
+//                audioImage.setIcon(currentAudio.getCoverImage()); //display audio's image
+//                currentAudio.setupSoundClip();
+//                currentAudio.playSoundClip(); //play audio's soundClip
+//            }
+//            
+//            if(currentAudio.getAuthor() != audioArtist){
+//                currentAudio.setupSoundClip();
+//                currentAudio.stopSoundClip();
+//            }
+//            
+//            else if(audioArtist == "Please Select an Artist"){ //if no audio is selected
+//                audioText.setText(""); //clear TextArea
+//                audioImage.setIcon(AV.IMAGES[15]); //set to default image
+//                currentAudio.stopSoundClip();
+//                //stop soundClip; //stop soundClip
+//            }
+//        }
     }//GEN-LAST:event_audioCBItemStateChanged
 
     private void videoCBItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_videoCBItemStateChanged
         //AV.stopSoundClip();
-        String movieName = (String)videoCB.getSelectedItem(); //get user's selection and assign to variable
+        //String movieName = (String)videoCB.getSelectedItem(); //get user's selection and assign to variable
+        currentSound.stopSoundClip();
         
-        //enhanced for loop scans through video array
         for(AudioVisualMaterial currentVideo : video){
-            if(currentVideo.getTitle() == movieName){ //if comboBox selection matches video's title
-                //currentVideo.stopSoundClip();
-                videoText.setText(currentVideo.displayInfo()); //display video's info in TextArea
-                videoImage.setIcon(currentVideo.getCoverImage()); //display video's image
-                currentVideo.setupSoundClip();
-                currentVideo.playSoundClip(); //play video's soundClip
+            currentSound = currentVideo;
+            if(videoCB.getSelectedItem() == currentSound.getTitle()){
+                videoText.setText(currentSound.displayInfo()); //display audio's info in TextArea
+                videoImage.setIcon(currentSound.getCoverImage()); //display audio's image
+                currentSound.setupSoundClip();
+                currentSound.playSoundClip(); //play audio's soundClip
             }
             
-            if(currentVideo.getTitle() != movieName){
-                currentVideo.setupSoundClip();
-                currentVideo.stopSoundClip();
-            }
-            
-            else if(movieName == "Please Select a Movie"){ //if no video is selected
-                videoText.setText(""); //clear TextArea
-                videoImage.setIcon(AV.IMAGES[15]); //set to default image
-                currentVideo.stopSoundClip();
-                //AV.stopSoundClip(); //stop soundClip
+            if(videoCB.getSelectedItem() != currentSound.getTitle()){
+                currentSound.setupSoundClip();
+                currentSound.stopSoundClip();
             }
         }
+        
+//        //enhanced for loop scans through video array
+//        for(AudioVisualMaterial currentVideo : video){
+//            if(currentVideo.getTitle() == movieName){ //if comboBox selection matches video's title
+//                //currentVideo.stopSoundClip();
+//                videoText.setText(currentVideo.displayInfo()); //display video's info in TextArea
+//                videoImage.setIcon(currentVideo.getCoverImage()); //display video's image
+//                currentVideo.setupSoundClip();
+//                currentVideo.playSoundClip(); //play video's soundClip
+//            }
+//            
+//            if(currentVideo.getTitle() != movieName){
+//                currentVideo.setupSoundClip();
+//                currentVideo.stopSoundClip();
+//            }
+//            
+//            else if(movieName == "Please Select a Movie"){ //if no video is selected
+//                videoText.setText(""); //clear TextArea
+//                videoImage.setIcon(AV.IMAGES[15]); //set to default image
+//                currentVideo.stopSoundClip();
+//                //AV.stopSoundClip(); //stop soundClip
+//            }
+//        }
     }//GEN-LAST:event_videoCBItemStateChanged
 
     private void stopButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stopButtonActionPerformed
         
+
         //AV.stopSoundClip(); //stop soundClip
         String movieName = (String)videoCB.getSelectedItem(); //get user's selection and assign to variable
         String audioArtist = (String)audioCB.getSelectedItem(); //get user's selection and assign to variable
@@ -380,6 +451,8 @@ public class Librarian extends javax.swing.JFrame {
                 //stop soundClip; //stop soundClip
             }
             }
+        
+        
     }//GEN-LAST:event_stopButtonActionPerformed
 
     private void playButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playButtonActionPerformed
