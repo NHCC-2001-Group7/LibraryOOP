@@ -42,8 +42,18 @@ public class Book extends LibraryMaterial {
         this("Unknown", "Select a Book", 0, 0, "Unknown", 0, 0, null); //initialize all field variables to their default value (either null or zero).
     }
     
-    /** Concept #7 Method overloading */
-    //constructor to initialize all field variables (including super class's field variables)
+    /** Concept #7 Method overloading
+     * @param author
+     * @param title
+     * @param bookType
+     * @param pubYear
+     * @param price
+     * @param printEdition
+     * @param coverImage
+     * @param pageNumber  
+     * constructor to initialize all field variables (including super class's field variables)
+     */
+    
     public Book(String author, String title, double price, int pubYear, String bookType, int printEdition, int pageNumber, ImageIcon coverImage){
         
         /** Concept #5 super reference */
@@ -55,8 +65,16 @@ public class Book extends LibraryMaterial {
         this.coverImage = coverImage;
     }
     
-    /** Concept #7 Method overloading */
-    //constructor to initialize firstEdition only (including super class's field variables)
+    /** Concept #7 Method overloading
+     * @param author
+     * @param title
+     * @param pubYear
+     * @param price
+     * @param printEdition
+     * @param coverImage
+     * constructor to initialize firstEdition only (including super class's field variables)
+     */
+    
     public Book(String author, String title, double price, int pubYear, int printEdition, ImageIcon coverImage){
         
         /** Concept #5 super reference */
@@ -69,13 +87,23 @@ public class Book extends LibraryMaterial {
         }
     }
     
-    //set bookType
-    public void setBookType(String bookType){
+  
+
+    /**
+     * set bookType
+     * @param bookType
+     */
+        public void setBookType(String bookType){
         this.bookType = bookType; //validate?
     }
     
-    //validate and set printEdition
-    public void setPrintEdition(int printEdition){
+   
+
+    /**
+     * validate and set printEdition
+     * @param printEdition
+     */
+        public void setPrintEdition(int printEdition){
         if(printEdition >= 0){ //validate if printEdition is positive
             this.printEdition = printEdition;
         }
@@ -83,8 +111,13 @@ public class Book extends LibraryMaterial {
             throw new IllegalArgumentException("Print Edtion must be > 0"); //throws exception if printEdition is negative
     }
     
-    //validate and set pageNumber
-    public void setPageNumber(int pageNumber){
+  
+
+    /**
+     * validate and set pageNumber
+     * @param pageNumber
+     */
+        public void setPageNumber(int pageNumber){
         if(pageNumber >= 0){ //validate if pageNumber is positive
             this.pageNumber = pageNumber;
         }
@@ -92,33 +125,63 @@ public class Book extends LibraryMaterial {
             throw new IllegalArgumentException("Page Number must be > 0"); //throws exception if pageNumber is negative
     }
     
-    //set coverImage
-    public void setCoverImage(ImageIcon coverImage) {
+    
+
+    /**
+     * set coverImage
+     * @param coverImage
+     */
+        public void setCoverImage(ImageIcon coverImage) {
         this.coverImage = coverImage;
     }
     
-    //get bookType
-     public String getBookType(){
+  
+    /**
+     * get bookType
+     * @return
+     */
+         public String getBookType(){
         return bookType;
     }
     
-     //get printEdition
-    public int getPrintEdition(){
+     
+
+    /**
+     * get printEdition
+     * @return
+     */
+        public int getPrintEdition(){
         return printEdition;
     }
     
-    //get pageNumber
-    public int getPageNumber(){
+  
+
+    /**
+     * get pageNumber
+     * @return
+     */
+        public int getPageNumber(){
         return pageNumber;
     }
     
-    //get coverImage
-    public ImageIcon getCoverImage() {
+   
+
+    /**
+     * get coverImage
+     * @return
+     */
+        public ImageIcon getCoverImage() {
         return coverImage;
     }
     
-    //method to find appropriate ordinal suffix and include it at the end of the printEdition number
-    public String getOrdinalSuffix(int suffix){
+  
+
+    /**
+     * method to find appropriate ordinal suffix and include it at the end of the printEdition number
+     * @param suffix
+     * @return
+     */
+        public String getOrdinalSuffix(int suffix){
         if(suffix == 0){
             return ""; //if printEdition is zero, don't add suffix
         }
@@ -139,10 +202,14 @@ public class Book extends LibraryMaterial {
         }
     }
     
-    /** Concept #5 super reference */
-    /** Concept #6 Method Overriding */
-    //method to display information about a book
-    @Override //overrides abstract method displayInfo in LibraryMaterial
+    
+    /** Concept #6 Method Overriding
+     * @return 
+     * overrides abstract method displayInfo in LibraryMaterial
+     * method to display information about a book
+     */
+  
+    @Override 
     public String displayInfo(){
         return String.format("%s\nBook Type: %s\nEdition: %d%s\nNumber of Pages: %d\n", super.toString(), getBookType(), getPrintEdition(), 
                 getOrdinalSuffix(getPrintEdition()), getPageNumber());

@@ -92,8 +92,17 @@ public class AudioVisualMaterial extends LibraryMaterial {
     }
            
         
-     /** Concept #7 Method overloading */
-     //constructor to initialize all field variables (including super class's field variables)
+     /** Concept #7 Method overloading
+     * @param author
+     * @param audioType
+     * @param price
+     * @param pubYear
+     * @param title
+     * @param coverImage
+     * @param soundClip 
+     *  constructor to initialize all field variables (including super class's field variables)
+     */
+    
      public AudioVisualMaterial(String author, String title, double price, int pubYear, String audioType, ImageIcon coverImage, URL soundClip) {
      
      /** Concept #5 super reference */
@@ -105,37 +114,69 @@ public class AudioVisualMaterial extends LibraryMaterial {
     }
 
     
-     //get AudioType
-    public String getAudioType() {
+     
+
+    /**
+     * get AudioType
+     * @return
+     */
+        public String getAudioType() {
         return audioType;
     }
 
-    //set AudioType
-    public void setAudioType(String audioType) {
+    
+
+    /**
+     * set AudioType
+     * @param audioType
+     */
+        public void setAudioType(String audioType) {
         this.audioType = audioType;
     }
     
-    //get coverImage
-     public ImageIcon getCoverImage() {
+   
+
+    /**
+     * get coverImage
+     * @return
+     */
+         public ImageIcon getCoverImage() {
         return coverImage;
     }
     
-    //set coverImage
-    public void setCoverImage(ImageIcon coverImage) {
+ 
+
+    /**
+     * set coverImage
+     * @param coverImage
+     */
+        public void setCoverImage(ImageIcon coverImage) {
         this.coverImage = coverImage;
     }
     
-    //get soundClip
-    public URL getSoundClip() {
+    
+
+    /**
+     * get soundClip
+     * @return
+     */
+        public URL getSoundClip() {
         return soundClip;
     }
     
-    //set soundClip
-    public void setSoundClip(URL soundClip) {
+ 
+
+    /** 
+     *  set soundClip
+     * @param soundClip
+     */
+        public void setSoundClip(URL soundClip) {
         this.soundClip = soundClip;
     }
- 
-    
+
+    /**
+     * Method to setup sound clip
+     */
     public void setupSoundClip(){
         if(clip != null && clip.isRunning()){
             System.out.println("Stopping audio");
@@ -151,6 +192,9 @@ public class AudioVisualMaterial extends LibraryMaterial {
         }          
     }
         
+    /**
+     * Method to play sound clip
+     */
     public void playSoundClip(){
         if(clip != null && clip.isRunning()){
             System.out.println("Stopping audio");
@@ -161,6 +205,9 @@ public class AudioVisualMaterial extends LibraryMaterial {
         clip.start();
     }
     
+    /**
+     * Method to stop sound clip
+     */
     public void stopSoundClip(){
         if(clip != null && clip.isRunning()){
             System.out.println("Stopping audio");
@@ -169,9 +216,12 @@ public class AudioVisualMaterial extends LibraryMaterial {
         }
     }
     
-    /** Concept #5 super reference */
-    /** Concept #6 Method Overriding */
-    //overrides abstract method displayInfo in LibraryMaterial
+   
+    /** Concept #6 Method Overriding
+     * @return  
+     * overrides abstract method displayInfo in LibraryMaterial
+     */
+   
     @Override
     public String displayInfo(){
         return String.format("%s\nAudioType: %s\n", super.toString(), getAudioType());
