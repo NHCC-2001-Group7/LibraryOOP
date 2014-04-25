@@ -94,6 +94,10 @@ public class Librarian extends javax.swing.JFrame {
             
             int tab = jTabbedPane1.getSelectedIndex(); //gets current selected tab and stores into tab
             
+            bookCB.setSelectedItem(SelectBook.getTitle());
+            audioCB.setSelectedItem(SelectAudio.getAuthor());
+            videoCB.setSelectedItem(SelectVideo.getTitle());
+            
             for(AudioVisualMaterial currentAudio : audio){ //enhanced for loop that iterates through array
                 if(tab != 2){ //if tab is changed, stop music
                     currentAudio.setupSoundClip();
@@ -383,20 +387,20 @@ public class Librarian extends javax.swing.JFrame {
 
     private void playButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playButtonActionPerformed
         
-//        for(AudioVisualMaterial currentVideo : video){
-//            currentSound = currentVideo;
-//            if(videoCB.getSelectedItem() == currentSound.getTitle()){
-//                currentSound.setupSoundClip();
-//                currentSound.playSoundClip();
-//            }
-//        }
-//        for(AudioVisualMaterial currentAudio : audio){
-//            currentSound = currentAudio;
-//            if(audioCB.getSelectedItem() == currentSound.getAuthor()){
-//                currentSound.setupSoundClip();
-//                currentSound.playSoundClip();
-//            }
-//        }
+        for(AudioVisualMaterial currentVideo : video){
+            currentSound = currentVideo;
+            if(videoCB.getSelectedItem() == currentSound.getTitle()){
+                currentSound.setupSoundClip();
+                currentSound.playSoundClip();
+            }
+        }
+        for(AudioVisualMaterial currentAudio : audio){
+            currentSound = currentAudio;
+            if(audioCB.getSelectedItem() == currentSound.getAuthor()){
+                currentSound.setupSoundClip();
+                currentSound.playSoundClip();
+            }
+        }
     }//GEN-LAST:event_playButtonActionPerformed
 
     /**
