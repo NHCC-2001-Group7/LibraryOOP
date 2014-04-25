@@ -44,6 +44,9 @@ public class AudioVisualMaterial extends LibraryMaterial {
     private final URL FROZENCLIP = this.getClass().getResource("Sound/Let it Go - Frozen.wav");
     private final URL MONSTERClIP = this.getClass().getResource("Sound/MonstersUniversity.wav");
     private final URL TOYCLIP = this.getClass().getResource("Sound/Friend in Me.wav");
+    private final URL ATTACKCLIP = this.getClass().getResource("Sound/AttackOnTitan.wav");
+    private final URL TORADORACLIP = this.getClass().getResource("Sound/Toradora.wav");
+    private final URL ADVENTCLIP = this.getClass().getResource("Sound/AdventChildren.wav");
     private final URL BEATLESCLIP = this.getClass().getResource("Sound/Beatles.wav");
     private final URL BOBCLIP = this.getClass().getResource("Sound/Bob.wav");
     private final URL SADECLIP = this.getClass().getResource("Sound/SadeClip.wav");
@@ -53,7 +56,8 @@ public class AudioVisualMaterial extends LibraryMaterial {
     private final URL BLANK = this.getClass().getResource("Sound/Blank.wav");
     
     //create soundClip array
-    final URL[] SOUND = {FROZENCLIP, MONSTERClIP, TOYCLIP, BEATLESCLIP, BOBCLIP, SADECLIP, CHARLIECLIP, EARTHCLIP, RICKCLIP, BLANK};
+    final URL[] SOUND = {FROZENCLIP, MONSTERClIP, TOYCLIP, BEATLESCLIP, BOBCLIP, SADECLIP, CHARLIECLIP, EARTHCLIP, 
+        RICKCLIP, BLANK, ATTACKCLIP, TORADORACLIP, ADVENTCLIP};
     
     //create book image files
     private final ImageIcon TEXASIMG = new ImageIcon(getClass().getResource("images/TexasHomeownersAssociationLaw2.jpg"));
@@ -75,13 +79,16 @@ public class AudioVisualMaterial extends LibraryMaterial {
     private final ImageIcon FROZENIMG = new ImageIcon(getClass().getResource("images/frozenImg2.jpg"));
     private final ImageIcon MONSTERIMG = new ImageIcon(getClass().getResource("images/monsterImg.jpg"));
     private final ImageIcon TOYIMG = new ImageIcon(getClass().getResource("images/toyStoryImg.jpg"));
+    private final ImageIcon ATTACKIMG = new ImageIcon(getClass().getResource("images/AttackOnTitan.jpg"));
+    private final ImageIcon TORADORAIMG = new ImageIcon(getClass().getResource("images/Toradora.jpg"));
+    private final ImageIcon ADVENTIMG = new ImageIcon(getClass().getResource("images/AdventChildren.jpg"));
     
     //create default image file
     private final ImageIcon WELCOME = new ImageIcon(getClass().getResource("images/welcomeLibrary.jpg"));
     
     //create images array
     final ImageIcon[] IMAGES = {TEXASIMG, MOTIVATIONIMG, PSIONICIMG, GAMEIMG, DIVERGENTIMG, FAULTIMG, BEATLESIMG, BOBIMG, SADEIMG, CHARLIEIMG, 
-        EARTHIMG, RICKIMG, FROZENIMG, MONSTERIMG, TOYIMG, WELCOME};
+        EARTHIMG, RICKIMG, FROZENIMG, MONSTERIMG, TOYIMG, WELCOME, ATTACKIMG, TORADORAIMG, ADVENTIMG};
     
     
     /** Concept #2 Default Constructor */

@@ -55,14 +55,17 @@ public class Librarian extends javax.swing.JFrame {
     AudioVisualMaterial Frozen = new AudioVisualMaterial("Walt Disney Studios Home Entertainment", "Frozen", 26.96, 2013, "DVD", AV.IMAGES[12], AV.SOUND[0]);
     AudioVisualMaterial MonstersUniversity = new AudioVisualMaterial("Walt Disney Studios Home Entertainment","Monster's University", 15.96, 2013, "DVD", AV.IMAGES[13], AV.SOUND[1]);
     AudioVisualMaterial ToyStory = new AudioVisualMaterial("Disney Pixar", "Toy Story 3", 18.27, 2010, "DVD", AV.IMAGES[14], AV.SOUND[2]); 
+    AudioVisualMaterial AttackOnTitan = new AudioVisualMaterial("Funimation", "Attack On Titan", 76.48, 2014, "Blu-Ray/DVD", AV.IMAGES[16], AV.SOUND[10]); 
+    AudioVisualMaterial Toradora = new AudioVisualMaterial("NIS America", "Toradora!", 29.99, 2010, "DVD", AV.IMAGES[17], AV.SOUND[11]); 
+    AudioVisualMaterial AdventChildren = new AudioVisualMaterial("Sony Pictures Home Entertainment", "Final Fantasy VII: Advent Children", 14.98, 2006, "Blu-Ray", AV.IMAGES[18], AV.SOUND[12]); 
     
     
     //create object arrays
     LibraryMaterial[] materials = {SelectBook, TexasHomeownersAssociationLaw, MotivationalInterviewing, PsionicPower, GameOfThrones, Divergent, FaultInOurStars, 
-        SelectVideo, Frozen, MonstersUniversity, ToyStory, SelectAudio, TheBeatles, Marley, Sade, CharlieBrown, EarthWindFire, Rick}; //array of all library materials
+        SelectVideo, Frozen, MonstersUniversity, ToyStory, AttackOnTitan, SelectAudio, TheBeatles, Marley, Sade, CharlieBrown, EarthWindFire, Rick}; //array of all library materials
     Book[] books = {SelectBook, TexasHomeownersAssociationLaw, MotivationalInterviewing, PsionicPower, GameOfThrones, Divergent, FaultInOurStars}; //array of books
     AudioVisualMaterial[] audio = {SelectAudio, TheBeatles, Marley, Sade, CharlieBrown, EarthWindFire, Rick}; //array of audio materials
-    AudioVisualMaterial[] video = {SelectVideo, Frozen, MonstersUniversity, ToyStory}; //array of video materials
+    AudioVisualMaterial[] video = {SelectVideo, Frozen, MonstersUniversity, ToyStory, AttackOnTitan, Toradora, AdventChildren}; //array of video materials
     
     private AudioVisualMaterial currentSound = SelectAudio;
     /**
@@ -130,6 +133,7 @@ public class Librarian extends javax.swing.JFrame {
         homePanel = new javax.swing.JPanel();
         libraryName = new javax.swing.JLabel();
         libraryInfo = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         homeBackground = new javax.swing.JLabel();
         bookTab = new javax.swing.JPanel();
         bookPanel = new javax.swing.JPanel();
@@ -189,15 +193,19 @@ public class Librarian extends javax.swing.JFrame {
         libraryName.setFont(new java.awt.Font("Serif", 1, 56)); // NOI18N
         libraryName.setForeground(new java.awt.Color(102, 255, 102));
         libraryName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        libraryName.setText("Library");
+        libraryName.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/Images/Welcome4.png"))); // NOI18N
         homePanel.add(libraryName);
-        libraryName.setBounds(350, 40, 310, 70);
+        libraryName.setBounds(94, -10, 470, 278);
 
         libraryInfo.setFont(new java.awt.Font("Serif", 1, 48)); // NOI18N
         libraryInfo.setForeground(new java.awt.Color(255, 255, 153));
-        libraryInfo.setText("Information About Library");
+        libraryInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/Images/Info.png"))); // NOI18N
         homePanel.add(libraryInfo);
-        libraryInfo.setBounds(240, 150, 630, 320);
+        libraryInfo.setBounds(462, 168, 384, 288);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/Images/Creators.png"))); // NOI18N
+        homePanel.add(jLabel1);
+        jLabel1.setBounds(-18, 456, 428, 176);
 
         homeBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/Images/BookshelfHome.jpg"))); // NOI18N
         homeBackground.setText("jLabel1");
@@ -257,7 +265,7 @@ public class Librarian extends javax.swing.JFrame {
             }
         });
         audioPanel.add(audioCB);
-        audioCB.setBounds(48, 54, 190, 40);
+        audioCB.setBounds(38, 64, 190, 40);
         audioPanel.add(audioImage);
         audioImage.setBounds(244, 52, 420, 490);
 
@@ -289,7 +297,7 @@ public class Librarian extends javax.swing.JFrame {
             }
         });
         videoPanel.add(videoCB);
-        videoCB.setBounds(66, 62, 170, 30);
+        videoCB.setBounds(34, 62, 234, 30);
         videoPanel.add(videoImage);
         videoImage.setBounds(300, 68, 360, 500);
 
@@ -456,6 +464,7 @@ public class Librarian extends javax.swing.JFrame {
     private javax.swing.JLabel homeBackground;
     private javax.swing.JPanel homePanel;
     private javax.swing.JPanel homeTab;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel libraryInfo;
     private javax.swing.JLabel libraryName;
