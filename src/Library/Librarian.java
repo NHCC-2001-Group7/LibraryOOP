@@ -67,7 +67,7 @@ public class Librarian extends javax.swing.JFrame {
     
     
     //declare field variables
-    private AudioVisualMaterial currentSound = SelectAudio; //Initialize to use default sound
+    private AudioVisualMaterial currentMaterial = SelectAudio; //Initialize to use default sound
     
     
     /**
@@ -364,16 +364,16 @@ public class Librarian extends javax.swing.JFrame {
         
         //enhanced for loop checks if any audio material is selected in comboBox
         for(AudioVisualMaterial currentAudio : audio){ //iterates through audio array
-            currentSound = currentAudio; //passes local variable into class variable
-            if(audioCB.getSelectedItem() == currentSound.getAuthor()){ //if comboBox selection matches an audio material's author
-                audioText.setText(currentSound.displayInfo()); //display that audio's info in TextArea
-                audioImage.setIcon(currentSound.getCoverImage()); //display that audio's image
-                currentSound.setupSoundClip(); //set up sound clip
-                currentSound.playSoundClip(); //play that audio's soundClip
+            currentMaterial = currentAudio; //passes local variable into class variable
+            if(audioCB.getSelectedItem() == currentMaterial.getAuthor()){ //if comboBox selection matches an audio material's author
+                audioText.setText(currentMaterial.displayInfo()); //display that audio's info in TextArea
+                audioImage.setIcon(currentMaterial.getCoverImage()); //display that audio's image
+                currentMaterial.setupSoundClip(); //set up sound clip
+                currentMaterial.playSoundClip(); //play that audio's soundClip
             }
-            if(audioCB.getSelectedItem() != currentSound.getAuthor()){ //if comboBox selection does not match an audio material's author
-                currentSound.setupSoundClip(); //set up sound clip
-                currentSound.stopSoundClip(); //stop sound clip
+            if(audioCB.getSelectedItem() != currentMaterial.getAuthor()){ //if comboBox selection does not match an audio material's author
+                currentMaterial.setupSoundClip(); //set up sound clip
+                currentMaterial.stopSoundClip(); //stop sound clip
             }
             if(audioCB.getSelectedItem() == SelectAudio.getAuthor()){ //if comboBox selection matches default author
                 audioText.setText(""); //clear text
@@ -385,16 +385,16 @@ public class Librarian extends javax.swing.JFrame {
         
         //enhanced for loop checks if any video material is selected in comboBox
         for(AudioVisualMaterial currentVideo : video){ //iterates through video array
-            currentSound = currentVideo; //passes local variable into class variable
-            if(videoCB.getSelectedItem() == currentSound.getTitle()){ //if comboBox selection matches a video's title
-                videoText.setText(currentSound.displayInfo()); //display that video's info in TextArea
-                videoImage.setIcon(currentSound.getCoverImage()); //display that video's image
-                currentSound.setupSoundClip(); //set up sound clip
-                currentSound.playSoundClip(); //play that video's soundClip
+            currentMaterial = currentVideo; //passes local variable into class variable
+            if(videoCB.getSelectedItem() == currentMaterial.getTitle()){ //if comboBox selection matches a video's title
+                videoText.setText(currentMaterial.displayInfo()); //display that video's info in TextArea
+                videoImage.setIcon(currentMaterial.getCoverImage()); //display that video's image
+                currentMaterial.setupSoundClip(); //set up sound clip
+                currentMaterial.playSoundClip(); //play that video's soundClip
             }
-            if(videoCB.getSelectedItem() != currentSound.getTitle()){ //if combobox selection does not match a video's title
-                currentSound.setupSoundClip(); //set up sound clip
-                currentSound.stopSoundClip(); //stop sound clip
+            if(videoCB.getSelectedItem() != currentMaterial.getTitle()){ //if combobox selection does not match a video's title
+                currentMaterial.setupSoundClip(); //set up sound clip
+                currentMaterial.stopSoundClip(); //stop sound clip
             }
             if(videoCB.getSelectedItem() == SelectVideo.getTitle()){ //if combobox selection matches default title
                 videoText.setText(""); //clear text
@@ -421,19 +421,19 @@ public class Librarian extends javax.swing.JFrame {
         
         //enhanced for loop that plays an audio soundClip if selected when play button is pressed
         for(AudioVisualMaterial currentAudio : audio){ //iterates through audio array
-            currentSound = currentAudio; //passes local variable into class variable
-            if(audioCB.getSelectedItem() == currentSound.getAuthor()){ //if comboBox selection matches an audio material's author
-                currentSound.setupSoundClip();
-                currentSound.playSoundClip(); //play audio sound clip
+            currentMaterial = currentAudio; //passes local variable into class variable
+            if(audioCB.getSelectedItem() == currentMaterial.getAuthor()){ //if comboBox selection matches an audio material's author
+                currentMaterial.setupSoundClip();
+                currentMaterial.playSoundClip(); //play audio sound clip
             }
         }
         
         //enhanced for loop that plays a video soundClip if selected when play button is pressed
         for(AudioVisualMaterial currentVideo : video){ //iterates through video array
-            currentSound = currentVideo; //passes local variable into class variable
-            if(videoCB.getSelectedItem() == currentSound.getTitle()){ //if comboBox selection matches a video's title
-                currentSound.setupSoundClip();
-                currentSound.playSoundClip(); //play video sound clip
+            currentMaterial = currentVideo; //passes local variable into class variable
+            if(videoCB.getSelectedItem() == currentMaterial.getTitle()){ //if comboBox selection matches a video's title
+                currentMaterial.setupSoundClip();
+                currentMaterial.playSoundClip(); //play video sound clip
             }
         }
     }//GEN-LAST:event_playButtonActionPerformed
