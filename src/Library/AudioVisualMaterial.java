@@ -26,38 +26,38 @@ import javax.swing.ImageIcon;
  */
 
 
-/** Concept #3 Inheritance */
 /**AudioVisualMaterial class extends LibraryMaterial */
+/** Concept #3 Inheritance */
 public class AudioVisualMaterial extends LibraryMaterial {
 
     /** Concept #1 Encapsulation/Data Hiding*/
     //Declare field variables as private
-    private String audioType;
-    //private final int x = 14;
-    //private BufferedImage[] coverImage = new BufferedImage[x]; 
+    private String audioType; 
     private ImageIcon coverImage;
     private URL soundClip;
     private Clip clip;
     
-    //create sound files
-    
-    private final URL FROZENCLIP = this.getClass().getResource("Sound/Let it Go - Frozen.wav");
-    private final URL MONSTERClIP = this.getClass().getResource("Sound/MonstersUniversity.wav");
-    private final URL TOYCLIP = this.getClass().getResource("Sound/Friend in Me.wav");
-    private final URL ATTACKCLIP = this.getClass().getResource("Sound/AttackOnTitan.wav");
-    private final URL TORADORACLIP = this.getClass().getResource("Sound/Toradora.wav");
-    private final URL ADVENTCLIP = this.getClass().getResource("Sound/AdventChildren.wav");
+    //create audio sound clips
     private final URL BEATLESCLIP = this.getClass().getResource("Sound/Beatles.wav");
     private final URL BOBCLIP = this.getClass().getResource("Sound/Bob.wav");
     private final URL SADECLIP = this.getClass().getResource("Sound/SadeClip.wav");
     private final URL CHARLIECLIP = this.getClass().getResource("Sound/charlie.wav");
     private final URL EARTHCLIP = this.getClass().getResource("Sound/earthwind.wav");
     private final URL RICKCLIP = this.getClass().getResource("Sound/rickAstley.wav");
+    
+    //create video sound clips
+    private final URL FROZENCLIP = this.getClass().getResource("Sound/Let it Go - Frozen.wav");
+    private final URL MONSTERClIP = this.getClass().getResource("Sound/MonstersUniversity.wav");
+    private final URL TOYCLIP = this.getClass().getResource("Sound/Friend in Me.wav");
+    private final URL ATTACKCLIP = this.getClass().getResource("Sound/AttackOnTitan.wav");
+    private final URL TORADORACLIP = this.getClass().getResource("Sound/Toradora.wav");
+    private final URL ADVENTCLIP = this.getClass().getResource("Sound/AdventChildren.wav");
+    
+    //create default sound clip
     private final URL BLANK = this.getClass().getResource("Sound/Blank.wav");
     
     //create soundClip array
-    final URL[] SOUND = {FROZENCLIP, MONSTERClIP, TOYCLIP, BEATLESCLIP, BOBCLIP, SADECLIP, CHARLIECLIP, EARTHCLIP, 
-        RICKCLIP, BLANK, ATTACKCLIP, TORADORACLIP, ADVENTCLIP};
+    final URL[] SOUND = {BEATLESCLIP, BOBCLIP, SADECLIP, CHARLIECLIP, EARTHCLIP, RICKCLIP, FROZENCLIP, MONSTERClIP, TOYCLIP, ATTACKCLIP, TORADORACLIP, ADVENTCLIP, BLANK,};
     
     //create book image files
     private final ImageIcon TEXASIMG = new ImageIcon(getClass().getResource("images/TexasHomeownersAssociationLaw2.jpg"));
@@ -83,22 +83,18 @@ public class AudioVisualMaterial extends LibraryMaterial {
     private final ImageIcon TORADORAIMG = new ImageIcon(getClass().getResource("images/Toradora.jpg"));
     private final ImageIcon ADVENTIMG = new ImageIcon(getClass().getResource("images/AdventChildren.jpg"));
     
-    //create default image file
-    private final ImageIcon WELCOME = new ImageIcon(getClass().getResource("images/welcomeLibrary.jpg"));
-    
     //create images array
     final ImageIcon[] IMAGES = {TEXASIMG, MOTIVATIONIMG, PSIONICIMG, GAMEIMG, DIVERGENTIMG, FAULTIMG, BEATLESIMG, BOBIMG, SADEIMG, CHARLIEIMG, 
-        EARTHIMG, RICKIMG, FROZENIMG, MONSTERIMG, TOYIMG, WELCOME, ATTACKIMG, TORADORAIMG, ADVENTIMG};
+        EARTHIMG, RICKIMG, FROZENIMG, MONSTERIMG, TOYIMG, ATTACKIMG, TORADORAIMG, ADVENTIMG};
     
     
     /** Concept #2 Default Constructor */
-    // no arg constructor acts as a default
+    // no argument constructor acts as a default
     public AudioVisualMaterial(){
-        this("Select an Artist", "Select a Movie",0,0, "Unknown", null, null); 
-        soundClip = SOUND[9];
+        this("Select an Artist", "Select a Movie",0,0, "Unknown", null, null); //sets default values
+        soundClip = SOUND[12]; //set the soundClip to the default "blank" sound
     }
-           
-        
+      
      /** Concept #7 Method overloading
      * @param author
      * @param audioType
@@ -107,21 +103,17 @@ public class AudioVisualMaterial extends LibraryMaterial {
      * @param title
      * @param coverImage
      * @param soundClip 
-     *  constructor to initialize all field variables (including super class's field variables)
+     *  constructor to initialize all field variables (including super class field variables)
      */
-    
      public AudioVisualMaterial(String author, String title, double price, int pubYear, String audioType, ImageIcon coverImage, URL soundClip) {
      
      /** Concept #5 super reference */
-     super(author, title, price, pubYear); //pass to LibraryMaterial constructor
      //Initialize variables
+     super(author, title, price, pubYear); //pass to LibraryMaterial constructor
      this.audioType = audioType;
      this.coverImage = coverImage;
      this.soundClip = soundClip;
     }
-
-    
-     
 
     /**
      * get AudioType
@@ -131,8 +123,6 @@ public class AudioVisualMaterial extends LibraryMaterial {
         return audioType;
     }
 
-    
-
     /**
      * set AudioType
      * @param audioType
@@ -140,8 +130,6 @@ public class AudioVisualMaterial extends LibraryMaterial {
         public void setAudioType(String audioType) {
         this.audioType = audioType;
     }
-    
-   
 
     /**
      * get coverImage
@@ -150,8 +138,6 @@ public class AudioVisualMaterial extends LibraryMaterial {
          public ImageIcon getCoverImage() {
         return coverImage;
     }
-    
- 
 
     /**
      * set coverImage
@@ -159,9 +145,7 @@ public class AudioVisualMaterial extends LibraryMaterial {
      */
         public void setCoverImage(ImageIcon coverImage) {
         this.coverImage = coverImage;
-    }
-    
-    
+    } 
 
     /**
      * get soundClip
@@ -170,8 +154,6 @@ public class AudioVisualMaterial extends LibraryMaterial {
         public URL getSoundClip() {
         return soundClip;
     }
-    
- 
 
     /** 
      *  set soundClip
@@ -185,10 +167,10 @@ public class AudioVisualMaterial extends LibraryMaterial {
      * Method to setup sound clip
      */
     public void setupSoundClip(){
-        if(clip != null && clip.isRunning()){
-            System.out.println("Stopping audio");
-            clip.stop();
-            clip.close();
+        if(clip != null && clip.isRunning()){ //if the player is still running
+            System.out.println("Stopping audio"); //test print
+            clip.stop(); //stop sound
+            clip.close(); //close the sound file
         }
         try{
             AudioInputStream audio = AudioSystem.getAudioInputStream(soundClip); //open an audio input stream
@@ -203,34 +185,32 @@ public class AudioVisualMaterial extends LibraryMaterial {
      * Method to play sound clip
      */
     public void playSoundClip(){
-        if(clip != null && clip.isRunning()){
-            System.out.println("Stopping audio");
-            clip.stop();
-            clip.close();
+        if(clip != null && clip.isRunning()){ //if the player is still running
+            System.out.println("Stop audio"); //test print
+            clip.stop(); //stop sound
+            clip.close(); //close the sound file
         }
-        clip.setFramePosition(0);
-        clip.start();
+        clip.setFramePosition(0); //rewind soundClip to the beginning
+        clip.start(); //start playing soundClip
     }
     
     /**
      * Method to stop sound clip
      */
     public void stopSoundClip(){
-        if(clip != null && clip.isRunning()){
-            System.out.println("Stopping audio");
-            clip.stop();
-            clip.close();
+        if(clip != null && clip.isRunning()){ //if the player is still running
+            System.out.println("Stopped the audio"); //test print
+            clip.stop(); //stop sound
+            clip.close(); //close the sound file
         }
     }
     
-   
     /** Concept #6 Method Overriding
-     * @return  
-     * overrides abstract method displayInfo in LibraryMaterial
+     * @return toString
+     * overrides abstract method displayInfo in LibraryMaterial parent class
      */
-   
     @Override
     public String displayInfo(){
-        return String.format("%s\nAudioType: %s\n", super.toString(), getAudioType());
+        return String.format("%s\nAudioType: %s\n", super.toString(), getAudioType()); //display audio or video material's info
     }
 }

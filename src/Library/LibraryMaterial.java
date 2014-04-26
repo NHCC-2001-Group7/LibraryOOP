@@ -48,9 +48,8 @@ public abstract class LibraryMaterial {
      * @param title
      * @param price
      * @param pubYear
-     *     constructor to initialize author, title, price and published year
+     * constructor to initialize author, title, price and published year
      */
-
     public LibraryMaterial(String author, String title, double price, int pubYear){
         
         //initialize variables
@@ -60,106 +59,90 @@ public abstract class LibraryMaterial {
         this.pubYear = pubYear;
     }
     
- 
     /**
      *  set author
      * @param author
      */
-        public void setAuthor(String author){
+    public void setAuthor(String author){
         this.author = author;
     }
-    
-    
 
     /**
      * set title
      * @param title
      */
-        public void setTitle(String title){
+    public void setTitle(String title){
         this.title = title;
     }
-    
- 
 
     /**
      * validate and set price
      * @param price
      */
-        public void setPrice(double price){
+    public void setPrice(double price){
         if(price >= 0){ //validate if price is positive
             this.price = price;
         }
         else
             throw new IllegalArgumentException("Price must be >= 0.0"); //throws exception if price is negative
     }
-    
-
 
     /**
      * set published year
      * @param pubYear
      */
-        public void setPubYear(int pubYear){
+    public void setPubYear(int pubYear){
         this.pubYear = pubYear;
     }
-    
-    
 
     /**
      * get author
      * @return  author
      */
-        public String getAuthor(){
+    public String getAuthor(){
         return author;
     }
-    
-
         
     /**
      * get title
      * @return title
      */
-        public String getTitle(){
+    public String getTitle(){
         return title;
     }
-    
-
 
     /**
      * get price 
      * @return price
      */
-        public double getPrice(){
+    public double getPrice(){
         return price;
     }
-    
-   
 
     /**
      * get published year
      * @return pubYear
      */
-        public int getPubYear(){
+    public int getPubYear(){
         return pubYear;
     }
-    
- 
 
     /**
-     * abstract method overrided by concrete subclasses
+     * abstract method overridden by concrete subclasses
      * 
      * @return displayInfo
      */
-        public abstract String displayInfo(); //no implementation here
+    public abstract String displayInfo(); //no implementation here
+    
     
     /** Concept #6 Method Overriding
-     * this method overrides a superclass method (Object method toString)
-     * convert LibraryMaterial to String format
+     * -this method overrides a superclass method (Object method toString)
+     * -converts LibraryMaterial to String format
      * 
      * @return toString
      */
     @Override 
     public String toString(){
-        return String.format("Title: %s\nAuthor: %s\nPrice: $%.2f\nPublication Year: %d", getTitle(), getAuthor(), getPrice(), getPubYear());
+        return String.format("Title: %s\nAuthor: %s\nPrice: $%.2f\nPublication Year: %d", getTitle(), getAuthor(), getPrice(), getPubYear()); //display info
     }
 }
