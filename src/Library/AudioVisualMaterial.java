@@ -168,7 +168,7 @@ public class AudioVisualMaterial extends LibraryMaterial {
      */
     public void setupSoundClip(){
         if(clip != null && clip.isRunning()){ //if the player is still running
-            System.out.println("Stopping audio"); //test print
+            //System.out.println("Stopping audio"); //test print
             clip.stop(); //stop sound
             clip.close(); //close the sound file
         }
@@ -185,12 +185,12 @@ public class AudioVisualMaterial extends LibraryMaterial {
      * Method to play sound clip
      */
     public void playSoundClip(){
-        if(clip != null && clip.isRunning()){ //if the player is still running
-            System.out.println("Stop audio"); //test print
-            clip.stop(); //stop sound
-            clip.close(); //close the sound file
-        }
-        clip.setFramePosition(0); //rewind soundClip to the beginning
+//        if(clip != null && clip.isRunning()){ //if the player is still running
+//            System.out.println("Stop audio"); //test print
+//            clip.stop(); //stop sound
+//            clip.close(); //close the sound file //wasnt doing anything
+//        }
+        //clip.setFramePosition(0); //rewind soundClip to the beginning //wasnt doing anything
         clip.start(); //start playing soundClip
     }
     
@@ -198,11 +198,11 @@ public class AudioVisualMaterial extends LibraryMaterial {
      * Method to stop sound clip
      */
     public void stopSoundClip(){
-        if(clip != null && clip.isRunning()){ //if the player is still running
-            System.out.println("Stopped the audio"); //test print
-            clip.stop(); //stop sound
-            clip.close(); //close the sound file
-        }
+//        if(clip != null && clip.isRunning()){ //if the player is still running
+//            System.out.println("Stopped the audio"); //test print
+//            clip.stop(); //stop sound
+//            clip.close(); //close the sound file //wasnt doing anything
+//        }
     }
     
     /** Concept #6 Method Overriding

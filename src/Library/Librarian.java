@@ -101,7 +101,7 @@ public class Librarian extends javax.swing.JFrame {
             for(AudioVisualMaterial currentAudio : audio){ //iterates through audio array
                 if(tab != 2){ //if audio tab is not selected
                     currentAudio.setupSoundClip();
-                    currentAudio.stopSoundClip(); //stop music
+                    //currentAudio.stopSoundClip(); //stop music
                 }
             }
             
@@ -109,7 +109,7 @@ public class Librarian extends javax.swing.JFrame {
             for(AudioVisualMaterial currentVideo : video){ //iterates through video array
                 if(tab != 3){ //if video tab is not selected
                     currentVideo.setupSoundClip();
-                    currentVideo.stopSoundClip(); //stop music
+                    //currentVideo.stopSoundClip(); //stop music
                 }
             }
         }
@@ -373,7 +373,7 @@ public class Librarian extends javax.swing.JFrame {
             }
             if(audioCB.getSelectedItem() != currentMaterial.getAuthor()){ //if comboBox selection does not match an audio material's author
                 currentMaterial.setupSoundClip(); //set up sound clip
-                currentMaterial.stopSoundClip(); //stop sound clip
+                //currentMaterial.stopSoundClip(); //stop sound clip
             }
             if(audioCB.getSelectedItem() == SelectAudio.getAuthor()){ //if comboBox selection matches default author
                 audioText.setText(""); //clear text
@@ -394,7 +394,7 @@ public class Librarian extends javax.swing.JFrame {
             }
             if(videoCB.getSelectedItem() != currentMaterial.getTitle()){ //if combobox selection does not match a video's title
                 currentMaterial.setupSoundClip(); //set up sound clip
-                currentMaterial.stopSoundClip(); //stop sound clip
+                //currentMaterial.stopSoundClip(); //stop sound clip
             }
             if(videoCB.getSelectedItem() == SelectVideo.getTitle()){ //if combobox selection matches default title
                 videoText.setText(""); //clear text
@@ -407,13 +407,13 @@ public class Librarian extends javax.swing.JFrame {
         //enhanced for loop stops any audio soundClip playing
         for(AudioVisualMaterial currentAudio : audio){ //iterates through audio array
             currentAudio.setupSoundClip(); //sets up sound clip
-            currentAudio.stopSoundClip(); //stops audio sound clip
+            //currentAudio.stopSoundClip(); //stops audio sound clip
         }
         
         //enhanced for loop stops any video soundClip playing
         for(AudioVisualMaterial currentVideo : video){ //iterates through video array
                 currentVideo.setupSoundClip(); //sets up sound clip
-                currentVideo.stopSoundClip(); //stops video sound clip
+                //currentVideo.stopSoundClip(); //stops video sound clip
         }
     }//GEN-LAST:event_stopButtonActionPerformed
 
