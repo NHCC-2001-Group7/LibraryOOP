@@ -9,6 +9,7 @@ package Library;
 
 //import classes
 import javax.swing.ImageIcon;
+import java.math.*;
 
 
 /**
@@ -39,7 +40,7 @@ public class Book extends LibraryMaterial {
     /** Concept #7 Method overloading */
     //no argument constructor (acts as default constructor)
     public Book(){
-        this("Unknown", "Select a Book", 0, 0, "Unknown", 0, 0, null); //initialize all field variables to their default value.
+        this("Unknown", "Select a Book", new BigDecimal("0.00"), 0, "Unknown", 0, 0, null); //initialize all field variables to their default value.
     }
     
     /** Concept #7 Method overloading
@@ -53,7 +54,7 @@ public class Book extends LibraryMaterial {
      * @param numberOfPages  
      * constructor to initialize all field variables (including super class field variables)
      */
-    public Book(String author, String title, double price, int pubYear, String bookType, int printEdition, int numberOfPages, ImageIcon coverImage){
+    public Book(String author, String title, BigDecimal price, int pubYear, String bookType, int printEdition, int numberOfPages, ImageIcon coverImage){
         
         /** Concept #5 super reference */
         //initialize variables
@@ -73,7 +74,7 @@ public class Book extends LibraryMaterial {
      * @param coverImage
      * constructor to initialize firstEdition book only (includes super class field variables)
      */
-    public Book(String author, String title, double price, int pubYear, int printEdition, ImageIcon coverImage){
+    public Book(String author, String title, BigDecimal price, int pubYear, int printEdition, ImageIcon coverImage){
         
         /** Concept #5 super reference */
         //initialize variables
@@ -82,6 +83,7 @@ public class Book extends LibraryMaterial {
         if(printEdition == 1){ //only initialize if book is a first edition
             this.printEdition = printEdition;
             this.coverImage = coverImage;
+            bookType = "Unknown";
         }
     }
     

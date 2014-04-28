@@ -7,6 +7,11 @@
 package Library;
 
 
+//import classes
+import java.math.*;
+import java.text.NumberFormat;
+
+
 /**
  * This class is the Super class of the project.
  * 
@@ -28,19 +33,23 @@ public abstract class LibraryMaterial {
     /**
      * declare field variables as protected
      */
-    protected double price;
+    protected BigDecimal price;
 
     /**
      * declare field variables as protected
      */
     protected int pubYear;
     
+    /** Concept #1 Encapsulation/Data hiding */
+    //create currency formatter
+    private NumberFormat moneyFormat = NumberFormat.getCurrencyInstance();
+    
     
     /** Concept #2 Default constructor */
     /** Concept #7 Method overloading */
     //no argument constructor (default)
     public LibraryMaterial(){
-        this(null,null,0,0); //initialize each instance variable to their default value (either null or zero).
+        this(null, null, new BigDecimal("0.00"), 0); //initialize each instance variable to their default value (either null or zero).
     }
     
     /** Concept #7 Method overloading
@@ -50,7 +59,7 @@ public abstract class LibraryMaterial {
      * @param pubYear
      * constructor to initialize author, title, price and published year
      */
-    public LibraryMaterial(String author, String title, double price, int pubYear){
+    public LibraryMaterial(String author, String title, BigDecimal price, int pubYear){
         
         //initialize variables
         this.author = author;
@@ -79,8 +88,8 @@ public abstract class LibraryMaterial {
      * validate and set price
      * @param price
      */
-    public void setPrice(double price){
-        if(price >= 0){ //validate if price is positive
+    public void setPrice(BigDecimal price){
+        if(price.compareTo(BigDecimal.ZERO) >= 0){ //validate if price is positive
             this.price = price;
         }
         else
@@ -115,7 +124,7 @@ public abstract class LibraryMaterial {
      * get price 
      * @return price
      */
-    public double getPrice(){
+    public BigDecimal getPrice(){
         return price;
     }
 
@@ -143,6 +152,6 @@ public abstract class LibraryMaterial {
      */
     @Override 
     public String toString(){
-        return String.format("Title: %s\nAuthor: %s\nPrice: $%.2f\nPublication Year: %d", getTitle(), getAuthor(), getPrice(), getPubYear()); //display info
+        return String.format("Title: %s\nAuthor: %s\nPrice: %s\nPublication Year: %d", getTitle(), getAuthor(), moneyFormat.format(getPrice()), getPubYear()); //display info
     }
 }

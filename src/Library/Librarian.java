@@ -11,6 +11,7 @@ package Library;
 import javax.swing.*;
 import javax.swing.event.ChangeListener;
 import javax.swing.event.ChangeEvent;
+import java.math.*;
 
 
 /**
@@ -32,31 +33,31 @@ public class Librarian extends javax.swing.JFrame {
     //create subclass objects
     //create book objects
     Book SelectBook = new Book(); //uses default constructor
-    Book TexasHomeownersAssociationLaw = new Book("Gregory S. Cagle", "Texas Homeowners Association Law", 37.74, 2013, "Paperback", 2, 822, AV.IMAGES[0]);
-    Book MotivationalInterviewing = new Book("William R. Miller and Stephen Rollnick", "Motivational Interviewing", 51.00, 2012, "Hardcover", 3, 482, AV.IMAGES[1]);
-    Book PsionicPower = new Book("Mike Mearls", "Psionic Power", 20.79, 2010, "Hardcover", 4, 160, AV.IMAGES[2]);
-    Book GameOfThrones = new Book("George R.R. Martin", "A Game of Thrones", 19.77, 1996, "Hardcover", 1, 704, AV.IMAGES[3]);
-    Book Divergent = new Book("Veronica Roth", "Divergent", 10.18, 2011, "Hardcover", 1, 496, AV.IMAGES[4]);
-    Book FaultInOurStars = new Book("John Green", "The Fault in our Stars", 10.00, 2012, 1, AV.IMAGES[5]); //uses 1rst Edition constructor
-    //Book FaultInOurStars = new Book("John Green", "The Fault in our Stars", 10.00, 2012, "Hardcover", 1, 318, AV.IMAGES[5]); //saving this line to keep the book's info
+    Book TexasHomeownersAssociationLaw = new Book("Gregory S. Cagle", "Texas Homeowners Association Law", new BigDecimal("37.74"), 2013, "Paperback", 2, 822, AV.IMAGES[0]);
+    Book MotivationalInterviewing = new Book("William R. Miller and Stephen Rollnick", "Motivational Interviewing", new BigDecimal("51.00"), 2012, "Hardcover", 3, 482, AV.IMAGES[1]);
+    Book PsionicPower = new Book("Mike Mearls", "Psionic Power", new BigDecimal("20.79"), 2010, "Hardcover", 4, 160, AV.IMAGES[2]);
+    Book GameOfThrones = new Book("George R.R. Martin", "A Game of Thrones", new BigDecimal("19.77"), 1996, "Hardcover", 1, 704, AV.IMAGES[3]);
+    Book Divergent = new Book("Veronica Roth", "Divergent", new BigDecimal("10.18"), 2011, "Hardcover", 1, 496, AV.IMAGES[4]);
+    Book FaultInOurStars = new Book("John Green", "The Fault in our Stars", new BigDecimal("10.00"), 2012, 1, AV.IMAGES[5]); //uses 1rst Edition constructor
+    //Book FaultInOurStars = new Book("John Green", "The Fault in our Stars", new BigDecimal("10.00"), 2012, "Hardcover", 1, 318, AV.IMAGES[5]); //saving this line to keep the book's info
     
     //create audio objects
     AudioVisualMaterial SelectAudio = new AudioVisualMaterial(); //uses default constructor
-    AudioVisualMaterial TheBeatles = new AudioVisualMaterial("The Beatles", "On Air - Live At The BBC Volume 2 ", 15.07, 2013, "CD", AV.IMAGES[6], AV.SOUND[0]);
-    AudioVisualMaterial Marley = new AudioVisualMaterial("Bob Marley", "Legend: The Best Of Bob Marley And The Wailers", 11.45, 2002, "CD", AV.IMAGES[7], AV.SOUND[1]);
-    AudioVisualMaterial Sade = new AudioVisualMaterial("Sade", "The Best of Sade", 9.99, 2001, "CD", AV.IMAGES[8], AV.SOUND[2]);
-    AudioVisualMaterial CharlieBrown = new AudioVisualMaterial("Fantasy", "Charlie Brown Christmas", 5.99, 2000, "Audio Cassette", AV.IMAGES[9], AV.SOUND[3]);
-    AudioVisualMaterial EarthWindFire = new AudioVisualMaterial("Earth Wind and Fire", "Earth Wind and Fire: Greatest Hits", 10.00, 1998, "Audio Cassette", AV.IMAGES[10], AV.SOUND[4]);
-    AudioVisualMaterial Rick = new AudioVisualMaterial("Rick Astley", "Whenever You Need Somebody", 7.95, 1990, "Audio Cassette", AV.IMAGES[11], AV.SOUND[5]);
+    AudioVisualMaterial TheBeatles = new AudioVisualMaterial("The Beatles", "On Air - Live At The BBC Volume 2 ", new BigDecimal("15.07"), 2013, "CD", AV.IMAGES[6], AV.SOUND[0]);
+    AudioVisualMaterial Marley = new AudioVisualMaterial("Bob Marley", "Legend: The Best Of Bob Marley And The Wailers", new BigDecimal("11.45"), 2002, "CD", AV.IMAGES[7], AV.SOUND[1]);
+    AudioVisualMaterial Sade = new AudioVisualMaterial("Sade", "The Best of Sade", new BigDecimal("9.99"), 2001, "CD", AV.IMAGES[8], AV.SOUND[2]);
+    AudioVisualMaterial CharlieBrown = new AudioVisualMaterial("Fantasy", "Charlie Brown Christmas", new BigDecimal("5.99"), 2000, "Audio Cassette", AV.IMAGES[9], AV.SOUND[3]);
+    AudioVisualMaterial EarthWindFire = new AudioVisualMaterial("Earth Wind and Fire", "Earth Wind and Fire: Greatest Hits", new BigDecimal("10.00"), 1998, "Audio Cassette", AV.IMAGES[10], AV.SOUND[4]);
+    AudioVisualMaterial Rick = new AudioVisualMaterial("Rick Astley", "Whenever You Need Somebody", new BigDecimal("7.95"), 1990, "Audio Cassette", AV.IMAGES[11], AV.SOUND[5]);
     
     //create video objects
     AudioVisualMaterial SelectVideo = new AudioVisualMaterial(); //uses defualt constructor
-    AudioVisualMaterial Frozen = new AudioVisualMaterial("Walt Disney Studios Home Entertainment", "Frozen", 26.96, 2013, "DVD", AV.IMAGES[12], AV.SOUND[6]);
-    AudioVisualMaterial MonstersUniversity = new AudioVisualMaterial("Walt Disney Studios Home Entertainment","Monster's University", 15.96, 2013, "DVD", AV.IMAGES[13], AV.SOUND[7]);
-    AudioVisualMaterial ToyStory = new AudioVisualMaterial("Disney Pixar", "Toy Story 3", 18.27, 2010, "DVD", AV.IMAGES[14], AV.SOUND[8]); 
-    AudioVisualMaterial AttackOnTitan = new AudioVisualMaterial("Funimation", "Attack On Titan", 76.48, 2014, "Blu-Ray/DVD", AV.IMAGES[15], AV.SOUND[9]); 
-    AudioVisualMaterial Toradora = new AudioVisualMaterial("NIS America", "Toradora!", 29.99, 2010, "DVD", AV.IMAGES[16], AV.SOUND[10]); 
-    AudioVisualMaterial AdventChildren = new AudioVisualMaterial("Sony Pictures Home Entertainment", "Final Fantasy VII: Advent Children", 14.98, 2006, "Blu-Ray", AV.IMAGES[17], AV.SOUND[11]); 
+    AudioVisualMaterial Frozen = new AudioVisualMaterial("Walt Disney Studios Home Entertainment", "Frozen", new BigDecimal("26.96"), 2013, "DVD", AV.IMAGES[12], AV.SOUND[6]);
+    AudioVisualMaterial MonstersUniversity = new AudioVisualMaterial("Walt Disney Studios Home Entertainment","Monster's University", new BigDecimal("15.96"), 2013, "DVD", AV.IMAGES[13], AV.SOUND[7]);
+    AudioVisualMaterial ToyStory = new AudioVisualMaterial("Disney Pixar", "Toy Story 3", new BigDecimal("18.27"), 2010, "DVD", AV.IMAGES[14], AV.SOUND[8]); 
+    AudioVisualMaterial AttackOnTitan = new AudioVisualMaterial("Funimation", "Attack On Titan", new BigDecimal("76.48"), 2014, "Blu-Ray/DVD", AV.IMAGES[15], AV.SOUND[9]); 
+    AudioVisualMaterial Toradora = new AudioVisualMaterial("NIS America", "Toradora!", new BigDecimal("29.99"), 2010, "DVD", AV.IMAGES[16], AV.SOUND[10]); 
+    AudioVisualMaterial AdventChildren = new AudioVisualMaterial("Sony Pictures Home Entertainment", "Final Fantasy VII: Advent Children", new BigDecimal("14.98"), 2006, "Blu-Ray", AV.IMAGES[17], AV.SOUND[11]); 
     
     //create object arrays
     LibraryMaterial[] materials = {SelectBook, TexasHomeownersAssociationLaw, MotivationalInterviewing, PsionicPower, GameOfThrones, Divergent, FaultInOurStars, 

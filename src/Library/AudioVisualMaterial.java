@@ -12,6 +12,7 @@ import java.io.*;
 import javax.sound.sampled.*;
 import java.net.URL;
 import javax.swing.ImageIcon;
+import java.math.*;
 
 
 /**
@@ -91,7 +92,7 @@ public class AudioVisualMaterial extends LibraryMaterial {
     /** Concept #2 Default Constructor */
     // no argument constructor acts as a default
     public AudioVisualMaterial(){
-        this("Select an Artist", "Select a Movie",0,0, "Unknown", null, null); //sets default values
+        this("Select an Artist", "Select a Movie", new BigDecimal("0.00"), 0, "Unknown", null, null); //sets default values
         soundClip = SOUND[12]; //set the soundClip to the default "blank" sound
     }
       
@@ -105,7 +106,7 @@ public class AudioVisualMaterial extends LibraryMaterial {
      * @param soundClip 
      *  constructor to initialize all field variables (including super class field variables)
      */
-     public AudioVisualMaterial(String author, String title, double price, int pubYear, String audioType, ImageIcon coverImage, URL soundClip) {
+     public AudioVisualMaterial(String author, String title, BigDecimal price, int pubYear, String audioType, ImageIcon coverImage, URL soundClip) {
      
      /** Concept #5 super reference */
      //Initialize variables
@@ -170,7 +171,8 @@ public class AudioVisualMaterial extends LibraryMaterial {
         if(clip != null && clip.isRunning()){ //if the player is still running
             //System.out.println("Stopping audio"); //test print
             clip.stop(); //stop sound
-            clip.close(); //close the sound file
+            clip.close();//close the sound file
+            //clip.flush();
         }
         try{
             AudioInputStream audio = AudioSystem.getAudioInputStream(soundClip); //open an audio input stream
