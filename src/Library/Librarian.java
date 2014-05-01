@@ -152,7 +152,8 @@ public class Librarian extends javax.swing.JFrame {
         homePanel = new javax.swing.JPanel();
         libraryName = new javax.swing.JLabel();
         libraryInfo = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        createdBy = new javax.swing.JLabel();
+        turtlebeach = new javax.swing.JLabel();
         homeBackground = new javax.swing.JLabel();
         bookTab = new javax.swing.JPanel();
         bookPanel = new javax.swing.JPanel();
@@ -212,9 +213,9 @@ public class Librarian extends javax.swing.JFrame {
         libraryName.setFont(new java.awt.Font("Serif", 1, 56)); // NOI18N
         libraryName.setForeground(new java.awt.Color(102, 255, 102));
         libraryName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        libraryName.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/Images/Welcome4.png"))); // NOI18N
+        libraryName.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/Images/Welcome.png"))); // NOI18N
         homePanel.add(libraryName);
-        libraryName.setBounds(94, -10, 470, 278);
+        libraryName.setBounds(106, 2, 470, 278);
 
         libraryInfo.setFont(new java.awt.Font("Serif", 1, 48)); // NOI18N
         libraryInfo.setForeground(new java.awt.Color(255, 255, 153));
@@ -222,9 +223,13 @@ public class Librarian extends javax.swing.JFrame {
         homePanel.add(libraryInfo);
         libraryInfo.setBounds(462, 168, 384, 288);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/Images/Creators.png"))); // NOI18N
-        homePanel.add(jLabel1);
-        jLabel1.setBounds(-18, 456, 428, 176);
+        createdBy.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/Images/Creators.png"))); // NOI18N
+        homePanel.add(createdBy);
+        createdBy.setBounds(-18, 456, 428, 176);
+
+        turtlebeach.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/Images/TurtleBeach.png"))); // NOI18N
+        homePanel.add(turtlebeach);
+        turtlebeach.setBounds(710, 294, 412, 386);
 
         homeBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Library/Images/BookshelfHome.jpg"))); // NOI18N
         homeBackground.setText("jLabel1");
@@ -489,16 +494,17 @@ public class Librarian extends javax.swing.JFrame {
     private javax.swing.JPanel bookPanel;
     private javax.swing.JPanel bookTab;
     private javax.swing.JTextArea bookText;
+    private javax.swing.JLabel createdBy;
     private javax.swing.JLabel homeBackground;
     private javax.swing.JPanel homePanel;
     private javax.swing.JPanel homeTab;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel libraryInfo;
     private javax.swing.JLabel libraryName;
     private javax.swing.JButton playButton;
     private javax.swing.JButton stopButton;
     private javax.swing.JLabel topBookBackground;
+    private javax.swing.JLabel turtlebeach;
     private javax.swing.JLabel videoBackground;
     private javax.swing.JComboBox videoCB;
     private javax.swing.JLabel videoImage;
