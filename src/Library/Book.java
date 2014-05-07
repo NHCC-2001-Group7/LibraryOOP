@@ -162,6 +162,7 @@ public class Book extends LibraryMaterial {
     /**
      * method to find appropriate ordinal suffix and include it at the end of the printEdition number
      * @param suffix
+     * @return suffix
      * 
      */
     public String getOrdinalSuffix(int suffix){
